@@ -7,6 +7,9 @@ function App() {
       <Typography variant="h4" component="h1" gutterBottom>
         Online Store Repo
       </Typography>
+      <Typography variant="h3" component="h1" gutterBottom>
+        Online Store Repo
+      </Typography>
     </Container>
   );
 }
