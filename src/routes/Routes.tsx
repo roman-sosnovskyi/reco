@@ -1,4 +1,4 @@
-import { Routes as AppRoutes, Route } from 'react-router-dom';
+import { Routes as AppRoutes, Route } from "react-router-dom";
 
 const Routes = () => {
   return (

@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import MainLayout from './core/layout/MainLayout'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import MainLayout from "@/core/layout/MainLayout";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -18,7 +18,9 @@ function App() {
               Edit <code>App.tsx</code> and save to test HMR updates.
             </p>
             <p>
-              <button onClick={() => setCount((count) => count + 1)}>count is: {count}</button>
+              <button onClick={() => setCount((count) => count + 1)}>
+                count is: {count}
+              </button>
             </p>
             <p>
               <a
@@ -29,7 +31,7 @@ function App() {
               >
                 Vite Documentation
               </a>
-              {' | '}
+              {" | "}
               <a
                 className="App-link"
                 href="https://reactjs.org"
@@ -43,7 +45,7 @@ function App() {
         </div>
       </MainLayout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
