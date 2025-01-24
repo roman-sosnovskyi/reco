@@ -1,2 +1,3 @@
-//Logo types
-// import styles from "./Logo.module.scss";
+export interface LogoProps {
+  className?: string;
+}

@@ -1,15 +1,14 @@
 //layout->header->footer?hero section
 import Header from "@/libs/components/Header/Header";
+import Footer from "@/libs/components/Footer/Footer";
+
 const MainLayout = ({ children }: any) => {
   return (
     <div className="main-layout">
-      <Header>
-        <h1>Header</h1>
-      </Header>
+      <Header />
       <main>{children}</main>
-      <footer>
-        <h1>Footer</h1>
-      </footer>
+
+      <Footer />
     </div>
   );
 };

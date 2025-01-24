@@ -1,10 +1,46 @@
 @use "../../../styles/variables" as *;
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-color: $pri-color;
+  background-color: $black-color;
   padding: $padding-base;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1440px;
+  width: 100vw;
+  background-color: $black-color;
+  gap: 1rem;
+}
+.nav_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  box-sizing: border-box;
+}
+.active_btns {
+  display: flex;
+  color: $white-color;
+  transition: all 0.3s ease;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav_btns {
+    display: none;
+  }
 }
