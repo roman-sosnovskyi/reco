@@ -8,7 +8,7 @@
   background: linear-gradient(
     149deg,
     rgba(80, 71, 42, 1) 33%,
-    rgba(43, 41, 32, 1) 70%,
+    rgba(43, 41, 32, 1) 50%,
     rgba(0, 0, 0, 1) 100%
   );
   border-radius: 30px;
@@ -20,7 +20,7 @@
 
 .footer_container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   max-width: 1440px;
@@ -28,4 +28,10 @@
   max-height: 512px;
   background-color: transparent;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: $padding-base;
+  }
 }
