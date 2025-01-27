@@ -1,0 +1,8 @@
+@use "@/styles/variables.scss" as *;
+
+.main_page {
+  background-color: $black_color;
+  min-width: 100%;
+  min-height: 300vh;
+  padding-top: 120px;
+}
