@@ -1,0 +1,88 @@
+@use "../../../styles/variables" as *;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 0 1px transparent;
+  position: relative;
+
+  &--s {
+    width: 130px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  &--m {
+    width: 200px;
+    height: 62px;
+    font-size: 18px;
+  }
+
+  &--l {
+    width: 252px;
+    height: 72px;
+    font-size: 20px;
+  }
+
+  &--black {
+    background-color: #1b1d20;
+    color: $white-color;
+    width: 161px;
+    height: 68px;
+    font-size: 18px;
+  }
+  &--primary {
+    background-color: $yellow-color;
+    color: $black-color;
+
+    &:hover {
+      background-color: #edb80b;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $white-color;
+    border: 1px solid $yellow-color;
+  }
+
+  &--tertiary {
+    background-color: transparent;
+    color: $yellow-color;
+    border: 1px solid $yellow-color;
+  }
+
+  &--disabled {
+    background-color: $grey-disabled-color;
+    color: $white-color;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 30%;
+    left: 80%;
+
+    border: 0.2em solid transparent;
+    border-top: 0.2em solid #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

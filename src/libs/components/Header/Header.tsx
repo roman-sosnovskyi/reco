@@ -3,6 +3,7 @@ import { HeaderProps } from "./types/Header.types";
 import Logo from "../Logo/Logo";
 import PhoneButton from "../PhoneButton/PhoneButton";
 import CartButton from "../CartButton/CartButton";
+import { Button } from "../Button/Button";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = className
@@ -13,10 +14,11 @@ const Header = ({ className }: HeaderProps) => {
       <div className={styles.container}>
         <Logo />
         <div className={styles.nav_btns}>
-          <button className={styles.button}>BUTTON</button>
-          <button className={styles.button}>BUTTON</button>
-          <button className={styles.button}>BUTTON</button>
-          <button className={styles.button}>BUTTON</button>
+          {" "}
+          <Button variant="black">КАТАЛОГ</Button>
+          <Button variant="black">ПРО НАС </Button>
+          <Button variant="black">ВІДГУКИ</Button>
+          <Button variant="black">КОНТАКТИ</Button>
         </div>
         <div className={styles.active_btns}>
           <PhoneButton />

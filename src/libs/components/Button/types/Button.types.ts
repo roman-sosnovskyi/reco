@@ -1,7 +1,11 @@
 import React from "react";
-export type ButtonProps = {
-  children: React.ReactNode;
-  onClick?: () => void;
+export type ButtonSize = "s" | "m" | "l";
+
+export interface ButtonProps {
+  size?: ButtonSize;
   disabled?: boolean;
-  className?: string;
-};
+  loading?: boolean;
+  variant?: "primary" | "secondary" | "tertiary" | "black";
+  onClick?: () => void;
+  children: React.ReactNode;
+}
