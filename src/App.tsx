@@ -4,7 +4,9 @@ import MainLayout from "@/core/layout/MainLayout";
 function App() {
   return (
     <>
-      <MainLayout></MainLayout>
+      <MainLayout>
+        <div>Welcome to the application!</div>
+      </MainLayout>
     </>
   );
 }

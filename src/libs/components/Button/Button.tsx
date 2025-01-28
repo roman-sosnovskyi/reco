@@ -1,22 +1,21 @@
-import React from "react";
 import { ButtonProps } from "./types/Button.types";
+import classNames from "classnames";
 import "./Button.scss";
 
-export const Button: React.FC<ButtonProps> = ({
+const Button = ({
   size = "m",
   disabled = false,
   loading = false,
   variant = "primary",
   onClick,
   children
-}) => {
-  const classes = [
-    "button",
-    `button--${size}`,
-    `button--${variant}`,
-    disabled ? "button--disabled" : "",
-    loading ? "button--loading" : ""
-  ].join(" ");
+}: ButtonProps) => {
+  const classes = classNames("button", {
+    [`button--${size}`]: size,
+    [`button--${variant}`]: variant,
+    "button--disabled": disabled,
+    "button--loading": loading
+  });
 
   return (
     <button
@@ -29,3 +28,5 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default Button;
