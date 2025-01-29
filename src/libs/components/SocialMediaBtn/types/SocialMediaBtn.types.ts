@@ -6,4 +6,5 @@ export type SocialMediaBtnProps = {
   className?: string;
   icon?: React.ReactNode;
   link?: string;
+  alt?: string;
 };

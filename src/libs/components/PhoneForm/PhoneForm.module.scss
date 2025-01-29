@@ -1,4 +1,4 @@
-@use "../../../styles/variables" as *;
+@use "@/styles/variables" as *;
 
 .phone_form_container {
   display: flex;
@@ -33,17 +33,35 @@
   overflow: hidden;
   margin: 0;
   padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 50px;
+  background-color: $input-color;
+  color: $white-color;
   transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 .phone_input:focus {
   box-shadow: 0 0 0 3px $yellow-color;
   outline: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: $input-color;
 }
 
 .phone_input::placeholder {
   color: $white-color;
   opacity: 0.7;
+}
+
+.input_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input_wrapper::before {
+  content: "+380";
+  position: absolute;
+  left: 10px;
+  font-size: 16px;
+  color: $white-color;
+  pointer-events: none;
 }

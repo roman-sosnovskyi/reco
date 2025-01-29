@@ -1,16 +1,11 @@
-@use "../../../styles/variables" as *;
+@use "@/styles/variables" as *;
 
 .footer {
   display: flex;
   justify-items: center;
   align-items: center;
   background: rgb(80, 71, 42);
-  background: linear-gradient(
-    149deg,
-    rgba(80, 71, 42, 1) 33%,
-    rgba(43, 41, 32, 1) 50%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  background: $footer-gradient;
   border-radius: 30px;
   padding: $padding-base;
   margin: 0;

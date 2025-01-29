@@ -1,12 +1,12 @@
 import styles from "./Footer.module.scss";
 import { FooterProps } from "./types/Footer.types";
-import Logo from "../Logo/Logo";
-import PhoneForm from "../PhoneForm/PhoneForm";
-import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
-import SocialMediaBtn from "../SocialMediaBtn/SocialMediaBtn";
-import instagram from "@/assets/instagram.svg";
-import telegram from "@/assets/telegram.svg";
-import viber from "@/assets/viber.svg";
+import Logo from "@/libs/components/Image/Image";
+import PhoneForm from "@/libs/components/PhoneForm/PhoneForm";
+import SocialMediaHub from "@/libs/components/SocialMediaHub/SocialMediaHub";
+import SocialMediaBtn from "@/libs/components/SocialMediaBtn/SocialMediaBtn";
+import { socialMedia } from "@/conatsnt/socialMedia";
+import logo from "@/assets/logo.svg";
+
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
     ? `${styles.header} ${className}`
@@ -14,12 +14,18 @@ const Footer = ({ className }: FooterProps) => {
   return (
     <footer className={`${combinedClass} ${styles.footer}`}>
       <div className={styles.footer_container}>
-        <Logo />
+        <Logo src={logo} alt="Логотип" size="medium" />
         <PhoneForm />
         <SocialMediaHub>
-          <SocialMediaBtn icon={<img src={instagram} alt="Instagram" />} />
-          <SocialMediaBtn icon={<img src={telegram} alt="Telegram" />} />
-          <SocialMediaBtn icon={<img src={viber} alt="Viber" />} />
+          {socialMedia.map(({ src, alt, link }) => (
+            <SocialMediaBtn
+              key={alt}
+              icon={<img src={src} alt={alt} />}
+              link={link}
+              alt={alt}
+            />
+          ))}
+          {/* These are stubs. We are waiting for the component. */}
         </SocialMediaHub>
       </div>
     </footer>

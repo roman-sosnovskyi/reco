@@ -1,4 +1,4 @@
-@use "../../../styles/variables" as *;
+@use "@/styles/variables" as *;
 
 .header {
   display: flex;
@@ -23,14 +23,7 @@
   background-color: $black-color;
   gap: 1rem;
 }
-.nav_btns {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 0.5rem;
-  width: 50%;
-  box-sizing: border-box;
-}
+
 .active_btns {
   display: flex;
   color: $white-color;

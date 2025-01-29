@@ -1,0 +1,18 @@
+@use "@/styles/variables" as *;
+
+.heroSection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  background-color: transparent;
+  color: $white-color;
+  text-align: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding-top: 1.5rem;
+  padding-left: 2rem;
+}

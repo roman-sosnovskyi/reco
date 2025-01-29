@@ -1,8 +1,10 @@
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./types/Header.types";
-import Logo from "../Logo/Logo";
-import PhoneButton from "../PhoneButton/PhoneButton";
-import CartButton from "../CartButton/CartButton";
+import Logo from "@/libs/components/Image/Image";
+import PhoneButton from "@/libs/components/PhoneButton/PhoneButton";
+import CartButton from "@/libs/components/CartButton/CartButton";
+import NavBar from "@/libs/components/NavBar/NavBar";
+import logo from "@/assets/logo.svg";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = className
@@ -11,16 +13,20 @@ const Header = ({ className }: HeaderProps) => {
   return (
     <header className={combinedClass}>
       <div className={styles.container}>
-        <Logo />
-        <div className={styles.nav_btns}>
+        <Logo src={logo} alt="Логотип" size="medium" />
+        <NavBar>
           <button className={styles.button}>BUTTON</button>
           <button className={styles.button}>BUTTON</button>
           <button className={styles.button}>BUTTON</button>
           <button className={styles.button}>BUTTON</button>
-        </div>
+          {/* These are stubs. We are waiting for the component. */}
+        </NavBar>
         <div className={styles.active_btns}>
           <PhoneButton />
+          {/* These are stubs. We are waiting for the component. */}
+
           <CartButton />
+          {/* These are stubs. We are waiting for the component. */}
         </div>
       </div>
     </header>

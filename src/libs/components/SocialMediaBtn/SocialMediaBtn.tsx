@@ -1,14 +1,36 @@
+import React from "react";
 import styles from "./SocialMediaBtn.module.scss";
 import { SocialMediaBtnProps } from "./types/SocialMediaBtn.types";
 
-const SocialMediaBtn = ({ className, icon, ...props }: SocialMediaBtnProps) => {
+const SocialMediaBtn: React.FC<SocialMediaBtnProps> = ({
+  onClick,
+  disabled,
+  className,
+  icon,
+  link,
+  alt
+}) => {
   const combinedClass = className
     ? `${styles.social_media_button} ${className}`
     : styles.social_media_button;
-  return (
-    <button {...props} className={combinedClass}>
-      {icon && <span className="icon-wrapper">{icon}</span>}
+
+  const buttonContent = (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={combinedClass}
+      aria-label={alt}
+    >
+      {icon}
     </button>
+  );
+
+  return link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      {buttonContent}
+    </a>
+  ) : (
+    buttonContent
   );
 };
 
