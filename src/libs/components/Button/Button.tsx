@@ -23,7 +23,7 @@ const Button = ({
   return (
     <button
       className={classes}
-      onClick={disabled ? undefined : onClick}
+      onClick={!disabled ? onClick : undefined}
       disabled={disabled}
     >
       <span className="button__text">{children}</span>

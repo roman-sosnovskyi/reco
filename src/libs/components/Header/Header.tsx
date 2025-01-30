@@ -24,7 +24,7 @@ const Header = ({ className }: HeaderProps) => {
           ))}
         </div>
         <div className={styles.active_btns}>
-          <Button size="l1" variant="secondary" icon={arowBtnImg}>
+          <Button disabled size="l" variant="primary" icon={arowBtnImg}>
             +380 50 988 33 39
           </Button>
           <CartButton />

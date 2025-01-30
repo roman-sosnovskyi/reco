@@ -12,6 +12,21 @@
   box-shadow: 0 0 0 1px transparent;
   position: relative;
   cursor: pointer;
+  width: auto;
+  min-width: 117px;
+  white-space: nowrap;
+
+  &.button--disabled {
+    background-color: #c9c6bd;
+    color: #a3a3a0;
+    cursor: not-allowed;
+    pointer-events: none;
+    .button__icon {
+      opacity: 0.4;
+      filter: grayscale(100%);
+    }
+  }
+
   &--s {
     width: 130px;
     height: 38px;
@@ -42,15 +57,6 @@
     }
   }
 
-  &--l1 {
-    width: 281px;
-    height: 72px;
-    font-size: 18px;
-    .button__icon {
-      width: 64px;
-      height: 64px;
-    }
-  }
   &--black1 {
     width: 161px;
     height: 68px;
@@ -84,11 +90,14 @@
     background-color: $yellow-color;
     color: $black-color;
     &:hover {
-      background-color: #edb80b;
+      background-color: #fbbc058c;
     }
     &:focus {
       background-color: #e0a809;
       outline: 2.5px solid #c7c0c0;
+    }
+    &:active {
+      background-color: #edb80b;
     }
   }
 
@@ -102,6 +111,9 @@
     &:focus {
       outline: 3px solid #edb80b;
     }
+    &:active {
+      outline: 1.5px solid #edb80b;
+    }
   }
 
   &--black {
@@ -112,6 +124,9 @@
     }
     &:focus {
       outline: 2px solid #a3a3a0;
+    }
+    &:active {
+      background-color: #1b1d20;
     }
   }
 }
