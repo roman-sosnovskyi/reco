@@ -11,38 +11,74 @@
   padding: 0;
   box-shadow: 0 0 0 1px transparent;
   position: relative;
-
+  cursor: pointer;
   &--s {
     width: 130px;
     height: 38px;
     font-size: 16px;
+    .button__icon {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   &--m {
     width: 200px;
     height: 62px;
     font-size: 18px;
+    .button__icon {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &--l {
     width: 252px;
     height: 72px;
     font-size: 20px;
+    .button__icon {
+      width: 64px;
+      height: 64px;
+    }
   }
-
-  &--black {
-    background-color: #1b1d20;
-    color: $white-color;
+  &--black1 {
     width: 161px;
     height: 68px;
     font-size: 18px;
   }
+
+  &--black2 {
+    width: 151px;
+    height: 58px;
+    font-size: 17px;
+  }
+
+  &--black3 {
+    width: 141px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    padding: 2px;
+  }
+
+  &__text {
+    flex-grow: 1;
+    text-align: center;
+  }
   &--primary {
     background-color: $yellow-color;
     color: $black-color;
-
     &:hover {
       background-color: #edb80b;
+    }
+    &:focus {
+      background-color: #e0a809;
+      outline: 2.5px solid #c7c0c0;
     }
   }
 
@@ -50,39 +86,22 @@
     background: transparent;
     color: $white-color;
     border: 1px solid $yellow-color;
-  }
-
-  &--tertiary {
-    background-color: transparent;
-    color: $yellow-color;
-    border: 1px solid $yellow-color;
-  }
-
-  &--disabled {
-    background-color: $grey-disabled-color;
-    color: $white-color;
-    cursor: not-allowed;
-  }
-
-  .spinner {
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    top: 30%;
-    left: 80%;
-
-    border: 0.2em solid transparent;
-    border-top: 0.2em solid #fff;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
+    &:hover {
+      outline: 1px solid #fbc000;
     }
-    to {
-      transform: rotate(360deg);
+    &:focus {
+      outline: 3px solid #edb80b;
+    }
+  }
+
+  &--black {
+    background: #1b1d20;
+    color: $white-color;
+    &:hover {
+      box-shadow: 0 0px 16px #fbc0004d;
+    }
+    &:focus {
+      outline: 2px solid #a3a3a0;
     }
   }
 }

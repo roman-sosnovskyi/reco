@@ -1,9 +1,9 @@
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./types/Header.types";
 import Logo from "../Logo/Logo";
-import PhoneButton from "../PhoneButton/PhoneButton";
 import CartButton from "../CartButton/CartButton";
 import Button from "../Button/Button";
+import arowBtnImg from "@/assets/arow_btn.svg";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = className
@@ -24,7 +24,9 @@ const Header = ({ className }: HeaderProps) => {
           ))}
         </div>
         <div className={styles.active_btns}>
-          <PhoneButton />
+          <Button size="l" variant="secondary" icon={arowBtnImg}>
+            +380 50 988 33 39
+          </Button>
           <CartButton />
         </div>
       </div>

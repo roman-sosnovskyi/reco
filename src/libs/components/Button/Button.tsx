@@ -5,26 +5,30 @@ import "./Button.scss";
 const Button = ({
   size = "m",
   disabled = false,
-  loading = false,
   variant = "primary",
+  state = "default",
   onClick,
-  children
+  children,
+  icon
 }: ButtonProps) => {
   const classes = classNames("button", {
     [`button--${size}`]: size,
     [`button--${variant}`]: variant,
-    "button--disabled": disabled,
-    "button--loading": loading
+    [`button--${variant}--hover`]: state === "hover",
+    [`button--${variant}--focus`]: state === "focus",
+    [`button--${variant}--pressed`]: state === "pressed",
+    "button--disabled": disabled || state === "disabled"
   });
 
   return (
     <button
       className={classes}
-      onClick={onClick}
-      disabled={disabled || loading}
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
     >
-      {children}
-      {loading && <span className="spinner" />}
+      <span className="button__text">{children}</span>
+      {icon && <img src={icon} alt="icon" className="button__icon" />}
+      {disabled}
     </button>
   );
 };
