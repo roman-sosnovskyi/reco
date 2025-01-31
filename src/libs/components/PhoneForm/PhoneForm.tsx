@@ -1,8 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./PhoneForm.module.scss";
 import { PhoneFormProps } from "./types/PhoneForm.types";
-import SendButton from "@/libs/components/SendButton/SendButton";
-import sendBtnImg from "@/assets/send_button.svg";
 
 type FormValues = {
   phoneNumber: string;
@@ -44,13 +42,6 @@ const PhoneForm = ({ className }: PhoneFormProps) => {
           {errors.phoneNumber.message}
         </span>
       )}
-      <SendButton type="submit" className={styles.send_button}>
-        <img
-          className={styles.send_button_image}
-          src={sendBtnImg}
-          alt="Отправить"
-        />
-      </SendButton>
     </form>
   );
 };
