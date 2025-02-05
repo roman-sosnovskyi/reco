@@ -1,9 +1,9 @@
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./types/Header.types";
-import Logo from "../Logo/Logo";
-import CartButton from "../CartButton/CartButton";
 import Button from "../Button/Button";
-import arowBtnImg from "@/assets/arow_btn.svg";
+import phoneBtnImg from "@/assets/phone_btn.svg";
+import Logo from "@/libs/components/Image/Image";
+import logo from "@/assets/logo.svg";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = className
@@ -14,8 +14,8 @@ const Header = ({ className }: HeaderProps) => {
 
   return (
     <header className={combinedClass}>
+      <Logo src={logo} alt="Логотип" size="medium" />
       <div className={styles.container}>
-        <Logo />
         <div className={styles.nav_btns}>
           {buttonLabels.map((label, index) => (
             <Button key={index} variant="black">
@@ -24,10 +24,9 @@ const Header = ({ className }: HeaderProps) => {
           ))}
         </div>
         <div className={styles.active_btns}>
-          <Button disabled size="l" variant="primary" icon={arowBtnImg}>
+          <Button size="l" variant="primary" icon={phoneBtnImg}>
             +380 50 988 33 39
           </Button>
-          <CartButton />
         </div>
       </div>
     </header>

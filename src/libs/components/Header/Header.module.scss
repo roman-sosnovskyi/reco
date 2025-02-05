@@ -35,12 +35,12 @@
   align-items: center;
 }
 
-// @media screen and (max-width: 768px) {
-//   .container {
-//     width: 100vw;
-//     box-sizing: border-box;
-//   }
-//   .nav_btns {
-//     display: none;
-//   }
-// }
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav_btns {
+    display: none;
+  }
+}
