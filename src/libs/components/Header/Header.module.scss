@@ -1,0 +1,43 @@
+@use "@/styles/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black-color;
+  padding: $padding-base;
+  width: 100vw;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1440px;
+  width: 100vw;
+  background-color: $black-color;
+  gap: 1rem;
+}
+
+.active_btns {
+  display: flex;
+  color: $white-color;
+  transition: all 0.3s ease;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .nav_btns {
+    display: none;
+  }
+}
