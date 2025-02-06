@@ -14,8 +14,10 @@ const Header = ({ className }: HeaderProps) => {
 
   return (
     <header className={combinedClass}>
-      <Logo src={logo} alt="Логотип" size="medium" />
       <div className={styles.container}>
+        <div className={styles.logo_container}>
+          <Logo src={logo} alt="Логотип" size="medium" />
+        </div>
         <div className={styles.nav_btns}>
           {buttonLabels.map((label, index) => (
             <Button key={index} variant="black">

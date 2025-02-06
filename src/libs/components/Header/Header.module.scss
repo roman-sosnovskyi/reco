@@ -12,26 +12,24 @@
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   max-width: 1440px;
-  width: 100vw;
+  width: 100%;
   background-color: $black-color;
-  gap: 1rem;
 }
 .nav_btns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   width: 50%;
   box-sizing: border-box;
+  gap: 1rem;
 }
 .active_btns {
   display: flex;
   color: $white-color;
   transition: all 0.3s ease;
-  gap: 1rem;
   align-items: center;
 }
 
