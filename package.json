@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

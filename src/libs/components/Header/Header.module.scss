@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "../../../styles/variables" as *;
 
 .header {
   display: flex;
@@ -8,10 +8,6 @@
   padding: $padding-base;
   width: 100vw;
   box-sizing: border-box;
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
 }
 
 .container {
@@ -23,7 +19,14 @@
   background-color: $black-color;
   gap: 1rem;
 }
-
+.nav_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+  box-sizing: border-box;
+}
 .active_btns {
   display: flex;
   color: $white-color;
