@@ -2,44 +2,14 @@
 
 .main_page {
   display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  background-color: $black_color;
-  min-width: 100%;
-  height: 100%;
-  padding-top: 120px;
-  z-index: -1000;
-}
-
-.slogan {
-  text-transform: uppercase;
-  font-family: "Arial", sans-serif;
-  font-size: 64px;
-  text-align: left;
-}
-
-.text {
-  font-family: "Arial", sans-serif;
-  font-size: 30px;
-  text-align: left;
-}
-
-.buttonBar {
-  display: flex;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: row;
-  height: 50px;
-  width: 100%;
-  background-color: transparent;
-  gap: 1rem;
-}
-
-.textBar {
-  display: flex;
-  justify-content: start;
-  text-align: left;
   flex-direction: column;
-  gap: 2rem;
+  width: 100vw;
+  max-width: 1440px;
+  background-color: $black_color;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
