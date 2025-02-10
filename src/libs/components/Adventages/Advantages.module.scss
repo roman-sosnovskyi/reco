@@ -26,7 +26,7 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   position: absolute;
-  top: 0em;
+  top: 0;
   width: 100%;
   margin-bottom: 0;
 }
@@ -36,7 +36,7 @@
   justify-content: space-between;
   height: 29.4em;
   width: 100%;
-  margin-top: 42px;
+  margin-top: 3rem;
 }
 
 .advantageCard {
@@ -45,10 +45,29 @@
   justify-content: center;
   align-items: center;
 }
+
+.advantageIconContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .advantageIconWrapper {
   position: relative;
+  z-index: 2;
   bottom: 80px;
 }
+
+.circle {
+  position: absolute;
+  z-index: 1;
+  left: 33%;
+  margin-bottom: 95px;
+  transform: translate(-50%, -50%);
+}
+
 .advantageIcon {
   width: 97.3%;
   height: 90%;
@@ -72,7 +91,6 @@
   position: absolute;
   bottom: 110px;
   overflow: auto;
-  width: 234px;
-  height: 50px;
+  max-width: 234px;
   bottom: 8.1rem;
 }
