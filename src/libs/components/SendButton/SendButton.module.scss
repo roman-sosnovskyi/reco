@@ -1,0 +1,18 @@
+@use "@/styles/variables" as *;
+
+.send_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 0 1px transparent;
+
+  &:active {
+    transform: scale(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}

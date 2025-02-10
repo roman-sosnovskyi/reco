@@ -11,10 +11,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --check .",
-    "prettier:format": "prettier --write .",
+    "prettir:format": "prettier --write .",
     "prepare": "husky"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^7.1.1",
