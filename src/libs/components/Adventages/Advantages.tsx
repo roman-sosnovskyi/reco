@@ -29,10 +29,7 @@ export default function Advantages() {
       <h2 className={classNames(styles.advantagesTitle)}>Переваги</h2>
       <div className={styles.advantagesContainer}>
         {advantages.map((adv) => (
-          <div
-            key={adv.title}
-            className={classNames(styles.advantageCard, "card")}
-          >
+          <div key={adv.title} className={classNames(styles.advantageCard)}>
             <div className={styles.advantageIconWrapper}>{adv.icon}</div>
             <h3 className={styles.advantageTitle}>{adv.title}</h3>
             <p className={styles.advantageDescription}>{adv.description}</p>
