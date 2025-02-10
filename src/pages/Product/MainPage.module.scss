@@ -1,0 +1,15 @@
+@use "@/styles/variables.scss" as *;
+
+.main_page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 1440px;
+  background-color: $black_color;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
