@@ -33,21 +33,3 @@
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-
-  .nav_btns {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .nav_btns.active {
-    visibility: visible;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-  }
-}
