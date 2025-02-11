@@ -2,12 +2,13 @@
 import Header from "@/libs/components/Header/Header";
 import Footer from "@/libs/components/Footer/Footer";
 import { MainLayoutProps } from "@/core/types/MainLayoutProps";
+import styles from "./MainLayout.module.scss";
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className="main-layout">
+    <div className={styles.main_ly}>
       <Header />
-      <main>{children}</main>
+      <main className={styles.main_content}>{children}</main>
       <Footer />
     </div>
   );
