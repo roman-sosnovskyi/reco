@@ -1,0 +1,132 @@
+@use "../../../styles/variables" as *;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 0 1px transparent;
+  position: relative;
+  cursor: pointer;
+  width: auto;
+  min-width: 117px;
+  white-space: nowrap;
+
+  &.button--disabled {
+    background-color: #c9c6bd;
+    color: #a3a3a0;
+    cursor: not-allowed;
+    pointer-events: none;
+    .button__icon {
+      opacity: 0.4;
+      filter: grayscale(100%);
+    }
+  }
+
+  &--s {
+    width: 130px;
+    height: 38px;
+    font-size: 16px;
+    .button__icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &--m {
+    width: 200px;
+    height: 62px;
+    font-size: 18px;
+    .button__icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &--l {
+    width: 252px;
+    height: 72px;
+    font-size: 20px;
+    .button__icon {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &--black1 {
+    width: 161px;
+    height: 68px;
+    font-size: 18px;
+  }
+
+  &--black2 {
+    width: 151px;
+    height: 58px;
+    font-size: 17px;
+  }
+
+  &--black3 {
+    width: 141px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+    padding: 2px;
+  }
+
+  &__text {
+    flex-grow: 1;
+    text-align: center;
+  }
+  &--primary {
+    background-color: $yellow-color;
+    color: $black-color;
+    &:hover {
+      background-color: #fbbc058c;
+    }
+    &:focus {
+      background-color: #e0a809;
+      outline: 2.5px solid #c7c0c0;
+    }
+    &:active {
+      background-color: #edb80b;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $white-color;
+    border: 1px solid $yellow-color;
+    &:hover {
+      outline: 1px solid #fbc000;
+    }
+    &:focus {
+      outline: 3px solid #edb80b;
+    }
+    &:active {
+      outline: 1.5px solid #edb80b;
+    }
+  }
+
+  &--black {
+    background: #1b1d20;
+    color: $white-color;
+    &:hover {
+      box-shadow: 0 0px 16px #fbc0004d;
+    }
+    &:focus {
+      outline: 2px solid #a3a3a0;
+    }
+    &:active {
+      background-color: #1b1d20;
+    }
+  }
+}
