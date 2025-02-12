@@ -26,8 +26,12 @@ const Header = ({ className }: HeaderProps) => {
           />
         </NavBar>
         <div className={styles.active_btns}>
-          <CallButton className={styles.call_btn} />
-          <CartButton className={styles.cart_btn} />
+          <Link to="tel:+380509883339" className={styles.call_btn}>
+            <CallButton phoneNumber="+380 50 988 33 39" />
+          </Link>
+          <Link to="/cart" className={styles.cart_btn}>
+            <CartButton />
+          </Link>
         </div>
       </div>
     </header>
