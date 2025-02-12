@@ -1,7 +1,7 @@
 import { MainPageProps } from "./types/MainPage.types";
 import styles from "./MainPage.module.scss";
-import HeroSection from "@/libs/components/HeroSection/HeroSection";
-import Advantages from "@/libs/components/Adventages/Advantages";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import Advantages from "@/components/Adventages/Advantages";
 
 const MainPage = ({ className }: MainPageProps) => {
   const combinedClass = className

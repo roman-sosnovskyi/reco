@@ -1,0 +1,110 @@
+@use "@/styles/variables" as *;
+
+.heroSection {
+  display: flex;
+  flex: 1;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
+  min-width: 100%;
+  max-width: 1440px;
+  margin-bottom: 5rem;
+  background-color: transparent;
+  color: $white-color;
+  text-align: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.main_content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  background-color: $black-color;
+  padding-left: 5rem;
+  gap: 6rem;
+}
+
+.text_field {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+.slogan {
+  text-transform: uppercase;
+  font-family: "Arial", sans-serif;
+  font-size: 64px;
+  text-align: left;
+}
+
+.text {
+  font-family: "Arial", sans-serif;
+  font-size: 30px;
+  text-align: left;
+}
+
+.image {
+  position: absolute;
+  right: 5%;
+  max-width: 40vw;
+  height: auto;
+  z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .image_container {
+    width: 250px;
+    max-height: 250px;
+  }
+
+  @media (max-width: 768px) {
+    .heroSection {
+      flex-direction: column;
+      padding-left: 1rem;
+    }
+
+    .image_container {
+      display: none;
+    }
+
+    .slogan {
+      font-size: 36px;
+    }
+
+    .text {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .heroSection {
+      width: 100vw;
+    }
+
+    .buttonBar {
+      height: 100px;
+      flex-direction: column;
+    }
+
+    .image_container {
+      display: none;
+    }
+
+    .textBar {
+      display: flex;
+      width: 100vw;
+    }
+
+    .slogan {
+      font-size: 28px;
+    }
+
+    .text {
+      font-size: 14px;
+    }
+  }
+}

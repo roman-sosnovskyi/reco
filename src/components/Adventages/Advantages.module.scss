@@ -1,0 +1,96 @@
+.advantages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50px;
+  outline: 2px solid #fbc00038;
+  background: linear-gradient(
+    105.12deg,
+    rgba(251, 192, 0, 0.0768416) 33.28%,
+    rgba(251, 192, 0, 0.021) 97.91%
+  );
+  width: 85rem;
+  height: 40rem;
+  position: relative;
+}
+
+.advantagesTitle {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 65.38px;
+  letter-spacing: 0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px #fbc000;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.advantagesContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 29.4em;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.advantageCard {
+  width: 27.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantageIconContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.advantageIconWrapper {
+  position: relative;
+  z-index: 2;
+  bottom: 80px;
+}
+
+.circle {
+  position: absolute;
+  z-index: 1;
+  left: 33%;
+  margin-bottom: 95px;
+  transform: translate(-50%, -50%);
+}
+
+.advantageIcon {
+  width: 97.3%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.advantageTitle {
+  font-weight: 700;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.3em;
+  color: #fbc000;
+  position: absolute;
+  bottom: 12rem;
+}
+
+.advantageDescription {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #fffaea;
+  font-family: "Noto Sans", sans-serif;
+  position: absolute;
+  bottom: 110px;
+  overflow: auto;
+  max-width: 234px;
+  bottom: 8.1rem;
+}

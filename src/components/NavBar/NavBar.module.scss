@@ -1,0 +1,11 @@
+@use "@/styles/variables" as *;
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+  box-sizing: border-box;
+  z-index: 1000;
+}

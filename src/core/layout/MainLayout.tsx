@@ -1,6 +1,6 @@
 //layout->header->footer?hero section
-import Header from "@/libs/components/Header/Header";
-import Footer from "@/libs/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 import { MainLayoutProps } from "@/core/types/MainLayoutProps";
 import styles from "./MainLayout.module.scss";
 
