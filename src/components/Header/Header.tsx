@@ -1,7 +1,5 @@
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./types/Header.types";
-import Button from "../Button/Button";
-import phoneBtnImg from "@/assets/phone_btn.svg";
 import Logo from "@/components/Image/Image";
 import logo from "@/assets/logo.svg";
 import classNames from "classnames";
@@ -9,6 +7,8 @@ import { navigationButtons } from "@/conatsnt/navigationButtons";
 import NavButtons from "@/components/NavButtons/NavButton";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
+import CallButton from "../CallButton/CallButton";
+import CartButton from "../CartButton/CartButton";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = classNames(styles.header, className);
@@ -26,9 +26,8 @@ const Header = ({ className }: HeaderProps) => {
           />
         </NavBar>
         <div className={styles.active_btns}>
-          <Button size="l" variant="primary" icon={phoneBtnImg}>
-            +380 50 988 33 39
-          </Button>
+          <CallButton className={styles.call_btn} />
+          <CartButton className={styles.cart_btn} />
         </div>
       </div>
     </header>
