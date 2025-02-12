@@ -1,12 +1,34 @@
-import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet
+} from "react-router-dom";
 import MainLayout from "@/core/layout/MainLayout";
-import MainPage from "./pages/Product/MainPage";
+import MainPage from "@/pages/Product/MainPage";
+import AboutPage from "@/pages/about/page";
+import ContactPage from "./pages/contacts/page";
+import FeedbackPage from "./pages/feedback/page";
 
 function App() {
   return (
-    <MainLayout>
-      <MainPage />
-    </MainLayout>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <Outlet />
+            </MainLayout>
+          }
+        >
+          <Route index element={<MainPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="contacts" element={<ContactPage />} />
+          <Route path="feedback" element={<FeedbackPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,0 +1,10 @@
+.buttonBar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  gap: 1rem;
+}

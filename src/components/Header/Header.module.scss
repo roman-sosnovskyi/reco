@@ -1,0 +1,26 @@
+@use "@/styles/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black-color;
+  padding: $padding-base;
+  width: 1440px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.active_btns {
+  display: flex;
+  color: $white-color;
+  transition: all 0.3s ease;
+  align-items: center;
+}
