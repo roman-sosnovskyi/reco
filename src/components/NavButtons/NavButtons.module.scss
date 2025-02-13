@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
   gap: 1rem;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.nav_btns a {
+  text-decoration: none;
 }

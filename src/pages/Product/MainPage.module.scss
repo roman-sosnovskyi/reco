@@ -5,11 +5,28 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   max-width: 1440px;
   background-color: $black_color;
-  height: 100%;
-  @media screen and (max-width: 768px) {
-    width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .main_page {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_page {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main_page {
+    padding: 0.5rem;
   }
 }
