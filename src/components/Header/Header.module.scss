@@ -4,12 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
   background-color: $black-color;
+  opacity: 0.97;
   padding: $padding-base;
+  border-radius: 2rem;
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .container {

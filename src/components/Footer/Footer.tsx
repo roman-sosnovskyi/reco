@@ -1,8 +1,9 @@
 import styles from "./Footer.module.scss";
 import { FooterProps } from "./types/Footer.types";
 import Logo from "@/components/Image/Image";
-import PhoneForm from "@/components/PhoneForm/PhoneForm";
+import AddressForm from "../AddressForm/AddressForm";
 import logo from "@/assets/logo.svg";
+import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
@@ -12,7 +13,10 @@ const Footer = ({ className }: FooterProps) => {
     <footer className={`${combinedClass} ${styles.footer}`}>
       <div className={styles.footer_container}>
         <Logo src={logo} alt="Логотип" size="medium" />
-        <PhoneForm />
+        <AddressForm />
+        <SocialMediaHub>
+          <button></button>
+        </SocialMediaHub>
       </div>
     </footer>
   );
