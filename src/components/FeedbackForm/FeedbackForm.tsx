@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-
 import { FormInput } from "./types/FeedbackForm.types";
+
+import style from "./FeedbackForm.module.scss";
 
 const FeedbackForm = () => {
   const {
@@ -13,9 +14,11 @@ const FeedbackForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="name">Ім&#39;я</label>
+    <form onSubmit={handleSubmit(onSubmit)} className={style.feedbackForm}>
+      <div className={style.feedbackInputContainer}>
+        <label htmlFor="name" className={style.feedbackInputLabel}>
+          Ім&#39;я
+        </label>
 
         <input
           id="name"
@@ -28,13 +31,16 @@ const FeedbackForm = () => {
           })}
           type="text"
           placeholder="Введіть ваше імʼя"
+          className={style.feedbackInput}
         />
 
         {errors.name && <p>{errors.name.message}</p>}
       </div>
 
-      <div>
-        <label htmlFor="phoneNumber">Номер телефону</label>
+      <div className={style.feedbackInputContainer}>
+        <label htmlFor="phoneNumber" className={style.feedbackInputLabel}>
+          Номер телефону
+        </label>
 
         <input
           id="phoneNumber"
@@ -47,6 +53,7 @@ const FeedbackForm = () => {
             }
           })}
           type="tel"
+          className={style.feedbackInput}
         />
 
         {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
