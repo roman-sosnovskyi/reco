@@ -2,31 +2,34 @@
 
 .footer {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   background: rgb(80, 71, 42);
   background: $footer-gradient;
   border-radius: 30px;
-  padding: $padding-base;
+  padding-top: 2rem;
   margin: 0;
   width: 100vw;
   box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 2rem;
+  }
 }
 
 .footer_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
-  max-width: 1440px;
-  width: 100vw;
-  max-height: 512px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  max-width: 1360px;
   background-color: transparent;
-  margin: 0 auto;
+  padding: 0 3rem;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    row-gap: $padding-base;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    height: auto;
   }
 }

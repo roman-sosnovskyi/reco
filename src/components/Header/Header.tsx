@@ -3,12 +3,13 @@ import { HeaderProps } from "./types/Header.types";
 import Logo from "@/components/Image/Image";
 import logo from "@/assets/logo.svg";
 import classNames from "classnames";
-import { navigationButtons } from "@/conatsnt/navigationButtons";
+import { navigationButtons } from "@/constants/navigationButtons";
 import NavButtons from "@/components/NavButtons/NavButton";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 import CallButton from "../CallButton/CallButton";
 import CartButton from "../CartButton/CartButton";
+import { phoneNumber } from "@/constants/contacts";
 
 const Header = ({ className }: HeaderProps) => {
   const combinedClass = classNames(styles.header, className);
@@ -27,7 +28,7 @@ const Header = ({ className }: HeaderProps) => {
         </NavBar>
         <div className={styles.active_btns}>
           <Link to="tel:+380509883339" className={styles.call_btn}>
-            <CallButton phoneNumber="+380 50 988 33 39" />
+            <CallButton phoneNumber={phoneNumber} />
           </Link>
           <Link to="/cart" className={styles.cart_btn}>
             <CartButton />
