@@ -1,25 +1,27 @@
 import styles from "./AddressForm.module.scss";
 import { AddressFormProps } from "./types/AddressForm.types";
-import PaymentIcon from "@/assets/visa_mastercard.svg"; // Проверь путь
+import PaymentIcon from "@/assets/visa_mastercard.svg";
 
-const AddressForm = ({ className }: AddressFormProps) => {
+const AddressForm = ({
+  className,
+  phoneNumber,
+  email,
+  address
+}: AddressFormProps) => {
   const combinedClass = className
     ? `${styles.header} ${className}`
     : styles.header;
 
   return (
     <div className={`${combinedClass} ${styles.address_form_container}`}>
+      <div className={styles.info_item}>{address}</div>
+
       <div className={styles.info_item}>
-        <strong>Адреса:</strong> м. Запоріжжя,
-        <br /> вул. Героїв України 12
+        <a href="tel:+380680001143">{phoneNumber}</a>
       </div>
 
       <div className={styles.info_item}>
-        <a href="tel:+380680001143">+380 68 000 11 43</a>
-      </div>
-
-      <div className={styles.info_item}>
-        <a href="mailto:beautynails@gmail.com">beautynails@gmail.com</a>
+        <a href="mailto:beautynails@gmail.com">{email}</a>
       </div>
 
       <div className={styles.payment_icon_container}>
