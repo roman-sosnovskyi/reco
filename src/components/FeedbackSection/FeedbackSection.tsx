@@ -1,14 +1,18 @@
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
 
+import styles from "./FeedbackSection.module.scss";
+
 const FeedbackSection = () => {
   return (
-    <div>
-      <h2>Залиште свої дані, щоб отримати більше інформації</h2>
+    <section className={styles.feedbackSection}>
+      <h2 className={styles.feedbackTitle}>
+        Залиште свої дані, щоб отримати більше інформації
+      </h2>
       <div>
         <FeedbackForm />
       </div>
       <div></div>
-    </div>
+    </section>
   );
 };
 
