@@ -1,6 +1,7 @@
 import { MainPageProps } from "./types/MainPage.types";
 import styles from "./MainPage.module.scss";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import FeedbackSection from "@/components/FeedbackSection/FeedbackSection";
 
 const MainPage = ({ className }: MainPageProps) => {
   const combinedClass = className
@@ -9,6 +10,7 @@ const MainPage = ({ className }: MainPageProps) => {
   return (
     <div className={combinedClass}>
       <HeroSection />
+      <FeedbackSection />
     </div>
   );
 };
