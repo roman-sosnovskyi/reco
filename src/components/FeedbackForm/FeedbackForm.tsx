@@ -16,20 +16,30 @@ const FeedbackForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label htmlFor="name">Ім&#39;я</label>
+
         <input
           id="name"
-          {...register("name", { required: "Це поле обов'язкове" })}
+          {...register("name", {
+            required: "Це поле обовʼязкове",
+            pattern: {
+              value: /^[A-Za-zA-Яа-яЁё\s]+$/,
+              message: "Імʼя повинно містити тільки букви"
+            }
+          })}
           type="text"
         />
+
         {errors.name && <p>{errors.name.message}</p>}
       </div>
+
       <div>
         <label htmlFor="phoneNumber">Номер телефону</label>
+
         <input
           id="phoneNumber"
           maxLength={9}
           {...register("phoneNumber", {
-            required: "Це поле обов'язкове",
+            required: "Це поле обовʼязкове",
             pattern: {
               value: /^\d{9}$/,
               message: "Невірний формат номеру телефону"
@@ -37,8 +47,10 @@ const FeedbackForm = () => {
           })}
           type="tel"
         />
+
         {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
       </div>
+
       <button type="submit">Надіслати</button>
     </form>
   );
