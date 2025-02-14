@@ -26,7 +26,9 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           </p>
           <HeroButtons />
         </div>
-        <img src={heroSectionImg} alt="Image 1" className={styles.image} />
+        <div className={styles.image_container}>
+          <img src={heroSectionImg} alt="Image 1" className={styles.image} />
+        </div>
       </div>
     </section>
   );
