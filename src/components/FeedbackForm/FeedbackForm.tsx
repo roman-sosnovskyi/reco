@@ -27,6 +27,7 @@ const FeedbackForm = () => {
             }
           })}
           type="text"
+          placeholder="Введіть ваше імʼя"
         />
 
         {errors.name && <p>{errors.name.message}</p>}
