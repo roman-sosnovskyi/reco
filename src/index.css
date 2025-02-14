@@ -1,6 +1,7 @@
-.html {
+html {
   width: 100vw;
   overflow-x: hidden;
+  font-size: 1vw;
 }
 body {
   margin: 0;
