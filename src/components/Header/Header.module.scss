@@ -8,10 +8,9 @@
   top: 0;
   background-color: $black-color;
   opacity: 0.97;
-  padding: $padding-base;
-  border-radius: 2rem;
   width: 100%;
-  max-width: 1440px;
+  padding-top: 2rem;
+  max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
 }
@@ -32,9 +31,13 @@
   gap: 1rem;
 }
 
-@media (max-width: 1024px) {
+.call_btn {
+  text-decoration: none;
+}
+
+@media (max-width: $breakpoint-tablet) {
   .header {
-    padding: $padding-small;
+    padding: 1 rem;
   }
 
   .container {
@@ -43,9 +46,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-mobile) {
   .header {
-    padding: $padding-small;
+    padding: 1 rem;
   }
 
   .container {

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  padding: 1rem 0;
   border: none;
   background-color: transparent;
   border: 1px solid $yellow-color;
@@ -18,9 +18,15 @@
   color: $white-color;
   margin-right: 8px;
   font-size: 16px;
+  text-decoration: none;
 }
 
-@media (max-width: 1300px) {
+.button a {
+  color: $white-color;
+  text-decoration: none;
+}
+
+@media (max-width: $breakpoint-tablet) {
   .button__text {
     display: none;
   }

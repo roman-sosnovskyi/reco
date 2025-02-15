@@ -7,7 +7,7 @@
   align-items: start;
   flex-direction: row;
   min-width: 100%;
-  max-width: 1440px;
+  max-width: 1360px;
   margin-bottom: 5rem;
   background-color: transparent;
   color: $white-color;
@@ -18,10 +18,12 @@
 
 .main_content {
   display: flex;
-  flex-direction: column;
-  max-width: 1440px;
+  flex-direction: row;
+  max-width: 1360px;
+  min-height: auto;
+  align-items: center;
   background-color: $black-color;
-  gap: 6rem;
+  gap: 2rem;
 }
 
 .text_field {
@@ -49,50 +51,59 @@
 .image {
   position: absolute;
   right: 5%;
-  max-width: 40vw;
+  top: 12%;
+  max-width: 28vw;
   height: auto;
   z-index: 2;
 }
 
-/* Медиа-запросы */
-@media (max-width: 1200px) {
+@media (max-width: $breakpoint-tablet) {
   .image {
     display: none;
   }
-}
+  .image_container {
+    display: none;
+  }
 
-@media (max-width: 768px) {
   .heroSection {
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-
-  .slogan {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .text {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .image {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .heroSection {
-    width: 100%;
-    justify-content: center;
     align-items: center;
+    height: auto;
   }
 
   .main_content {
     gap: 2rem;
     padding: 0;
+    min-height: auto;
+  }
+
+  .slogan {
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .image {
+    display: none;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .heroSection {
+    width: 100%;
+    align-items: center;
+    margin-top: 8rem;
+  }
+
+  .main_content {
+    gap: 2rem;
+    padding: 0;
+    min-height: auto;
+    margin-top: 3rem;
   }
 
   .buttonBar {
@@ -107,12 +118,12 @@
   }
 
   .slogan {
-    font-size: 28px;
+    font-size: 6rem;
     text-align: center;
   }
 
   .text {
-    font-size: 14px;
+    font-size: 3.3rem;
     text-align: center;
   }
 

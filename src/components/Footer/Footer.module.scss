@@ -9,9 +9,9 @@
   border-radius: 30px;
   padding-top: 2rem;
   margin: 0;
-  width: 100vw;
+  width: 1360px;
   box-sizing: border-box;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $breakpoint-mobile) {
     padding-bottom: 2rem;
   }
 }
@@ -23,9 +23,9 @@
   width: 100%;
   max-width: 1360px;
   background-color: transparent;
-  padding: 0 3rem;
+  padding: 0 1rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
