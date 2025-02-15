@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 import { FooterProps } from "./types/Footer.types";
 import Logo from "@/components/Image/Image";
 import AddressForm from "../AddressForm/AddressForm";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.png";
 import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 

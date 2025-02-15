@@ -3,7 +3,7 @@ import styles from "./HeroSection.module.scss";
 import RecoBg from "../RecoBg/RecoBg";
 import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
-import heroSectionImg from "@/assets/images/heroSectionImg.svg";
+import heroSectionImg from "@/assets/heroSectionImg_desktop.png";
 
 const HeroSection = ({ className }: HeroSectionProps) => {
   const combinedClass = className
