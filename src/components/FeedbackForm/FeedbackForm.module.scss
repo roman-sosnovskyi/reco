@@ -1,5 +1,8 @@
 .feedbackForm {
   max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .feedbackInputContainer {
@@ -17,4 +20,8 @@
   border: 1px solid #1b1d20;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.05);
+  outline: none;
+  padding: 12px;
+  font-size: 1.125rem;
+  color: inherit;
 }
