@@ -3,7 +3,7 @@ import styles from "./HeroSection.module.scss";
 import RecoBg from "../RecoBg/RecoBg";
 import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
-import heroSectionImg from "@/assets/images/heroSectionImg.svg";
+import heroSectionImg from "@/assets/heroSectionImg_desktop.png";
 
 const HeroSection = ({ className }: HeroSectionProps) => {
   const combinedClass = className
@@ -26,7 +26,9 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           </p>
           <HeroButtons />
         </div>
-        <img src={heroSectionImg} alt="Image 1" className={styles.image} />
+        <div className={styles.image_container}>
+          <img src={heroSectionImg} alt="Image 1" className={styles.image} />
+        </div>
       </div>
     </section>
   );
