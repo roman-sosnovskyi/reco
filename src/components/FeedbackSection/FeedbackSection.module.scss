@@ -1,6 +1,7 @@
 @use "@/styles/variables" as *;
 
 .feedbackSection {
+  width: 100%;
   max-width: 1360px;
   padding: 60px 92px;
   border-radius: 50px;
@@ -10,11 +11,19 @@
     rgba(251, 192, 0, 0.07) 0%,
     rgba(251, 192, 0, 0) 100%
   );
-  font-family: $font-family;
   color: $white-color;
+  border: 1px solid rgb(96, 80, 28);
 }
 
 .feedbackTitle {
+  text-align: center;
   font-weight: 400;
   font-size: 1.875rem;
+}
+
+.feedbackContent {
+  display: flex;
+}
+
+.feedbackImgContainer {
 }

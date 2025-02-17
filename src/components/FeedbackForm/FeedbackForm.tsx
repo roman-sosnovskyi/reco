@@ -7,10 +7,12 @@ const FeedbackForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm<FormInput>();
   const onSubmit: SubmitHandler<FormInput> = (data) => {
     console.log(data);
+    reset();
   };
 
   return (
@@ -23,18 +25,16 @@ const FeedbackForm = () => {
         <input
           id="name"
           {...register("name", {
-            required: "Це поле обовʼязкове",
-            pattern: {
-              value: /^[A-Za-zA-Яа-яЁё\s]+$/,
-              message: "Імʼя повинно містити тільки букви"
-            }
+            required: "Це поле обовʼязкове"
           })}
           type="text"
           placeholder="Введіть ваше імʼя"
           className={style.feedbackInput}
         />
 
-        {errors.name && <p>{errors.name.message}</p>}
+        {errors.name && (
+          <p className={style.inputError}>{errors.name.message}</p>
+        )}
       </div>
 
       <div className={style.feedbackInputContainer}>
@@ -44,19 +44,18 @@ const FeedbackForm = () => {
 
         <input
           id="phoneNumber"
-          maxLength={9}
+          maxLength={13}
           {...register("phoneNumber", {
-            required: "Це поле обовʼязкове",
-            pattern: {
-              value: /^\d{9}$/,
-              message: "Невірний формат номеру телефону"
-            }
+            required: "Це поле обовʼязкове"
           })}
           type="tel"
           className={style.feedbackInput}
+          placeholder="+380 __ ___ __ __"
         />
 
-        {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
+        {errors.phoneNumber && (
+          <p className={style.inputError}>{errors.phoneNumber.message}</p>
+        )}
       </div>
 
       <button type="submit">Надіслати</button>

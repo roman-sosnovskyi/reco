@@ -8,10 +8,10 @@ const FeedbackSection = () => {
       <h2 className={styles.feedbackTitle}>
         Залиште свої дані, щоб отримати більше інформації
       </h2>
-      <div>
+      <div className={styles.feedbackContent}>
         <FeedbackForm />
+        <div className={styles.feedbackImgContainer}></div>
       </div>
-      <div></div>
     </section>
   );
 };

@@ -3,12 +3,16 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding-top: 69px;
+  flex-grow: 1;
 }
 
 .feedbackInputContainer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 30px;
+  position: relative;
 }
 
 .feedbackInputLabel {
@@ -24,4 +28,18 @@
   padding: 12px;
   font-size: 1.125rem;
   color: inherit;
+}
+
+.inputError {
+  position: absolute;
+  bottom: 5px;
+  font-weight: 100;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.feedbackForm button {
+  width: 199px;
+  height: 62px;
+  background-color: white;
 }
