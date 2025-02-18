@@ -2,7 +2,7 @@ import { FC } from "react";
 import { CallButtonProps } from "./types/CallButton.types";
 import styles from "./CallButton.module.scss";
 import classNames from "classnames";
-import phoneIcon from "@/assets/phone_btn.svg";
+import Icon from "@/components/Icon/Icon";
 
 const CallButton: FC<CallButtonProps> = ({
   className,
@@ -13,8 +13,14 @@ const CallButton: FC<CallButtonProps> = ({
 
   return (
     <button className={classes} onClick={onClick}>
-      <span className={styles.button__text}>{phoneNumber}</span>
-      <img src={phoneIcon} alt="Call button" className={styles.button__icon} />
+      <span className={styles.button__text}>{phoneNumber}</span>{" "}
+      <Icon
+        name="icon-phone"
+        size={32}
+        color="none"
+        stroke="white"
+        className={styles.icon}
+      />
     </button>
   );
 };

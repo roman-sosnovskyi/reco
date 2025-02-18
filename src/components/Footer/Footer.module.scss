@@ -9,7 +9,8 @@
   border-radius: 30px;
   padding-top: 2rem;
   margin: 0;
-  width: 1360px;
+  max-width: 1360px;
+  width: 100%;
   box-sizing: border-box;
   @media screen and (max-width: $breakpoint-mobile) {
     padding-bottom: 2rem;
