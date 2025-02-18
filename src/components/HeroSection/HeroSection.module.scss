@@ -36,6 +36,8 @@
 }
 
 .slogan {
+  position: absolute;
+  top: 18%;
   text-transform: uppercase;
   font-family: "Arial", sans-serif;
   font-size: 3.5em;
@@ -49,7 +51,6 @@
 }
 
 .image {
-  position: absolute;
   right: 5%;
   top: 12%;
   max-width: 28vw;
@@ -58,26 +59,23 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
-  .image {
-    display: none;
-  }
-  .image_container {
-    display: none;
-  }
-
   .heroSection {
     flex-direction: column;
     align-items: center;
     height: auto;
+    gap: 2rem;
+    padding: 0;
   }
 
   .main_content {
     gap: 2rem;
     padding: 0;
     min-height: auto;
+    margin-top: 3rem;
   }
 
   .slogan {
+    position: relative;
     font-size: 6rem;
     text-align: center;
   }
@@ -94,9 +92,10 @@
 
 @media (max-width: $breakpoint-mobile) {
   .heroSection {
-    width: 100%;
+    max-width: 100%;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: 14rem;
+    padding: 0 1rem;
   }
 
   .main_content {

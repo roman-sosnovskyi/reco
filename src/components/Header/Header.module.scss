@@ -8,8 +8,8 @@
   top: 0;
   background-color: $black-color;
   opacity: 0.97;
-  width: 100%;
   padding-top: 2rem;
+  width: 100%;
   max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
@@ -18,9 +18,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  max-width: 1360px;
 }
 
 .active_btns {
@@ -32,25 +30,19 @@
 }
 
 .call_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 }
 
-@media (max-width: $breakpoint-tablet) {
-  .header {
-    padding: 1 rem;
-  }
-
-  .container {
-    justify-content: space-between;
-    max-width: 900px;
-  }
+.cart_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .header {
-    padding: 1 rem;
-  }
-
+@media (max-width: $breakpoint-tablet) {
   .container {
     max-width: 100%;
     padding: 0 10px;

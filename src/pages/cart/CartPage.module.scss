@@ -1,0 +1,60 @@
+@use "@/styles/variables" as *;
+
+.cartPage {
+  padding: 20px;
+  max-width: 1360px;
+  margin-top: 10rem;
+  color: $white-color;
+}
+
+.cartItems {
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.cartSummary {
+  margin-bottom: 20px;
+}
+
+.checkoutButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.checkoutButton:hover {
+  background-color: #0056b3;
+}
+
+.removeItem {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.removeItem:hover {
+  background-color: darkred;
+}
+
+.clearCart {
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.clearCart:hover {
+  background-color: darkgray;
+}
