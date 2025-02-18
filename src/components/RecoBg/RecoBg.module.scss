@@ -3,12 +3,12 @@
 .background {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0%;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: anchor-center;
   padding-top: 5vh;
   background-color: transparent;
   z-index: 1;
