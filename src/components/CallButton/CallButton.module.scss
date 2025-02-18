@@ -1,15 +1,13 @@
 @use "@/styles/variables" as *;
 .button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 0;
   border: none;
   background-color: transparent;
   border: 1px solid $yellow-color;
   border-radius: 60px;
   height: 65px;
-  gap: 1rem;
   cursor: pointer;
 }
 

@@ -32,7 +32,15 @@
 }
 
 .call_btn {
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: $breakpoint-tablet) {
