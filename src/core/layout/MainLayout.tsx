@@ -1,16 +1,20 @@
-//layout->header->footer?hero section
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { MainLayoutProps } from "@/core/types/MainLayoutProps";
 import styles from "./MainLayout.module.scss";
+import { CartContext } from "@/context/CartContext";
+import { useCart } from "@/hooks/useCart";
 
 const MainLayout = ({ children }: MainLayoutProps) => {
+  const cartHook = useCart();
   return (
-    <div className={styles.main_ly}>
-      <Header />
-      <main className={styles.main_content}>{children}</main>
-      <Footer />
-    </div>
+    <CartContext.Provider value={cartHook}>
+      <div className={styles.main_ly}>
+        <Header />
+        <main className={styles.main_content}>{children}</main>
+        <Footer />
+      </div>
+    </CartContext.Provider>
   );
 };
 
