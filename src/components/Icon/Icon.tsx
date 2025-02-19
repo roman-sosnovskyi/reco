@@ -6,6 +6,7 @@ const Icon = ({
   size = 24,
   color = "white",
   className,
+  stroke,
   width,
   style,
   ariaLabel
@@ -24,7 +25,7 @@ const Icon = ({
         width={size}
         height="100%"
         fill={color}
-        stroke={color}
+        stroke={stroke}
         aria-hidden="true"
       >
         <use href={`/sprite.svg#${name}`} />

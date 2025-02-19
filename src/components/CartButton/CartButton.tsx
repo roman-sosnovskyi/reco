@@ -11,7 +11,7 @@ const CartButton: FC<CartButtonProps> = ({ className, onClick = () => {} }) => {
     <button className={classes} onClick={onClick}>
       <Icon
         name="icon-cart"
-        size={62}
+        size={40}
         color="none"
         stroke="black"
         className={styles.icon}
