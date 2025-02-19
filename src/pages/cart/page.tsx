@@ -1,13 +1,29 @@
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./CartPage.module.scss";
+import { Product } from "@/types/types";
 
 export default function CartPage() {
-  const { cart, removeFromCart, clearCart } = useCartContext();
+  const { cart, removeFromCart, clearCart, addToCart } = useCartContext();
 
   const total = cart.reduce((acc, item) => {
     const price = item.size ? item.sizes[item.size] : 0;
     return acc + (price || 0) * (item.quantity || 1);
   }, 0);
+
+  interface CartItem extends Product {
+    size?: string;
+    quantity?: number;
+  }
+
+  const handleIncreaseQuantity = (item: CartItem) => {
+    addToCart(item, item.size || "");
+  };
+
+  const handleDecreaseQuantity = (item: CartItem) => {
+    if (item.quantity && item.quantity > 1) {
+      removeFromCart(item, item.size || "");
+    }
+  };
 
   return (
     <main className={styles.cartPage}>
@@ -30,7 +46,21 @@ export default function CartPage() {
                       <p>Price: ${item.sizes[item.size]}</p>
                     </>
                   )}
-                  <p>Quantity: {item.quantity || 1}</p>
+                  <div className={styles.quantityControl}>
+                    <button
+                      onClick={() => handleDecreaseQuantity(item)}
+                      className={styles.quantityButton}
+                    >
+                      -
+                    </button>
+                    <p>{item.quantity || 1}</p>
+                    <button
+                      onClick={() => handleIncreaseQuantity(item)}
+                      className={styles.quantityButton}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <button
                   onClick={() => removeFromCart(item, item.size || "")}

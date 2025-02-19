@@ -31,16 +31,11 @@ export const useCart = () => {
 
   const removeFromCart = (product: Product, size: string) => {
     setCart((prevCart) =>
-      prevCart
-        .map((item) =>
-          item.name === product.name && item.size === size
-            ? { ...item, quantity: (item.quantity || 0) - 1 }
-            : item
-        )
-        .filter((item) => item.quantity! > 0)
+      prevCart.filter(
+        (item) => !(item.name === product.name && item.size === size)
+      )
     );
   };
-
   const clearCart = () => {
     setCart([]);
   };
