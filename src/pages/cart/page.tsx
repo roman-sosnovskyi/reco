@@ -3,7 +3,8 @@ import styles from "./CartPage.module.scss";
 import { Product } from "@/types/types";
 
 export default function CartPage() {
-  const { cart, removeFromCart, clearCart, addToCart } = useCartContext();
+  const { cart, removeFromCart, decreaseQuantity, clearCart, addToCart } =
+    useCartContext();
 
   const total = cart.reduce((acc, item) => {
     const price = item.size ? item.sizes[item.size] : 0;
@@ -21,7 +22,7 @@ export default function CartPage() {
 
   const handleDecreaseQuantity = (item: CartItem) => {
     if (item.quantity && item.quantity > 1) {
-      removeFromCart(item, item.size || "");
+      decreaseQuantity(item, item.size || "");
     }
   };
 

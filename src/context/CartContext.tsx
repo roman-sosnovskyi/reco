@@ -6,6 +6,7 @@ interface CartContextProps {
   cart: Product[];
   addToCart: (product: Product, size: string) => void;
   removeFromCart: (product: Product, size: string) => void;
+  decreaseQuantity: (product: Product, size: string) => void;
   clearCart: () => void;
 }
 

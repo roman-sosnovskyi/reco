@@ -36,9 +36,22 @@ export const useCart = () => {
       )
     );
   };
+
+  const decreaseQuantity = (product: Product, size: string) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) =>
+          item.name === product.name && item.size === size
+            ? { ...item, quantity: (item.quantity || 0) - 1 }
+            : item
+        )
+        .filter((item) => (item.quantity || 0) > 0)
+    );
+  };
+
   const clearCart = () => {
     setCart([]);
   };
 
-  return { cart, addToCart, removeFromCart, clearCart };
+  return { cart, addToCart, removeFromCart, decreaseQuantity, clearCart };
 };
