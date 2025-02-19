@@ -37,11 +37,27 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   };
 
   const handleAddToCart = () => {
-    if (selectedSize) {
-      addToCart(currentProduct, selectedSize);
-    } else {
+    if (!selectedSize) {
       alert("Будь ласка, виберіть розмір!");
+      return;
     }
+
+    const newItem = {
+      id: currentProduct.id,
+      name: currentProduct.name,
+      size: selectedSize,
+      price: currentProduct.sizes[selectedSize],
+      photo: currentProduct.photo
+    };
+
+    const storedCart = localStorage.getItem("cart");
+    const cart = storedCart ? JSON.parse(storedCart) : [];
+
+    cart.push(newItem);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    addToCart(currentProduct, selectedSize);
   };
 
   return (

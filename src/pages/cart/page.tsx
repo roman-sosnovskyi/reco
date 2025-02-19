@@ -1,18 +1,13 @@
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./CartPage.module.scss";
-import { Product } from "@/types/types";
 
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCartContext();
 
   const total = cart.reduce((acc, item) => {
     const price = item.size ? item.sizes[item.size] : 0;
-    return acc + (price || 0) * (item.quantity || 0);
+    return acc + (price || 0) * (item.quantity || 1);
   }, 0);
-
-  const handleRemoveItem = (item: Product) => {
-    removeFromCart(item, item.size || "");
-  };
 
   return (
     <main className={styles.cartPage}>
@@ -32,13 +27,13 @@ export default function CartPage() {
                   {item.size && (
                     <>
                       <p>Size: {item.size}</p>
-                      <p>Price: ${item.sizes[item.size]}</p>{" "}
+                      <p>Price: ${item.sizes[item.size]}</p>
                     </>
                   )}
-                  <p>Quantity: {item.quantity}</p>
+                  <p>Quantity: {item.quantity || 1}</p>
                 </div>
                 <button
-                  onClick={() => handleRemoveItem(item)}
+                  onClick={() => removeFromCart(item, item.size || "")}
                   className={styles.removeItem}
                 >
                   Remove
