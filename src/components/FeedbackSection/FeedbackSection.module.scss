@@ -1,0 +1,52 @@
+@use "@/styles/variables" as *;
+
+.feedbackSection {
+  width: 100%;
+  max-width: 1228px;
+  padding: 60px 92px;
+  border-radius: 50px;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
+  background: radial-gradient(
+    371.89% 134.33% at 3.21% 1.26%,
+    rgba(251, 192, 0, 0.07) 0%,
+    rgba(251, 192, 0, 0) 100%
+  );
+  color: $white-color;
+  border: 1px solid rgb(96, 80, 28);
+  position: relative;
+}
+
+.feedbackTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.875rem;
+}
+
+.feedbackContent {
+  display: flex;
+}
+
+.feedbackImgContainer {
+  background-image: url(../../assets/FeedbackSection/circles-desc-1x.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 60px;
+  width: 680px;
+  height: 480px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+@media (min-resolution: 192dpi) {
+  .feedbackImgContainer {
+    background-image: url(../../assets/FeedbackSection/circles-desc-2x.png);
+  }
+}
+
+.feedbackImgContainer img {
+  width: 100%;
+  position: absolute;
+  top: -168px;
+  left: 76px;
+}
