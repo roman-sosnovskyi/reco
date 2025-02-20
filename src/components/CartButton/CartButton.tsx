@@ -12,14 +12,8 @@ const CartButton: FC<CartButtonProps> = ({ className, onClick = () => {} }) => {
 
   return (
     <button className={classes} onClick={onClick}>
-      <Icon
-        name="icon-cart"
-        size={40}
-        color="none"
-        stroke="black"
-        className={styles.icon}
-      />
-      {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}{" "}
+      <Icon name="icon-cart" stroke="black" size={40} className={styles.icon} />
+      {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
     </button>
   );
 };

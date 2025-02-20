@@ -1,36 +1,23 @@
+import React from "react";
 import { IconProps } from "./types/Icon.types";
-import styles from "./Icon.module.scss";
 
-const Icon = ({
+const Icon: React.FC<IconProps> = ({
   name,
   size = 24,
-  color = "white",
-  className,
-  stroke,
-  width,
-  style,
-  ariaLabel
-}: IconProps) => {
-  const combinedClass = className
-    ? `${styles.icon_container} ${className}`
-    : styles.icon_container;
-
+  stroke = "currentColor",
+  fill = "none",
+  className
+}) => {
   return (
-    <div
-      className={combinedClass}
-      style={{ width: width ?? size, ...style }}
-      aria-label={ariaLabel || name}
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      fill={fill}
+      stroke={stroke}
     >
-      <svg
-        width={size}
-        height="100%"
-        fill={color}
-        stroke={stroke}
-        aria-hidden="true"
-      >
-        <use href={`/sprite.svg#${name}`} />
-      </svg>
-    </div>
+      <use href={`/sprite.svg#${name}`} />
+    </svg>
   );
 };
 
