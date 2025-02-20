@@ -16,6 +16,17 @@
   position: relative;
 }
 
+.feedbackArrow {
+  width: 63px;
+  height: 45px;
+  background-image: url(../../assets/FeedbackSection/arrow-desc-1x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 100px;
+  left: 155px;
+}
+
 .feedbackTitle {
   text-align: center;
   font-weight: 400;
