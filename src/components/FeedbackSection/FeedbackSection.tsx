@@ -7,8 +7,11 @@ import styles from "./FeedbackSection.module.scss";
 const FeedbackSection = () => {
   return (
     <section className={styles.feedbackSection}>
+      <div className={styles.feedbackArrow}></div>
       <h2 className={styles.feedbackTitle}>
-        Залиште свої дані, щоб отримати більше інформації
+        Залиште свої дані, щоб отримати більше
+        <br />
+        інформації
       </h2>
       <div className={styles.feedbackContent}>
         <FeedbackForm />
