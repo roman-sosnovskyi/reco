@@ -57,11 +57,11 @@ const FeedbackForm = () => {
           })}
           type="text"
           placeholder="Введіть ваше імʼя"
-          className={style.feedbackInput}
+          className={`${style.feedbackInput} ${errors.name ? style.inputError : ""}`}
         />
 
         {errors.name && (
-          <p className={style.inputError}>{errors.name.message}</p>
+          <p className={style.inputErrorText}>{errors.name.message}</p>
         )}
       </div>
 
@@ -88,7 +88,7 @@ const FeedbackForm = () => {
               }
             })}
             type="tel"
-            className={style.feedbackInput}
+            className={`${style.feedbackInput} ${errors.phoneNumber ? style.inputError : ""}`}
             placeholder="+380 __ ___ __ __"
             onChange={handlePhoneChange}
             onFocus={handlePhoneChange}
@@ -101,7 +101,7 @@ const FeedbackForm = () => {
             style={{
               position: "absolute",
               top: -6,
-              right: 12,
+              right: 13,
               width: 24,
               minHeight: 1,
               minWidth: 1
@@ -110,7 +110,7 @@ const FeedbackForm = () => {
         </div>
 
         {errors.phoneNumber && (
-          <p className={style.inputError}>{errors.phoneNumber.message}</p>
+          <p className={style.inputErrorText}>{errors.phoneNumber.message}</p>
         )}
       </div>
 

@@ -3,7 +3,7 @@
 .feedbackSection {
   width: 100%;
   max-width: 1228px;
-  padding: 60px 92px;
+  padding: 60px 104px;
   border-radius: 50px;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
   background: radial-gradient(
@@ -14,17 +14,18 @@
   color: $white-color;
   border: 1px solid rgb(96, 80, 28);
   position: relative;
+  overflow: hidden;
 }
 
 .feedbackArrow {
-  width: 63px;
-  height: 45px;
+  width: 71px;
+  height: 53px;
   background-image: url(../../assets/FeedbackSection/arrow-desc-1x.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: 100px;
-  left: 155px;
+  top: 65px;
+  left: 160px;
 }
 
 .feedbackTitle {
@@ -41,12 +42,13 @@
   background-image: url(../../assets/FeedbackSection/circles-desc-1x.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-x: 60px;
+  background-position-x: right;
   width: 680px;
   height: 480px;
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 42px;
 }
 
 @media (min-resolution: 192dpi) {
@@ -59,5 +61,20 @@
   width: 100%;
   position: absolute;
   top: -168px;
-  left: 76px;
+  left: 96px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .feedbackSection {
+    padding: 60px 60px;
+  }
+
+  .feedbackArrow {
+    top: 5dvh;
+    left: 10dvw;
+  }
+
+  .feedbackImgContainer {
+    right: -6dvw;
+  }
 }
