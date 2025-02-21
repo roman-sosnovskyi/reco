@@ -1,3 +1,6 @@
+$error-color: #ea4335;
+$hover-color: #fbc000;
+
 .feedbackForm {
   max-width: 480px;
   display: flex;
@@ -24,21 +27,37 @@
 
 .feedbackInput {
   border: 1px solid #1b1d20;
-  border-radius: 15px;
+  border-radius: 25px;
   background: rgba(255, 255, 255, 0.05);
   outline: none;
   padding: 12px;
   font-size: 1.125rem;
   color: inherit;
   width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    border-color: $hover-color;
+    box-shadow: 0px 4px 20px 0px #fbbc054d;
+  }
+
+  &:focus {
+    border-color: $hover-color;
+    border-radius: 15px;
+  }
+
+  &.inputError {
+    border-color: $error-color;
+  }
 }
 
-.inputError {
+.inputErrorText {
   position: absolute;
   bottom: 5px;
   font-weight: 100;
   font-size: 1rem;
-  color: #fff;
+  color: $error-color;
 }
 
 .phoneNumberInputContainer {
