@@ -15,7 +15,7 @@ const CallButton: FC<CallButtonProps> = ({
     <button className={classes} onClick={onClick}>
       <span className={styles.button__text}>{phoneNumber}</span>{" "}
       <div className={styles.icon_container}>
-        <Icon name="icon-phone" size={40} fill="none" stroke="white" />
+        <Icon name="icon-phone" size={39} fill="none" stroke="white" />
       </div>
     </button>
   );
