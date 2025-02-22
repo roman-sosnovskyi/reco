@@ -24,6 +24,16 @@
   text-decoration: none;
 }
 
+.icon_container {
+  height: 62px;
+  width: 62px;
+  background-color: $grey-color;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: $breakpoint-tablet) {
   .button__text {
     display: none;

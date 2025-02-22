@@ -1,13 +1,7 @@
 import React from "react";
-
-export interface IconProps {
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: string;
   size?: number;
   color?: string;
   className?: string;
-  style?: React.CSSProperties;
-  ariaLabel?: string;
-  fill?: string;
-  stroke?: string;
-  width?: number;
 }

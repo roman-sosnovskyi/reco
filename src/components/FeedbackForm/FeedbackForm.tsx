@@ -28,7 +28,7 @@ const FeedbackForm = () => {
   };
 
   const onSubmit: SubmitHandler<FormInput> = (data) => {
-    console.log(data);
+    void data;
     reset();
   };
 

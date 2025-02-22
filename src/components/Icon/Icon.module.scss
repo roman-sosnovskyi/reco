@@ -1,14 +1,1 @@
 @use "@/styles/variables" as *;
-
-.icon_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  border-radius: 50%;
-
-  width: var(--icon-size, 62px);
-  height: var(--icon-size, 62px);
-  min-width: var(--icon-size, 62px);
-  min-height: var(--icon-size, 62px);
-}

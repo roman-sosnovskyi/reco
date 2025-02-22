@@ -1,8 +1,9 @@
 import styles from "./Footer.module.scss";
 import { FooterProps } from "./types/Footer.types";
 import Logo from "@/components/Image/Image";
-import AddressForm from "../AddressForm/AddressForm";
 import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
+import AddressForm from "../AddressForm/AddressForm";
 import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 
@@ -13,7 +14,9 @@ const Footer = ({ className }: FooterProps) => {
   return (
     <footer className={`${combinedClass} ${styles.footer}`}>
       <div className={styles.footer_container}>
-        <Logo src={logo} alt="Логотип" size="medium" />
+        <Link to="/">
+          <Logo src={logo} alt="Логотип компанії RECO" size="medium" />
+        </Link>{" "}
         <AddressForm
           address={address}
           phoneNumber={phoneNumber}

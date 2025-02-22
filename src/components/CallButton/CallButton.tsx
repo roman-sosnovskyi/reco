@@ -14,13 +14,9 @@ const CallButton: FC<CallButtonProps> = ({
   return (
     <button className={classes} onClick={onClick}>
       <span className={styles.button__text}>{phoneNumber}</span>{" "}
-      <Icon
-        name="icon-phone"
-        size={32}
-        color="none"
-        stroke="white"
-        className={styles.icon}
-      />
+      <div className={styles.icon_container}>
+        <Icon name="icon-phone" size={40} fill="none" stroke="white" />
+      </div>
     </button>
   );
 };

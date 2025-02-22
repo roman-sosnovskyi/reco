@@ -1,46 +1,70 @@
-import { useState } from "react";
-import styles from "./CartPage.module.scss"; // Стиль для страницы
+import { useCartContext } from "@/hooks/useCartContext";
+import styles from "./CartPage.module.scss";
+import { Product } from "@/types/types";
 
 export default function CartPage() {
-  const [items, setItems] = useState([
-    { id: 1, name: "Product 1", price: 20, quantity: 2 },
-    { id: 2, name: "Product 2", price: 15, quantity: 1 },
-    { id: 3, name: "Product 3", price: 30, quantity: 3 }
-  ]);
+  const { cart, removeFromCart, decreaseQuantity, clearCart, addToCart } =
+    useCartContext();
 
-  const total = items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const total = cart.reduce((acc, item) => {
+    const price = item.size ? item.sizes[item.size] : 0;
+    return acc + (price || 0) * (item.quantity || 1);
+  }, 0);
 
-  const handleRemoveItem = (id: number) => {
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  interface CartItem extends Product {
+    size?: string;
+    quantity?: number;
+  }
+
+  const handleIncreaseQuantity = (item: CartItem) => {
+    addToCart(item, item.size || "");
   };
 
-  const handleClearCart = () => {
-    setItems([]);
+  const handleDecreaseQuantity = (item: CartItem) => {
+    if (item.quantity && item.quantity > 1) {
+      decreaseQuantity(item, item.size || "");
+    }
   };
 
   return (
     <main className={styles.cartPage}>
       <h1>Shopping Cart</h1>
 
-      {/* Секция с товарами в корзине */}
       <section className={styles.cartItems}>
         <h2>Your Items</h2>
-        {items.length === 0 ? (
+        {cart.length === 0 ? (
           <p>Your cart is empty</p>
         ) : (
           <ul>
-            {items.map((item) => (
+            {cart.map((item) => (
               <li key={item.id} className={styles.cartItem}>
                 <div>
+                  <img src={item.photo} alt={item.name} />
                   <p>{item.name}</p>
-                  <p>Price: ${item.price}</p>
-                  <p>Quantity: {item.quantity}</p>
+                  {item.size && (
+                    <>
+                      <p>Size: {item.size}</p>
+                      <p>Price: ${item.sizes[item.size]}</p>
+                    </>
+                  )}
+                  <div className={styles.quantityControl}>
+                    <button
+                      onClick={() => handleDecreaseQuantity(item)}
+                      className={styles.quantityButton}
+                    >
+                      -
+                    </button>
+                    <p>{item.quantity || 1}</p>
+                    <button
+                      onClick={() => handleIncreaseQuantity(item)}
+                      className={styles.quantityButton}
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <button
-                  onClick={() => handleRemoveItem(item.id)}
+                  onClick={() => removeFromCart(item, item.size || "")}
                   className={styles.removeItem}
                 >
                   Remove
@@ -54,7 +78,7 @@ export default function CartPage() {
       <section className={styles.cartSummary}>
         <h2>Summary</h2>
         <p>Total: ${total}</p>
-        <button className={styles.clearCart} onClick={handleClearCart}>
+        <button className={styles.clearCart} onClick={clearCart}>
           Clear Cart
         </button>
       </section>
