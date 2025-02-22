@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
+import HighlightText from "../HighLightText/HighLightText";
+
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
 }) => {
@@ -66,23 +68,37 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
         <button onClick={handlePrev} className={styles.arrowLeft}>
           ←
         </button>
-        <img
-          src={currentProduct.photo}
-          alt={currentProduct.name}
-          style={{ width: "100%", maxHeight: "300px", objectFit: "contain" }}
-        />
+        <div className={styles.image_container}>
+          <img
+            src={currentProduct.photo}
+            alt={currentProduct.name}
+            className={styles.image}
+          />
+          <button
+            className={styles.addToCart}
+            onClick={() => {
+              handleAddToCart();
+            }}
+            disabled={!selectedSize}
+          >
+            Додати в кошик
+          </button>
+        </div>
+
         <button onClick={handleNext} className={styles.arrowRight}>
           →
         </button>
       </div>
       <div className={styles.info}>
-        <h2>{currentProduct.name}</h2>
+        <HighlightText>
+          <h2>{currentProduct.name}</h2>
+        </HighlightText>
         <p>{currentProduct.description}</p>
         <div className={styles.sizes}>
           {sizes.length === 0 ? (
             <div>Размеры не доступны</div>
           ) : (
-            sizes.map(([size, price]) => (
+            sizes.map(([size]) => (
               <label key={size}>
                 <input
                   type="radio"
@@ -91,20 +107,12 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
                   checked={selectedSize === size}
                   onChange={() => handleSizeChange(size)}
                 />
-                {size} — {price} грн
+                {size}
               </label>
             ))
           )}
         </div>
-        <button
-          className={styles.addToCart}
-          onClick={() => {
-            handleAddToCart();
-          }}
-          disabled={!selectedSize}
-        >
-          Додати в кошик
-        </button>
+        <button>Learn more</button>
       </div>
     </div>
   );
