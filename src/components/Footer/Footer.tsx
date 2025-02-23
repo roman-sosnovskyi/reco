@@ -1,7 +1,8 @@
 import styles from "./Footer.module.scss";
 import { FooterProps } from "./types/Footer.types";
 import Logo from "@/components/Image/Image";
-import logo from "@/assets/logo.png";
+import logo1x from "@/assets/images/logo/logo-1x.png";
+import logo2x from "@/assets/images/logo/logo-2x.png";
 import { Link } from "react-router-dom";
 import AddressForm from "../AddressForm/AddressForm";
 import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
@@ -15,7 +16,12 @@ const Footer = ({ className }: FooterProps) => {
     <footer className={`${combinedClass} ${styles.footer}`}>
       <div className={styles.footer_container}>
         <Link to="/">
-          <Logo src={logo} alt="Логотип компанії RECO" size="medium" />
+          <Logo
+            src1x={logo1x}
+            src2x={logo2x}
+            alt="Логотип компанії RECO"
+            size="medium"
+          />
         </Link>{" "}
         <AddressForm
           address={address}

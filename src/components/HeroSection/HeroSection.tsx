@@ -3,7 +3,8 @@ import styles from "./HeroSection.module.scss";
 import RecoBg from "../RecoBg/RecoBg";
 import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
-import heroSectionImg from "@/assets/heroSectionImg_desktop.png";
+import heroDesc1x from "@/assets/images/sections/hero/hero-desc-1x.png";
+import heroDesc2x from "@/assets/images/sections/hero/hero-desc-2x.png";
 
 const HeroSection = ({ className }: HeroSectionProps) => {
   const combinedClass = className
@@ -27,11 +28,14 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           <HeroButtons />
         </div>
         <div className={styles.image_container}>
-          <img
-            src={heroSectionImg}
-            alt="RECO продукція "
-            className={styles.image}
-          />
+          <picture>
+            <source srcSet={`${heroDesc1x} 1x, ${heroDesc2x} 2x`} />
+            <img
+              src={heroDesc1x}
+              alt="RECO продукція"
+              className={styles.image}
+            />
+          </picture>
         </div>
       </div>
     </section>

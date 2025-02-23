@@ -1,7 +1,8 @@
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./types/Header.types";
 import Logo from "@/components/Image/Image";
-import logo from "@/assets/logo.png";
+import logo1x from "@/assets/images/logo/logo-1x.png";
+import logo2x from "@/assets/images/logo/logo-2x.png";
 import classNames from "classnames";
 import { navigationButtons } from "@/constants/navigationButtons";
 import NavButtons from "@/components/NavButtons/NavButton";
@@ -18,7 +19,12 @@ const Header = ({ className }: HeaderProps) => {
     <header className={combinedClass}>
       <div className={styles.container}>
         <Link to="/">
-          <Logo src={logo} alt="Логотип компанії RECO" size="medium" />
+          <Logo
+            src1x={logo1x}
+            src2x={logo2x}
+            alt="Логотип компанії RECO"
+            size="medium"
+          />
         </Link>
         <NavBar>
           <NavButtons
