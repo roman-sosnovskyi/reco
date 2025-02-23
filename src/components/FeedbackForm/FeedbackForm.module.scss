@@ -65,6 +65,17 @@ $hover-color: #fbc000;
   position: relative;
 }
 
+.inputIconStar {
+  margin-left: auto;
+}
+
+.inputIconPhone {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
 .feedbackForm button {
   width: 199px;
   height: 62px;
