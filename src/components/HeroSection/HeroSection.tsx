@@ -4,7 +4,7 @@ import RecoBg from "../RecoBg/RecoBg";
 import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
 import heroDesc1x from "@/assets/images/sections/hero/hero-desc-1x.png";
-import heroDesc2x from "@/assets/images/sections/hero/hero-desc-1x.png";
+import heroDesc2x from "@/assets/images/sections/hero/hero-desc-2x.png";
 
 const HeroSection = ({ className }: HeroSectionProps) => {
   const combinedClass = className
