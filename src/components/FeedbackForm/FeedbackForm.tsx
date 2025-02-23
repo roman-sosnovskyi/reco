@@ -38,10 +38,10 @@ const FeedbackForm = () => {
         <label htmlFor="name" className={style.feedbackInputLabel}>
           Ім&#39;я
           <Icon
+            className={style.inputIconStar}
             name="icon-star"
-            color="yellow"
+            stroke="#fbc000"
             size={20}
-            style={{ height: 24, minHeight: 1, minWidth: 1, marginLeft: 10 }}
           />
         </label>
 
@@ -68,10 +68,10 @@ const FeedbackForm = () => {
         <label htmlFor="phoneNumber" className={style.feedbackInputLabel}>
           Номер телефону
           <Icon
+            className={style.inputIconStar}
             name="icon-star"
-            color="yellow"
+            stroke="#fbc000"
             size={20}
-            style={{ height: 24, minHeight: 1, minWidth: 1, marginLeft: 10 }}
           />
         </label>
 
