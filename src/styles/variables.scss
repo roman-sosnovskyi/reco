@@ -15,3 +15,48 @@ $footer-gradient: linear-gradient(
 
 $breakpoint-tablet: 1280px;
 $breakpoint-mobile: 768px;
+
+@font-face {
+  font-family: "NotoSansBold", sans-serif;
+  src:
+    url("../assets/fonts/NotoSans-Bold.woff") format("woff"),
+    url("../assets/fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSansMedium", sans-serif;
+  src:
+    url("../assets/fonts/NotoSans-Medium.woff") format("woff"),
+    url("../assets/fonts/NotoSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSansRegular", sans-serif;
+  src:
+    url("../assets/fonts/NotoSans-Regular.woff") format("woff"),
+    url("../assets/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSansSemiBold", sans-serif;
+  src:
+    url("../assets/fonts/NotoSans-SemiBold.woff") format("woff"),
+    url("../assets/fonts/NotoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSansThin", sans-serif;
+  src:
+    url("../assets/fonts/NotoSans-Thin.woff") format("woff"),
+    url("../assets/fonts/NotoSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
