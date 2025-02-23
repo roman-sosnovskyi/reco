@@ -98,14 +98,7 @@ const FeedbackForm = () => {
             color="none"
             stroke="#96989B"
             size={24}
-            style={{
-              position: "absolute",
-              top: -6,
-              right: 13,
-              width: 24,
-              minHeight: 1,
-              minWidth: 1
-            }}
+            className={style.inputIconPhone}
           />
         </div>
 
