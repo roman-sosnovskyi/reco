@@ -6,6 +6,7 @@
   background-color: $black-color;
   border-radius: 10px;
   overflow: hidden;
+
   max-width: 1224px;
   height: 512px;
   margin: 20px;
@@ -84,6 +85,8 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
+  font-family: "Noto Sans SC", sans-serif;
+  text-decoration: underline;
   align-items: start;
   gap: 1rem;
   overflow-y: hidden;
@@ -91,24 +94,31 @@
   h2 {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: "Noto Sans SC", sans-serif;
+    text-decoration: underline;
     margin: 0;
   }
 
   p {
     font-size: 1rem;
     color: $white-color;
+    font-family: "Noto Sans SC", sans-serif;
+    text-decoration: underline;
     margin: 10px 0;
   }
 
   .sizes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 10px;
 
     label {
       display: flex;
       align-items: center;
       font-size: 1rem;
+      font-family: "Noto Sans SC", sans-serif;
+      text-decoration: underline;
       color: white;
       cursor: pointer;
       gap: 8px;

@@ -31,7 +31,7 @@
   justify-content: start;
   text-align: left;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 5rem;
   z-index: 1000;
 }
 
@@ -42,20 +42,23 @@
   font-family: "Arial", sans-serif;
   font-size: 3.5em;
   text-align: left;
+  text-decoration: underline;
 }
 
 .text {
   font-family: "Arial", sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-align: left;
+  text-decoration: underline;
 }
-
+.image_container {
+  z-index: 10;
+}
 .image {
   right: 5%;
   top: 12%;
   max-width: 28vw;
   height: auto;
-  z-index: 2;
 }
 
 @media (max-width: $breakpoint-tablet) {
