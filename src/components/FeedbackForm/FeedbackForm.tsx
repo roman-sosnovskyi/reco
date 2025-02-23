@@ -40,8 +40,7 @@ const FeedbackForm = () => {
           <Icon
             name="icon-star"
             color="yellow"
-            size={24}
-            width={24}
+            size={20}
             style={{ height: 24, minHeight: 1, minWidth: 1, marginLeft: 10 }}
           />
         </label>
@@ -71,8 +70,7 @@ const FeedbackForm = () => {
           <Icon
             name="icon-star"
             color="yellow"
-            size={24}
-            width={24}
+            size={20}
             style={{ height: 24, minHeight: 1, minWidth: 1, marginLeft: 10 }}
           />
         </label>
@@ -97,7 +95,6 @@ const FeedbackForm = () => {
             name="icon-phone"
             color="none"
             stroke="#96989B"
-            size={24}
             className={style.inputIconPhone}
           />
         </div>
