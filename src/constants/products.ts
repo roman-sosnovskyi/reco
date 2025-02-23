@@ -1,4 +1,4 @@
-import recoLogo from "@/assets/logo.png";
+import recoLogo from "@/assets/images/logo/logo-1x.png";
 
 export const products = [
   {
