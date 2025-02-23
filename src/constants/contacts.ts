@@ -1,5 +1,5 @@
 export const CONTACTS = {
-  phoneNumber: "+380509883339",
+  phoneNumber: "+380 50 988 33 39",
   email: "dsds@gmail.com",
   address: "м. Запоріжжя, вул. Героїв України 12"
 };

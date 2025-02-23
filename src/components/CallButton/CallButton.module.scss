@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+
 .button {
   display: flex;
   justify-content: center;
@@ -8,13 +9,15 @@
   border: 1px solid $yellow-color;
   border-radius: 60px;
   height: 65px;
+  gap: 1rem;
   cursor: pointer;
 }
 
 .button__text {
-  padding-left: 2rem;
+  padding-left: 1rem;
   color: $white-color;
   margin-right: 8px;
+  font-family: "Noto Sans SC", sans-serif;
   font-size: 16px;
   text-decoration: none;
 }
@@ -25,11 +28,12 @@
 }
 
 .icon_container {
-  height: 62px;
-  width: 62px;
+  height: 59px;
+  width: 59px;
   background-color: $grey-color;
   border-radius: 50%;
   display: flex;
+  margin-right: 1px;
   justify-content: center;
   align-items: center;
 }
