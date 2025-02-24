@@ -1,5 +1,5 @@
 import styles from "./ButtonUp.module.scss";
-import ArrowUpIcon from "../assets/icon/arowUp.svg";
+import ArrowUpIcon from "@/assets/icon/arowUp.svg";
 import { ButtonUpProps } from "./types/ButtonUp";
 import React from "react";
 

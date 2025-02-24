@@ -4,7 +4,7 @@ import { MainLayoutProps } from "@/core/types/MainLayoutProps";
 import styles from "./MainLayout.module.scss";
 import { CartContext } from "@/context/CartContext";
 import { useCart } from "@/hooks/useCart";
-import ButtonUp from "@/ButtonUp/ButtonUp";
+import ButtonUp from "@/components/ButtonUp/ButtonUp";
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   const cartHook = useCart();
