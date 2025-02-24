@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import AddressForm from "../AddressForm/AddressForm";
 import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
+import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
@@ -29,7 +30,9 @@ const Footer = ({ className }: FooterProps) => {
           email={email}
         />
         <SocialMediaHub>
-          <button></button>
+          <SocialMediaLinks platform={"instagram"} />
+          <SocialMediaLinks platform={"viber"} />
+          <SocialMediaLinks platform={"telegram"} />
         </SocialMediaHub>
       </div>
     </footer>
