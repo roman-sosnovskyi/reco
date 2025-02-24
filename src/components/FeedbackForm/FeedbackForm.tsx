@@ -4,7 +4,7 @@ import { FormInput } from "./types/FeedbackForm.types";
 import style from "./FeedbackForm.module.scss";
 import Icon from "../Icon/Icon";
 import { ChangeEvent } from "react";
-
+import Button from "../Button/Button";
 const FeedbackForm = () => {
   const {
     register,
@@ -104,7 +104,9 @@ const FeedbackForm = () => {
         )}
       </div>
 
-      <button type="submit">Надіслати</button>
+      <Button variant="primary" size="l">
+        Надіслати
+      </Button>
     </form>
   );
 };

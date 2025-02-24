@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 export type ButtonSize = "s" | "m" | "l" | "black1" | "black2" | "black3";
 export type ButtonState =
   | "default"
@@ -14,5 +14,6 @@ export interface ButtonProps {
   state?: ButtonState;
   onClick?: () => void;
   children: React.ReactNode;
-  icon?: string;
+  icon?: JSX.Element;
+  className?: string;
 }
