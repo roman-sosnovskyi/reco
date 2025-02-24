@@ -1,6 +1,5 @@
 @use "@/styles/variables" as *;
 $error-color: #ea4335;
-$hover-color: #fbc000;
 
 .feedbackForm {
   max-width: 480px;
@@ -39,12 +38,12 @@ $hover-color: #fbc000;
   z-index: 1;
 
   &:hover {
-    border-color: $hover-color;
+    border-color: $yellow-color;
     box-shadow: 0px 4px 20px 0px #fbbc054d;
   }
 
   &:focus {
-    border-color: $hover-color;
+    border-color: $yellow-color;
     border-radius: 15px;
   }
 
