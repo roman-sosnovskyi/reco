@@ -1,6 +1,6 @@
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
-import recoilDesc1x from "../../assets/FeedbackSection/recoil-desc-1x.png";
-import recoilDesc2x from "../../assets/FeedbackSection/recoil-desc-2x.png";
+import recoilDesc1x from "../../assets/images/sections/feedback/recoil-desc-1x.png";
+import recoilDesc2x from "../../assets/images/sections/feedback/recoil-desc-2x.png";
 
 import styles from "./FeedbackSection.module.scss";
 

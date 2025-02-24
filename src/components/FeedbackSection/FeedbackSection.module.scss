@@ -20,7 +20,7 @@
 .feedbackArrow {
   width: 71px;
   height: 53px;
-  background-image: url(../../assets/FeedbackSection/arrow-desc-1x.png);
+  background-image: url(../../assets/images/sections/feedback/arrow-desc-1x.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -39,7 +39,7 @@
 }
 
 .feedbackImgContainer {
-  background-image: url(../../assets/FeedbackSection/circles-desc-1x.png);
+  background-image: url(../../assets/images/sections/feedback/circles-desc-1x.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: right;
@@ -51,17 +51,21 @@
   right: 42px;
 }
 
-@media (min-resolution: 192dpi) {
-  .feedbackImgContainer {
-    background-image: url(../../assets/FeedbackSection/circles-desc-2x.png);
-  }
-}
-
 .feedbackImgContainer img {
   width: 100%;
   position: absolute;
   top: -168px;
   left: 96px;
+}
+
+@media (min-resolution: 192dpi) {
+  .feedbackArrow {
+    background-image: url(../../assets/images/sections/feedback/arrow-desc-2x.png);
+  }
+
+  .feedbackImgContainer {
+    background-image: url(../../assets/images/sections/feedback/circles-desc-2x.png);
+  }
 }
 
 @media (max-width: $breakpoint-tablet) {

@@ -1,6 +1,6 @@
 import styles from "./AddressForm.module.scss";
 import { AddressFormProps } from "./types/AddressForm.types";
-import PaymentIcon from "@/assets/visa_mastercard.svg";
+import PaymentIcon from "@/assets/images/sections/footer/visa-mastercard.svg";
 
 const AddressForm = ({
   className,
