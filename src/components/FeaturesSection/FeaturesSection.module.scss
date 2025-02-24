@@ -1,5 +1,61 @@
 @use "@/styles/variables.scss" as *;
+@mixin featuresarticle {
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fffaea;
+  font-size: 1rem;
+  text-transform: uppercase;
 
-efficiency_sec {
+  span {
+    color: $yellow-color;
+  }
+}
+
+.featuresSection {
   display: flex;
+  max-width: 1360px;
+  h2,
+  h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    whitespace: nowrap;
+  }
+}
+
+.featuresArticleLeft {
+  @include featuresarticle();
+  background-image: image-set(
+    url(../../assets/images/sections/features/left-field-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/left-field-desc-2x.png) 2x
+  );
+  width: 10%;
+  height: 10%;
+}
+
+.featuresArticlesRight {
+  display: flex;
+  flex-direction: column;
+  gap: 124px;
+}
+
+.featuresArticleRightTop {
+  @include featuresarticle();
+  background-image: image-set(
+    url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
+  );
+}
+
+.featuresArticleRightBottom {
+  @include featuresarticle();
+  background-image: image-set(
+    url(../../assets/images/sections/features/right-bottom-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/right-bottom-desc-2x.png) 2x
+  );
 }
