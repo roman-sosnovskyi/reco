@@ -8,6 +8,7 @@ import AddressForm from "../AddressForm/AddressForm";
 import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
+import FooterLinks from "../FooterLink/FooterLink";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
@@ -24,6 +25,7 @@ const Footer = ({ className }: FooterProps) => {
             size="medium"
           />
         </Link>{" "}
+        <FooterLinks />
         <AddressForm
           address={address}
           phoneNumber={phoneNumber}
