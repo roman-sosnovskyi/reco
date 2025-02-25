@@ -2,7 +2,7 @@ import { MainPageProps } from "./types/MainPage.types";
 import styles from "./MainPage.module.scss";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FeedbackSection from "@/components/FeedbackSection/FeedbackSection";
-import EfficiencySection from "@/components/EfficiencySection/EfficiencySection";
+import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 import { products } from "@/constants/products";
 
@@ -13,7 +13,7 @@ const MainPage = ({ className }: MainPageProps) => {
   return (
     <div className={combinedClass}>
       <HeroSection />
-      <EfficiencySection />
+      <FeaturesSection />
 
       <ProductCard products={products} />
 
