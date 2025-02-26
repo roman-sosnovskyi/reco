@@ -24,9 +24,7 @@
     transform: scale(0.95);
   }
 
-  .icon {
-    width: 24px; // Розмір іконки
-    height: 24px; // Розмір іконки
-    fill: white; // Колір іконки (якщо SVG підтримує fill)
+  .arrowLeft {
+    transform: rotate(180deg);
   }
 }

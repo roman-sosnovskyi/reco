@@ -1,5 +1,5 @@
+import Icon from "../Icon/Icon";
 import styles from "./ButtonUp.module.scss";
-import ArrowUpIcon from "@/assets/icon/arowUp.svg";
 import { ButtonUpProps } from "./types/ButtonUp";
 import React from "react";
 
@@ -13,7 +13,15 @@ const ButtonUp: React.FC<ButtonUpProps> = ({ className }) => {
       className={`${styles.buttonUp} ${className}`}
       onClick={handleScrollToTop}
     >
-      <img src={ArrowUpIcon} alt="Arrow Up" className={styles.icon} />
+      <div className={styles.iconContainer}>
+        <Icon
+          name="icon-arrow-right2"
+          size={30}
+          fill="black"
+          stroke="none"
+          className={styles.feedbackButtonIcon}
+        />
+      </div>
     </button>
   );
 };

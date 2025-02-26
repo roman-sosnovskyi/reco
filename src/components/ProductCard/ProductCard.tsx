@@ -4,8 +4,8 @@ import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
 import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
-import ArrowIcon from "@/assets/button/arow_btn.svg";
 import ButtonArrow from "../ArowButton/ArowButton.types";
+import Icon from "../Icon/Icon";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
@@ -120,8 +120,17 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
             ))
           )}
         </div>
-        <Button variant="secondary" size="l" icon={ArrowIcon}>
-          БІЛЬШЕ ТОВАРІВ
+        <Button variant="secondary" size="l" className={styles.moreButton}>
+          <div className={styles.iconContainer}>
+            <Icon
+              name="icon-arrow-up-right2"
+              size={24}
+              fill="white"
+              stroke="none"
+              className={styles.moreButton}
+            />
+          </div>
+          <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
         </Button>
       </div>
     </div>

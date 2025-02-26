@@ -5,8 +5,6 @@ import style from "./FeedbackForm.module.scss";
 import Icon from "../Icon/Icon";
 import { ChangeEvent } from "react";
 import Button from "../Button/Button";
-import ArrowIcon from "@/assets/button/arow_btn.svg";
-
 const FeedbackForm = () => {
   const {
     register,
@@ -106,8 +104,17 @@ const FeedbackForm = () => {
         )}
       </div>
 
-      <Button variant="primary" size="l" icon={ArrowIcon}>
-        Надіслати
+      <Button variant="primary" size="l" className="feedbackButton">
+        <div className={style.iconContainer}>
+          <Icon
+            name="icon-arrow-up-right2"
+            size={30}
+            fill="white"
+            stroke="none"
+            className={style.feedbackButtonIcon}
+          />
+        </div>
+        <span className={style.feedbackButtonText}>НАДІСЛАТИ</span>
       </Button>
     </form>
   );
