@@ -9,9 +9,7 @@ const FeedbackSection = () => {
     <section className={styles.feedbackSection}>
       <div className={styles.feedbackArrow}></div>
       <h2 className={styles.feedbackTitle}>
-        Залиште свої дані, щоб отримати більше
-        <br />
-        інформації
+        Залиште свої дані, щоб отримати більше інформації
       </h2>
       <div className={styles.feedbackContent}>
         <FeedbackForm />
