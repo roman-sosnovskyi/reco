@@ -23,8 +23,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: 65px;
-  left: 160px;
+  top: 10%;
+  left: 10%;
 }
 
 .feedbackTitle {
@@ -63,11 +63,6 @@
 @media (max-width: $breakpoint-tablet) {
   .feedbackSection {
     padding: 60px 60px;
-  }
-
-  .feedbackArrow {
-    top: 5dvh;
-    left: 10dvw;
   }
 
   .feedbackImgContainer {
