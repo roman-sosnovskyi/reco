@@ -19,8 +19,14 @@
   width: 71px;
   height: 53px;
   background-image: image-set(
-    url(../../assets/images/sections/feedback/arrow-desc-1x.png) 1x,
-    url(../../assets/images/sections/feedback/arrow-desc-2x.png) 2x
+    url(../../assets/images/sections/feedback/arrow-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/feedback/arrow-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/feedback/arrow-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/feedback/arrow-desc-2x.png)
+      type("image/png") 2x
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,8 +47,14 @@
 
 .feedbackImgContainer {
   background-image: image-set(
-    url(../../assets/images/sections/feedback/circles-desc-1x.png) 1x,
-    url(../../assets/images/sections/feedback/circles-desc-2x.png) 2x
+    url(../../assets/images/sections/feedback/circles-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/feedback/circles-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.png)
+      type("image/png") 2x
   );
   background-repeat: no-repeat;
   background-size: contain;
@@ -53,9 +65,14 @@
   top: 50%;
   transform: translateY(-50%);
   right: 42px;
+
+  &:hover .feedbackImg {
+    transform: scale(1.2);
+  }
 }
 
-.feedbackImgContainer img {
+.feedbackImg {
+  pointer-events: none;
   width: 100%;
   position: absolute;
   top: -168px;
