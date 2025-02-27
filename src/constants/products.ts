@@ -30,7 +30,7 @@ export const products = [
   },
   {
     id: 3,
-    name: "REC ON Booster спрей-реконструктор",
+    name: "REC ON",
     photo: recoLogo,
     description:
       "Спрей-реконструктор з активною формулою для пористого та ламкого волосся. Зволожує, розгладжує, захищає від зовнішніх факторів.",
@@ -41,7 +41,7 @@ export const products = [
   },
   {
     id: 4,
-    name: "RecOil маселко",
+    name: "RecOil",
     photo: recoLogo,
     description:
       "Коктейль з натуральних олій, що зволожує, живить, додає блиску та робить волосся слухняним.",
@@ -52,7 +52,7 @@ export const products = [
   },
   {
     id: 5,
-    name: "TERMO CONTROL Спрей-термозахист",
+    name: "TERMO CONTROL ",
     photo: recoLogo,
     description:
       "Спрей-термозахист з формулою RECO. Захищає від високих/низьких температур і УФ-променів, зволожує, зменшує пухнастість.",
@@ -63,7 +63,7 @@ export const products = [
   },
   {
     id: 6,
-    name: "VOL UP CRAZY спрей для обʼєму",
+    name: "VOL UP CRAZY",
     photo: recoLogo,
     description:
       "Спрей для прикореневого об’єму. Надає блиску, зберігає форму, захищає волосся від УФ-впливу.",
@@ -74,7 +74,7 @@ export const products = [
   },
   {
     id: 7,
-    name: "EVERY DAY Маска для волосся",
+    name: "EVERY DAY",
     photo: recoLogo,
     description:
       "Завдяки амінокислотам забезпечує розгладження, м’якість, блиск та живлення волосся. Підходить для щоденного використання, підтримує здоров’я та красу волосся кожного дня.",

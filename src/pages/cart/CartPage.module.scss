@@ -1,94 +1,19 @@
 @use "@/styles/variables" as *;
 
+/* Основные стили контейнера корзины */
 .cartPage {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   max-width: 1360px;
   margin-top: 10rem;
   color: $white-color;
-}
-
-.cartItems {
-  margin-bottom: 20px;
-}
-
-.cartItem {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: $black-color;
-  border-radius: 8px;
-}
-
-.cartItem img {
-  max-width: 60px;
   height: auto;
-  margin-right: 10px;
 }
 
-.cartItem p {
-  margin: 5px 0;
-}
-
-.quantityControl {
+.cartContainer {
   display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.quantityButton {
-  padding: 5px 10px;
-  background-color: $yellow-color;
-  color: white;
-  border: 1px solid $yellow-color;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.quantityButton:hover {
-  background-color: $yellow-color;
-}
-
-.cartSummary {
-  margin-bottom: 20px;
-}
-
-.checkoutButton {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.checkoutButton:hover {
-  background-color: #0056b3;
-}
-
-.removeItem {
-  padding: 5px 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.removeItem:hover {
-  background-color: darkred;
-}
-
-.clearCart {
-  padding: 10px;
-  background-color: gray;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.clearCart:hover {
-  background-color: darkgray;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
 }

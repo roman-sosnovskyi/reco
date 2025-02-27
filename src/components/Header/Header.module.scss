@@ -9,7 +9,6 @@
   background-color: $black-color;
   opacity: 0.97;
   padding-top: 2rem;
-  width: 100%;
   max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
@@ -19,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 1rem;
 }
 
 .active_btns {

@@ -1,0 +1,75 @@
+@use "@/styles/variables" as *;
+
+/* Стили для списка товаров */
+.cartItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  background-color: $black-color;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  max-width: 708px;
+  height: 213px;
+}
+
+.cartItem img {
+  max-width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.cartItem p {
+  margin: 5px 0;
+}
+
+/* Контейнер для информации о товаре */
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Контейнер управления товарами */
+.controlContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* Стили управления количеством */
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityButton {
+  padding: 5px 10px;
+  background-color: $yellow-color;
+  color: white;
+  border: 1px solid $yellow-color;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantityButton:hover {
+  background-color: $yellow-color;
+}
+
+.removeItem {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.removeItem:hover {
+  background-color: darkred;
+}
