@@ -65,9 +65,14 @@
   top: 50%;
   transform: translateY(-50%);
   right: 42px;
+
+  &:hover .feedbackImg {
+    transform: scale(1.2);
+  }
 }
 
-.feedbackImgContainer img {
+.feedbackImg {
+  pointer-events: none;
   width: 100%;
   position: absolute;
   top: -168px;
