@@ -3,6 +3,9 @@ import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
 import HighlightText from "../HighLightText/HighLightText";
+import Button from "../Button/Button";
+import ButtonArrow from "../ArowButton/ArowButton.types";
+import Icon from "../Icon/Icon";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
@@ -65,16 +68,20 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   return (
     <div className={styles.card}>
       <div className={styles.carousel}>
-        <button onClick={handlePrev} className={styles.arrowLeft}>
-          ←
-        </button>
+        <ButtonArrow
+          icon="left"
+          onClick={handlePrev}
+          className={styles.arrowLeft}
+        />
         <div className={styles.image_container}>
           <img
             src={currentProduct.photo}
             alt={currentProduct.name}
             className={styles.image}
           />
-          <button
+          <Button
+            size="m"
+            variant="primary"
             className={styles.addToCart}
             onClick={() => {
               handleAddToCart();
@@ -82,12 +89,13 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
             disabled={!selectedSize}
           >
             Додати в кошик
-          </button>
+          </Button>
         </div>
-
-        <button onClick={handleNext} className={styles.arrowRight}>
-          →
-        </button>
+        <ButtonArrow
+          icon="right"
+          onClick={handleNext}
+          className={styles.arrowRight}
+        />
       </div>
       <div className={styles.info}>
         <HighlightText>
@@ -112,7 +120,18 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
             ))
           )}
         </div>
-        <button>Learn more</button>
+        <Button variant="secondary" size="l" className={styles.moreButton}>
+          <div className={styles.iconContainer}>
+            <Icon
+              name="icon-arrow-up-right2"
+              size={24}
+              fill="white"
+              stroke="none"
+              className={styles.moreButton}
+            />
+          </div>
+          <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
+        </Button>
       </div>
     </div>
   );

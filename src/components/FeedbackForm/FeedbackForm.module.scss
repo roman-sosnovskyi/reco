@@ -10,6 +10,33 @@ $error-color: #ea4335;
   flex-grow: 1;
 }
 
+.feedbackButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feedbackButtonText {
+  padding-right: 2rem;
+  color: $black-color;
+  margin-right: 8px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.iconContainer {
+  height: 59px;
+  width: 59px;
+  background-color: $grey-color;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 1px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
 .feedbackInputContainer {
   display: flex;
   flex-direction: column;
@@ -78,7 +105,6 @@ $error-color: #ea4335;
 .feedbackForm button {
   width: 199px;
   height: 62px;
-  background-color: white;
 }
 
 @media (max-width: $breakpoint-tablet) {

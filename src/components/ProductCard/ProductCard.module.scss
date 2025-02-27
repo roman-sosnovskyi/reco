@@ -59,9 +59,7 @@
   .arrowLeft,
   .arrowRight {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
+    top: 30%;
     color: white;
     border: none;
     padding: 10px;
@@ -77,6 +75,27 @@
   .arrowRight {
     right: 10px;
   }
+}
+
+.iconContainer {
+  height: 52px;
+  width: 52px;
+  background-color: $grey-color;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 1px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.moreButtonText {
+  padding-right: 2rem;
+  color: $white-color;
+  margin-right: 8px;
+  font-size: 16px;
 }
 
 .info {

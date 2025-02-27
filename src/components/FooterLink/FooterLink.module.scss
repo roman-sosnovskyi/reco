@@ -1,0 +1,35 @@
+@use "@/styles/variables" as *;
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerLink {
+  color: $white-color;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    color: $yellow-color;
+  }
+}
+.link {
+  color: #facc15;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-weight: 600;
+    font-size: 12px;
+  }
+}

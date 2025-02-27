@@ -27,7 +27,9 @@ const Button = ({
       disabled={disabled}
     >
       <span className="button__text">{children}</span>
-      {icon && <img src={icon} alt="icon" className="button__icon" />}
+      {typeof icon === "string" && (
+        <img src={icon} alt="icon" className="button__icon" />
+      )}
       {disabled}
     </button>
   );
