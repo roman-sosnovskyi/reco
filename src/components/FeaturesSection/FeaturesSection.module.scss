@@ -8,6 +8,7 @@ $block-width: calc(100vw / 3);
   color: #fffaea;
   text-transform: uppercase;
   z-index: 1;
+  transition: transform $transition-speed $transition-style;
 
   &:hover {
     transform: scale(1.1);
@@ -105,6 +106,7 @@ $block-width: calc(100vw / 3);
   position: relative;
   left: -5%;
   pointer-events: none;
+  transition: transform $transition-speed $transition-style;
 }
 
 // Right side
