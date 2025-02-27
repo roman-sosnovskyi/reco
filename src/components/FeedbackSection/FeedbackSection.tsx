@@ -1,6 +1,8 @@
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
-import recoilDesc1x from "../../assets/images/sections/feedback/recoil-desc-1x.png";
-import recoilDesc2x from "../../assets/images/sections/feedback/recoil-desc-2x.png";
+import recoilDesc1xPng from "../../assets/images/sections/feedback/recoil-desc-1x.png";
+import recoilDesc2xPng from "../../assets/images/sections/feedback/recoil-desc-2x.png";
+import recoilDesc1xWebp from "../../assets/images/sections/feedback/recoil-desc-1x.webp";
+import recoilDesc2xWebp from "../../assets/images/sections/feedback/recoil-desc-2x.webp";
 
 import styles from "./FeedbackSection.module.scss";
 
@@ -15,8 +17,15 @@ const FeedbackSection = () => {
         <FeedbackForm />
         <div className={styles.feedbackImgContainer}>
           <picture>
-            <source srcSet={`${recoilDesc1x} 1x, ${recoilDesc2x} 2x`} />
-            <img src={recoilDesc1x} alt="recoil" />
+            <source
+              srcSet={`${recoilDesc1xWebp} 1x, ${recoilDesc2xWebp} 2x`}
+              type="image/webp"
+            />
+            <source
+              srcSet={`${recoilDesc1xPng} 1x, ${recoilDesc2xPng} 2x`}
+              type="image/png"
+            />
+            <img src={recoilDesc1xPng} alt="recoil" />
           </picture>
         </div>
       </div>
