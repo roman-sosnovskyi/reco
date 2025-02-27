@@ -1,5 +1,204 @@
 @use "@/styles/variables.scss" as *;
 
-efficiency_sec {
+$block-width: calc(100vw / 3);
+
+@mixin features-article {
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fffaea;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin button {
+  width: fit-content;
+  margin-top: auto;
+  border: 1px solid #fbc000;
+  background: inherit;
+  color: #fffaea;
+  border-radius: 50px;
+  padding: 18px 40px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+// Common style
+.featuresSection {
   display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  max-width: 1360px;
+  width: 100%;
+  font-size: 16px;
+
+  h2,
+  h3 {
+    @include visually-hidden;
+  }
+
+  a {
+    @include button;
+  }
+}
+
+// Article container
+.featuresArticleContainer {
+  height: 50%;
+}
+
+// Left side
+.featuresLeftSide {
+  padding-top: 120px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $block-width;
+}
+
+.featuresArticleLeft {
+  @include features-article;
+  background-image: image-set(
+    url(../../assets/images/sections/features/left-field-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/left-field-desc-2x.png) 2x
+  );
+  width: 100%;
+  height: 158%;
+  position: relative;
+}
+
+.featuresArticleLeftText {
+  max-width: 260px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+// Image container
+.featuresImgContainer {
+  flex-grow: 1;
+  width: $block-width;
+
+  &:hover .featuresImg {
+    transform: scale(2);
+  }
+}
+
+.featuresImg {
+  transform: scale(1.8);
+  position: relative;
+  left: -5%;
+  pointer-events: none;
+}
+
+// Right side
+.featuresRightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 40%;
+  flex-grow: 1;
+  width: $block-width;
+}
+
+.featuresArticleRightTop {
+  @include features-article;
+  background-image: image-set(
+    url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
+  );
+  width: 120%;
+  height: 230%;
+  position: relative;
+  top: -100%;
+  left: -20%;
+}
+
+.featuresArticleRightTopText {
+  max-width: 320px;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  text-wrap: pretty;
+}
+
+.featuresArticleRightBottom {
+  @include features-article;
+  background-image: image-set(
+    url(../../assets/images/sections/features/right-bottom-desc-1x.png) 1x,
+    url(../../assets/images/sections/features/right-bottom-desc-2x.png) 2x
+  );
+  width: 120%;
+  height: 180%;
+  position: relative;
+  right: 20%;
+}
+
+.featuresArticleRightBottomText {
+  max-width: 315px;
+  position: absolute;
+  top: 20%;
+  right: 15%;
+}
+
+// Media queries
+@media (max-width: $breakpoint-tablet) {
+  .featuresSection {
+    font-size: 12px;
+  }
+
+  .featuresArticleLeft {
+    top: -60%;
+    width: 100%;
+    height: 190%;
+  }
+
+  .featuresArticleLeftText {
+    max-width: 200px;
+    left: 15%;
+  }
+
+  .featuresImgContainer {
+  }
+
+  .featuresImg {
+    left: -10%;
+  }
+
+  .featuresArticleRightTop {
+    height: 250%;
+    left: -30%;
+  }
+
+  .featuresArticleRightTopText {
+    max-width: 200px;
+    right: 10%;
+  }
+
+  .featuresArticleRightBottom {
+    width: 135%;
+    right: 35%;
+  }
+
+  .featuresArticleRightBottomText {
+    max-width: 220px;
+    top: 15%;
+    right: 10%;
+    text-wrap: pretty;
+  }
 }
