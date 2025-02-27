@@ -25,7 +25,11 @@ const FeedbackSection = () => {
               srcSet={`${recoilDesc1xPng} 1x, ${recoilDesc2xPng} 2x`}
               type="image/png"
             />
-            <img src={recoilDesc1xPng} alt="recoil" />
+            <img
+              src={recoilDesc1xPng}
+              alt="recoil"
+              className={styles.feedbackImg}
+            />
           </picture>
         </div>
       </div>
