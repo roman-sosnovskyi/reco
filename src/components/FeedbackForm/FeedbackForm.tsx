@@ -4,7 +4,7 @@ import { FormInput } from "./types/FeedbackForm.types";
 import style from "./FeedbackForm.module.scss";
 import Icon from "../Icon/Icon";
 import { ChangeEvent } from "react";
-
+import Button from "../Button/Button";
 const FeedbackForm = () => {
   const {
     register,
@@ -104,7 +104,18 @@ const FeedbackForm = () => {
         )}
       </div>
 
-      <button type="submit">Надіслати</button>
+      <Button variant="primary" size="l" className="feedbackButton">
+        <div className={style.iconContainer}>
+          <Icon
+            name="icon-arrow-up-right2"
+            size={30}
+            fill="white"
+            stroke="none"
+            className={style.feedbackButtonIcon}
+          />
+        </div>
+        <span className={style.feedbackButtonText}>НАДІСЛАТИ</span>
+      </Button>
     </form>
   );
 };

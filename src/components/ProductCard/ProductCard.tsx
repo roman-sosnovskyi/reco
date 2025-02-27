@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductCard.module.scss";
 import HighlightText from "../HighLightText/HighLightText";
+import Button from "../Button/Button";
+import ButtonArrow from "../ArowButton/ArowButton.types";
+import Icon from "../Icon/Icon";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
@@ -13,6 +17,9 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+  const [isAnimating, setIsAnimating] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const currentProduct = products[currentIndex];
 
@@ -23,14 +30,19 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const sizes = currentProduct.sizes
     ? Object.entries(currentProduct.sizes)
     : [];
-
   const { addToCart } = useCartContext();
 
   const handleNext = () => {
+    if (isAnimating) return;
+    setDirection("left");
+    setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
   const handlePrev = () => {
+    if (isAnimating) return;
+    setDirection("right");
+    setIsAnimating(true);
     setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
   };
 
@@ -58,36 +70,67 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     cart.push(newItem);
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
     addToCart(currentProduct, selectedSize);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touchStartX = e.touches[0].clientX;
+    carouselRef.current!.dataset.touchStart = touchStartX.toString();
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!carouselRef.current!.dataset.touchStart) return;
+    const touchStartX = parseFloat(carouselRef.current!.dataset.touchStart);
+    const touchEndX = e.touches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
+
+    if (deltaX > 50) handleNext();
+    if (deltaX < -50) handlePrev();
+    delete carouselRef.current!.dataset.touchStart;
+  };
+
+  const handleAnimationComplete = () => {
+    setIsAnimating(false);
+  };
+
+  useEffect(() => {
+    setSelectedSize(null);
+  }, [currentIndex]);
+
   return (
     <div className={styles.card}>
+
       <div className={styles.carousel}>
-        <button onClick={handlePrev} className={styles.arrowLeft}>
-          ←
-        </button>
+        <ButtonArrow
+          icon="left"
+          onClick={handlePrev}
+          className={styles.arrowLeft}
+        />
         <div className={styles.image_container}>
           <img
             src={currentProduct.photo}
             alt={currentProduct.name}
             className={styles.image}
           />
-          <button
+          <Button
+            size="m"
+            variant="primary"
+
             className={styles.addToCart}
-            onClick={() => {
-              handleAddToCart();
-            }}
+            onClick={handleAddToCart}
             disabled={!selectedSize}
           >
             Додати в кошик
-          </button>
+          </Button>
         </div>
 
-        <button onClick={handleNext} className={styles.arrowRight}>
-          →
-        </button>
+
+        <ButtonArrow
+          icon="right"
+          onClick={handleNext}
+          className={styles.arrowRight}
+        />
+
       </div>
       <div className={styles.info}>
         <HighlightText>
@@ -112,7 +155,18 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
             ))
           )}
         </div>
-        <button>Learn more</button>
+        <Button variant="secondary" size="l" className={styles.moreButton}>
+          <div className={styles.iconContainer}>
+            <Icon
+              name="icon-arrow-up-right2"
+              size={24}
+              fill="white"
+              stroke="none"
+              className={styles.moreButton}
+            />
+          </div>
+          <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
+        </Button>
       </div>
     </div>
   );

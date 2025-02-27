@@ -6,15 +6,13 @@
   padding: 60px 104px;
   border-radius: 50px;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
-  background: radial-gradient(
-    371.89% 134.33% at 3.21% 1.26%,
-    rgba(251, 192, 0, 0.07) 0%,
-    rgba(251, 192, 0, 0) 100%
-  );
+  background: #1b1d20;
   color: $white-color;
   border: 1px solid rgb(96, 80, 28);
   position: relative;
   overflow: hidden;
+  margin-bottom: 180px;
+  box-sizing: border-box;
 }
 
 .feedbackArrow {
@@ -27,8 +25,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: 65px;
-  left: 160px;
+  top: 10%;
+  left: 10%;
 }
 
 .feedbackTitle {
@@ -67,11 +65,6 @@
 @media (max-width: $breakpoint-tablet) {
   .feedbackSection {
     padding: 60px 60px;
-  }
-
-  .feedbackArrow {
-    top: 5dvh;
-    left: 10dvw;
   }
 
   .feedbackImgContainer {

@@ -1,0 +1,51 @@
+@use "@/styles/variables" as *;
+
+/* Стили для секции итоговой информации */
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+  width: 500px;
+  height: 328px;
+}
+
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: $grey-color;
+}
+
+.summaryDelyvery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Кнопки управления корзиной */
+.checkoutButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.checkoutButton:hover {
+  background-color: #0056b3;
+}
+
+.clearCart {
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.clearCart:hover {
+  background-color: darkgray;
+}
