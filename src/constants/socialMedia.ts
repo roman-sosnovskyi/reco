@@ -1,6 +1,6 @@
-import instagram from "@/assets/instagram.svg";
-import telegram from "@/assets/telegram.svg";
-import viber from "@/assets/viber.svg";
+import instagram from "@/assets/icon/instagram.svg";
+import telegram from "@/assets/icon/telegram.svg";
+import viber from "@/assets/icon/viber.svg";
 
 export const socialMedia = [
   { src: instagram, alt: "Instagram", link: "https://www.instagram.com" },
