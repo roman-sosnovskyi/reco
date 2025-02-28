@@ -1,8 +1,18 @@
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 html {
   width: 100vw;
   overflow-x: hidden;
   font-size: 1vw;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 body {
@@ -14,5 +24,17 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  background-color: #111214;
+  transition: all 300ms ease-in-out;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
   background-color: #111214;
 }

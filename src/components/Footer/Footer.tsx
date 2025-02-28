@@ -24,7 +24,7 @@ const Footer = ({ className }: FooterProps) => {
             alt="Логотип компанії RECO"
             size="medium"
           />
-        </Link>{" "}
+        </Link>
         <FooterLinks />
         <AddressForm
           address={address}
@@ -37,6 +37,10 @@ const Footer = ({ className }: FooterProps) => {
           <SocialMediaLinks platform={"telegram"} />
         </SocialMediaHub>
       </div>
+      <p className={styles.authorRights}>
+        © 2025 RECO. Всі права захищені. Політика конфіденційності | Умови
+        використання
+      </p>
     </footer>
   );
 };

@@ -3,9 +3,9 @@ import styles from "./MainPage.module.scss";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FeedbackSection from "@/components/FeedbackSection/FeedbackSection";
 import FeaturesSection from "@/components/FeaturesSection/FeaturesSection";
-// import CarrouselCards from "@/components/CarrouselCards/CarrouselCards";
-// import { ProductCard } from "@/components/ProductCard/ProductCard";
-// import { products } from "@/constants/products";
+
+import { ProductCard } from "@/components/ProductCard/ProductCard";
+import { products } from "@/constants/products";
 
 const MainPage = ({ className }: MainPageProps) => {
   const combinedClass = className
@@ -15,7 +15,7 @@ const MainPage = ({ className }: MainPageProps) => {
     <div className={combinedClass}>
       <HeroSection />
       <FeaturesSection />
-      {/* <ProductCard products={products} /> */}
+      <ProductCard products={products} />
 
       <FeedbackSection />
     </div>

@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+
 .footerLinks {
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
 .footerLink {
   color: $white-color;
   text-decoration: none;
+  text-align: left;
   font-weight: 400;
   transition: color 0.3s ease-in-out;
 
@@ -16,6 +18,11 @@
     color: $yellow-color;
   }
 }
+
+.footerLinks .footerLink:first-child {
+  color: $yellow-color;
+}
+
 .link {
   color: #facc15;
   text-decoration: none;
@@ -24,6 +31,7 @@
     text-decoration: underline;
   }
 }
+
 @media (max-width: $breakpoint-mobile) {
   .footerLinks {
     display: flex;

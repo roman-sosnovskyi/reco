@@ -13,6 +13,16 @@
   cursor: pointer;
   position: relative;
 }
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: darken($yellow-color, 10%);
+  border-color: darken($yellow-color, 10%);
+
+  .icon {
+    opacity: 0.7;
+  }
+}
 
 .icon {
   display: block;

@@ -1,5 +1,6 @@
 @use "@/styles/variables" as *;
 
+/* Стили для хедера */
 .header {
   display: flex;
   justify-content: center;
@@ -9,11 +10,13 @@
   background-color: $black-color;
   opacity: 0.97;
   padding-top: 2rem;
+  width: 100%;
   max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
 }
 
+/* Стили для контейнера внутри хедера */
 .container {
   display: flex;
   justify-content: space-between;
@@ -21,6 +24,7 @@
   gap: 1rem;
 }
 
+/* Стили для активных кнопок */
 .active_btns {
   display: flex;
   color: $white-color;
@@ -29,6 +33,7 @@
   gap: 1rem;
 }
 
+/* Стили для кнопки вызова */
 .call_btn {
   display: flex;
   justify-content: center;
@@ -36,12 +41,14 @@
   text-decoration: none;
 }
 
+/* Стили для кнопки корзины */
 .cart_btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Адаптивные стили для планшетов */
 @media (max-width: $breakpoint-tablet) {
   .container {
     max-width: 100%;

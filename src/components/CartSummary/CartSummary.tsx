@@ -1,24 +1,47 @@
+import { useMemo } from "react";
 import styles from "./CartSummary.module.scss";
 import { useCartContext } from "@/hooks/useCartContext";
 
 const CartSummary = () => {
   const { cart } = useCartContext();
 
-  const total = cart.reduce((acc, item) => {
-    const price = item.size ? item.sizes[item.size] : 0;
-    return acc + (price || 0) * (item.quantity || 1);
-  }, 0);
+  const total = useMemo(() => {
+    return cart.reduce((acc, item) => {
+      const price = item.size ? item.sizes[item.size] : 0;
+      return acc + (price || 0) * (item.quantity || 1);
+    }, 0);
+  }, [cart]); // Пересчитываем только при изменении корзины
+
   return (
     <section className={styles.cartSummary}>
       <div className={styles.summaryContainer}>
-        <div className={styles.summryText}>
-          <h2>ПІДСУМОК КОШИКА</h2>
-          <p>Проміжний підсумок: ₴{total}</p>
+        <h2 className={styles.summaryHeader}>ПІДСУМОК КОШИКА</h2>
+        <div className={styles.totalPrice}>
+          <p>Проміжний підсумок: </p>
+          <p>₴{total}</p>
         </div>
         <div className={styles.summaryDelyvery}>
-          <h3> Доставка</h3>
-          <input type="radio" name="" id="" />
-          <input type="radio" name="" id="" />
+          <h3 className={styles.deliveryHeader}> Доставка</h3>
+          <div className={styles.deliveryOptions}>
+            <div className={styles.deliveryOption}>
+              <input type="radio" name="delivery" id="delivery-standard" />
+              <label
+                className={styles.deliveryOptionDescription}
+                htmlFor="delivery-standard"
+              >
+                Стандартна доставка
+              </label>
+            </div>
+            <div className={styles.deliveryOption}>
+              <input type="radio" name="delivery" id="delivery-express" />
+              <label
+                className={styles.deliveryOptionDescription}
+                htmlFor="delivery-express"
+              >
+                Експрес доставка
+              </label>
+            </div>
+          </div>
         </div>
         <div className={styles.summaryTotal}>
           <h3>Всього</h3>

@@ -2,6 +2,7 @@
 
 .footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgb(80, 71, 42);
@@ -33,4 +34,8 @@
     padding: 0 1rem;
     height: auto;
   }
+}
+.authorRights {
+  color: white;
+  font-size: 0.8rem;
 }
