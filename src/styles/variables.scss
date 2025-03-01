@@ -13,5 +13,8 @@ $footer-gradient: linear-gradient(
   rgba(0, 0, 0, 1) 100%
 );
 
-$breakpoint-tablet: 1280px;
+$transition-speed: 300ms;
+$transition-style: ease-in-out;
+
+$breakpoint-tablet: 1276px;
 $breakpoint-mobile: 768px;
