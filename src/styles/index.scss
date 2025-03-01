@@ -1,3 +1,5 @@
+@use "@/styles/variables" as *;
+
 * {
   user-select: none;
   -webkit-user-select: none;
@@ -7,5 +9,23 @@
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: #111214;
+  background-color: $black-color;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-mobile) {
+    max-width: $breakpoint-mobile;
+    padding: 0 16px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: $breakpoint-tablet;
+    padding: 0 24px;
+  }
 }
