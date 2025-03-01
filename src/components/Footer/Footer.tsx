@@ -22,7 +22,7 @@ const Footer = ({ className }: FooterProps) => {
             src1x={logo1x}
             src2x={logo2x}
             alt="Логотип компанії RECO"
-            size="medium"
+            size="small"
           />
         </Link>
         <FooterLinks />

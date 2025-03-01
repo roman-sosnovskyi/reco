@@ -18,12 +18,12 @@ const Header = ({ className }: HeaderProps) => {
   return (
     <header className={combinedClass}>
       <div className={styles.container}>
-        <Link to="/">
+        <Link to="/" className={styles.logo}>
           <Logo
             src1x={logo1x}
             src2x={logo2x}
             alt="Логотип компанії RECO"
-            size="medium"
+            size="small"
           />
         </Link>
         <NavBar>
