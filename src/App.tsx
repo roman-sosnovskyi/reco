@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Outlet
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "@/core/layout/MainLayout";
 import MainPage from "@/pages/Product/MainPage";
 import AboutPage from "@/pages/about/page";
@@ -15,14 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <MainLayout>
-              <Outlet />
-            </MainLayout>
-          }
-        >
+        <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactPage />} />
