@@ -8,29 +8,31 @@ import styles from "./FeedbackSection.module.scss";
 
 const FeedbackSection = () => {
   return (
-    <section className={styles.feedbackSection}>
-      <div className={styles.feedbackArrow}></div>
-      <h2 className={styles.feedbackTitle}>
-        Залиште свої дані, щоб отримати більше інформації
-      </h2>
-      <div className={styles.feedbackContent}>
-        <FeedbackForm />
-        <div className={styles.feedbackImgContainer}>
-          <picture>
-            <source
-              srcSet={`${recoilDesc1xWebp} 1x, ${recoilDesc2xWebp} 2x`}
-              type="image/webp"
-            />
-            <source
-              srcSet={`${recoilDesc1xPng} 1x, ${recoilDesc2xPng} 2x`}
-              type="image/png"
-            />
-            <img
-              src={recoilDesc1xPng}
-              alt="recoil"
-              className={styles.feedbackImg}
-            />
-          </picture>
+    <section className="container">
+      <div className={styles.feedbackSection}>
+        <div className={styles.feedbackArrow}></div>
+        <h2 className={styles.feedbackTitle}>
+          Залиште свої дані, щоб отримати більше інформації
+        </h2>
+        <div className={styles.feedbackContent}>
+          <FeedbackForm />
+          <div className={styles.feedbackImgContainer}>
+            <picture>
+              <source
+                srcSet={`${recoilDesc1xWebp} 1x, ${recoilDesc2xWebp} 2x`}
+                type="image/webp"
+              />
+              <source
+                srcSet={`${recoilDesc1xPng} 1x, ${recoilDesc2xPng} 2x`}
+                type="image/png"
+              />
+              <img
+                src={recoilDesc1xPng}
+                alt="recoil"
+                className={styles.feedbackImg}
+              />
+            </picture>
+          </div>
         </div>
       </div>
     </section>
