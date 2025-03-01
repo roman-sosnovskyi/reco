@@ -1,6 +1,5 @@
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import styles from "./MainLayout.module.scss";
 import { CartContext } from "@/context/CartContext";
 import { useCart } from "@/hooks/useCart";
 import ButtonUp from "@/components/ButtonUp/ButtonUp";
@@ -10,12 +9,10 @@ const MainLayout = () => {
   const cartHook = useCart();
   return (
     <CartContext.Provider value={cartHook}>
-      <div className={styles.main_ly}>
-        <Header />
-        <Outlet />
-        <ButtonUp />
-        <Footer />
-      </div>
+      <Header />
+      <Outlet />
+      <ButtonUp />
+      <Footer />
     </CartContext.Provider>
   );
 };
