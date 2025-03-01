@@ -25,7 +25,6 @@ const FeaturesSection = ({ className }: FeaturesSectionProps) => {
               </p>
             </article>
           </div>
-
           <a href="#about">Про нас</a>
         </div>
         <div className={styles.featuresImgContainer}>
@@ -56,7 +55,6 @@ const FeaturesSection = ({ className }: FeaturesSectionProps) => {
               </p>
             </article>
           </div>
-
           <div className={styles.featuresArticleContainer}>
             <article className={styles.featuresArticleRightBottom}>
               <h3>Комплексний підхід</h3>
