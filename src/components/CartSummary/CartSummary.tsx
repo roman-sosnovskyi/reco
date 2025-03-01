@@ -10,7 +10,7 @@ const CartSummary = () => {
       const price = item.size ? item.sizes[item.size] : 0;
       return acc + (price || 0) * (item.quantity || 1);
     }, 0);
-  }, [cart]); // Пересчитываем только при изменении корзины
+  }, [cart]);
 
   return (
     <section className={styles.cartSummary}>
