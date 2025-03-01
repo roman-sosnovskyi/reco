@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: static;
   top: 0;
   background-color: $black-color;
   opacity: 0.97;
@@ -17,7 +17,7 @@
 }
 
 /* Стили для контейнера внутри хедера */
-.container {
+.content {
   display: flex;
   justify-content: space-between;
   width: 100%;

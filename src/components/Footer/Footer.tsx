@@ -9,38 +9,41 @@ import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
 import FooterLinks from "../FooterLink/FooterLink";
+import "@/styles/index.scss";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
     ? `${styles.header} ${className}`
     : styles.header;
   return (
-    <footer className={`${combinedClass} ${styles.footer}`}>
-      <div className={styles.footer_container}>
-        <Link to="/">
-          <Logo
-            src1x={logo1x}
-            src2x={logo2x}
-            alt="Логотип компанії RECO"
-            size="small"
+    <footer className="container">
+      <div className={`${combinedClass} ${styles.footer}`}>
+        <div className={styles.footer_container}>
+          <Link to="/">
+            <Logo
+              src1x={logo1x}
+              src2x={logo2x}
+              alt="Логотип компанії RECO"
+              size="small"
+            />
+          </Link>
+          <FooterLinks />
+          <AddressForm
+            address={address}
+            phoneNumber={phoneNumber}
+            email={email}
           />
-        </Link>
-        <FooterLinks />
-        <AddressForm
-          address={address}
-          phoneNumber={phoneNumber}
-          email={email}
-        />
-        <SocialMediaHub>
-          <SocialMediaLinks platform={"instagram"} />
-          <SocialMediaLinks platform={"viber"} />
-          <SocialMediaLinks platform={"telegram"} />
-        </SocialMediaHub>
+          <SocialMediaHub>
+            <SocialMediaLinks platform={"instagram"} />
+            <SocialMediaLinks platform={"viber"} />
+            <SocialMediaLinks platform={"telegram"} />
+          </SocialMediaHub>
+        </div>
+        <p className={styles.authorRights}>
+          © 2025 RECO. Всі права захищені. Політика конфіденційності | Умови
+          використання
+        </p>
       </div>
-      <p className={styles.authorRights}>
-        © 2025 RECO. Всі права захищені. Політика конфіденційності | Умови
-        використання
-      </p>
     </footer>
   );
 };

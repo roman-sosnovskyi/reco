@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
+import "@/styles/index.scss";
 import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
 import ButtonArrow from "../ArowButton/ArowButton.types";
@@ -69,70 +70,72 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   }, [currentIndex]);
 
   return (
-    <div className={styles.card}>
-      <div className={styles.carousel}>
-        <ButtonArrow
-          icon="left"
-          onClick={handlePrev}
-          className={styles.arrowLeft}
-        />
-        <div className={`${styles.image_container} ${styles[direction]}`}>
-          <img
-            src={currentProduct.photo}
-            alt={currentProduct.name}
-            className={styles.image}
+    <section className="container">
+      <div className={styles.card}>
+        <div className={styles.carousel}>
+          <ButtonArrow
+            icon="left"
+            onClick={handlePrev}
+            className={styles.arrowLeft}
           />
-          <Button
-            size="m"
-            variant="primary"
-            className={styles.addToCart}
-            onClick={handleAddToCart}
-            disabled={!selectedSize}
-          >
-            Додати в кошик
+          <div className={`${styles.image_container} ${styles[direction]}`}>
+            <img
+              src={currentProduct.photo}
+              alt={currentProduct.name}
+              className={styles.image}
+            />
+            <Button
+              size="m"
+              variant="primary"
+              className={styles.addToCart}
+              onClick={handleAddToCart}
+              disabled={!selectedSize}
+            >
+              Додати в кошик
+            </Button>
+          </div>
+          <ButtonArrow
+            icon="right"
+            onClick={handleNext}
+            className={styles.arrowRight}
+          />
+        </div>
+        <div className={styles.info}>
+          <HighlightText>
+            <h2>{currentProduct.name}</h2>
+          </HighlightText>
+          <p>{currentProduct.description}</p>
+          <div className={styles.sizes}>
+            {sizes.length === 0 ? (
+              <div>Размеры не доступны</div>
+            ) : (
+              sizes.map(([size]) => (
+                <label key={size}>
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    checked={selectedSize === size}
+                    onChange={() => handleSizeChange(size)}
+                  />
+                  {size}
+                </label>
+              ))
+            )}
+          </div>
+          <Button variant="secondary" size="l" className={styles.moreButton}>
+            <div className={styles.iconContainer}>
+              <Icon
+                name="icon-arrow-up-right2"
+                size={24}
+                fill="white"
+                stroke="none"
+              />
+            </div>
+            <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
           </Button>
         </div>
-        <ButtonArrow
-          icon="right"
-          onClick={handleNext}
-          className={styles.arrowRight}
-        />
       </div>
-      <div className={styles.info}>
-        <HighlightText>
-          <h2>{currentProduct.name}</h2>
-        </HighlightText>
-        <p>{currentProduct.description}</p>
-        <div className={styles.sizes}>
-          {sizes.length === 0 ? (
-            <div>Размеры не доступны</div>
-          ) : (
-            sizes.map(([size]) => (
-              <label key={size}>
-                <input
-                  type="radio"
-                  name="size"
-                  value={size}
-                  checked={selectedSize === size}
-                  onChange={() => handleSizeChange(size)}
-                />
-                {size}
-              </label>
-            ))
-          )}
-        </div>
-        <Button variant="secondary" size="l" className={styles.moreButton}>
-          <div className={styles.iconContainer}>
-            <Icon
-              name="icon-arrow-up-right2"
-              size={24}
-              fill="white"
-              stroke="none"
-            />
-          </div>
-          <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
-        </Button>
-      </div>
-    </div>
+    </section>
   );
 };
