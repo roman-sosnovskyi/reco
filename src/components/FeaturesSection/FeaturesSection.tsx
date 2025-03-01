@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import "@/styles/index.scss";
 import { FeaturesSectionProps } from "./types/FeaturesSection.types";
 import recoil1xPng from "@/assets/images/sections/features/recoil-desc-1x.png";
 import recoil1xWebp from "@/assets/images/sections/features/recoil-desc-1x.webp";
