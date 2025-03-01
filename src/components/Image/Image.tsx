@@ -7,7 +7,7 @@ const Image = ({
   src2x,
   alt,
   className,
-  size = "medium"
+  size = "small"
 }: ImageProps) => {
   return (
     <picture>
