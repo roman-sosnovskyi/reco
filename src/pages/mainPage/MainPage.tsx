@@ -11,7 +11,6 @@ const MainPage = () => {
       <HeroSection />
       <FeaturesSection />
       <ProductCard products={products} />
-
       <FeedbackSection />
     </>
   );
