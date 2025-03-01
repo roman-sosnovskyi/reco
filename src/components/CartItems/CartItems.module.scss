@@ -1,58 +1,85 @@
 @use "@/styles/variables" as *;
 
-/* Стили для списка товаров */
+/* --- Стили для списка товаров --- */
 .cartItems {
   display: flex;
   flex-direction: column;
+  width: 710px;
 }
 
+/* --- Стили для отдельного товара в корзине --- */
 .cartItem {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #ccc;
-  background-color: $black-color;
+  background-color: $grey-color;
+  border-radius: 20px;
   margin-bottom: 1rem;
-  border-radius: 8px;
   max-width: 708px;
-  height: 213px;
+  min-height: 213px;
 }
 
+/* --- Стили изображения товара --- */
 .cartItem img {
   max-width: 60px;
   height: auto;
-  margin-right: 10px;
 }
 
-.cartItem p {
-  margin: 5px 0;
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
 }
 
-/* Контейнер для информации о товаре */
+/* --- Контейнер для информации о товаре --- */
 .infoContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Контейнер управления товарами */
-.controlContainer {
-  display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+  max-width: 506px;
   gap: 1rem;
 }
 
-/* Стили управления количеством */
+.title {
+  display: flex;
+  justify-content: start;
+  font-size: 1.5rem;
+}
+
+.description {
+  display: flex;
+  justify-content: start;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* --- Контейнер управления товарами (количество и удаление) --- */
+.controlContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+/* --- Стили управления количеством товаров --- */
 .quantityControl {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-around;
+  border: 1px solid $yellow-color;
+  border-radius: 40px;
+  width: 140px;
+  height: 58px;
+  font-size: 1.5em;
 }
 
 .quantityButton {
   padding: 5px 10px;
-  background-color: $yellow-color;
-  color: white;
-  border: 1px solid $yellow-color;
+  color: $yellow-color;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -61,11 +88,12 @@
   background-color: $yellow-color;
 }
 
+/* --- Кнопка удаления товара --- */
 .removeItem {
   padding: 5px 10px;
-  background-color: red;
   color: white;
   border: none;
+  font-size: 1.5rem;
   cursor: pointer;
   border-radius: 5px;
 }

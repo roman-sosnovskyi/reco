@@ -1,7 +1,6 @@
 @use "@/styles/variables" as *;
 .address_form_container {
   color: $white-color;
-  padding: 20px;
   box-shadow: none;
 }
 
@@ -15,7 +14,8 @@
   font-size: 16px;
   margin-bottom: 12px;
   line-height: 1.5;
-  max-width: 130px;
+  max-width: 202px;
+  text-align: left;
 }
 
 .info_item strong {

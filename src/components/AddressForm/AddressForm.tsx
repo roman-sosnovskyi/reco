@@ -12,22 +12,25 @@ const AddressForm = ({
     ? `${styles.header} ${className}`
     : styles.header;
 
+  const phoneLink = `tel:${phoneNumber}`;
+  const mailLink = `mailto:${email}`;
+
   return (
     <div className={`${combinedClass} ${styles.address_form_container}`}>
       <div className={styles.info_item}>{address}</div>
 
       <div className={styles.info_item}>
-        <a href="tel:+380680001143">{phoneNumber}</a>
+        <a href={phoneLink}>{phoneNumber}</a>
       </div>
 
       <div className={styles.info_item}>
-        <a href="mailto:beautynails@gmail.com">{email}</a>
+        <a href={mailLink}>{email}</a>
       </div>
 
       <div className={styles.payment_icon_container}>
         <img
           src={PaymentIcon}
-          alt="Visa & Mastercard"
+          alt="Visa and Mastercard payment options"
           className={styles.payment_icon}
         />
       </div>

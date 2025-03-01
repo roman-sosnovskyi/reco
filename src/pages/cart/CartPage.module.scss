@@ -9,10 +9,12 @@
   margin-top: 10rem;
   color: $white-color;
   height: auto;
+  gap: 2rem;
 }
 
 .cartContainer {
   display: flex;
+  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;

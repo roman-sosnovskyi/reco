@@ -26,22 +26,24 @@ const CartItems = () => {
       ) : (
         <ul className={styles.cartList}>
           {cart.map((item) => (
-            <li key={item.id} className={styles.cartItem}>
+            <li key={`${item.id}-${item.size}`} className={styles.cartItem}>
               <div className={styles.imageContainer}>
                 {" "}
                 <img src={item.photo} alt={item.name} />
               </div>
               <div className={styles.infoContainer}>
                 <HighlightText>
-                  <p>{item.name}</p>
+                  <p className={styles.title}>{item.name}</p>
                 </HighlightText>
-                <p>{item.description}</p>
+                <p className={styles.description}>{item.description}</p>
 
                 <div className={styles.controlContainer}>
                   {item.size && (
                     <>
-                      <p>Розмiр: {item.size}</p>
-                      <p>Цiна: {item.sizes[item.size]}грн</p>
+                      <p> {item.size}</p>
+                      <p className={styles.price}>
+                        {item.sizes[item.size]} грн
+                      </p>
                     </>
                   )}
                   <div className={styles.quantityControl}>
