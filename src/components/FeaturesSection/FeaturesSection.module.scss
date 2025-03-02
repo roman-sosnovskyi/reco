@@ -5,11 +5,12 @@
   background-size: contain;
   color: $white-color;
   text-transform: uppercase;
+  position: relative;
   z-index: 1;
   transition: transform $transition-speed $transition-style;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -21,7 +22,7 @@
   background: inherit;
   color: $white-color;
   border-radius: 50px;
-  padding: 18px 40px;
+  padding: 16px 40px;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -43,7 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 192px 0 100px;
+  font-weight: 300;
   width: 100%;
   font-size: 16px;
 
@@ -56,11 +57,6 @@
     @include button;
   }
 }
-
-// Article container
-// .featuresArticleContainer {
-//   height: 50%;
-// }
 
 // Left side
 .featuresLeftSide {
@@ -79,36 +75,28 @@
   );
   width: 386px;
   height: 332px;
-  position: relative;
 }
 
 .featuresArticleLeftText {
   max-width: 260px;
   position: absolute;
-  top: 64px;
-  left: 72px;
+  top: 68px;
+  left: 76px;
 }
 
 // Image container
 .featuresImgContainer {
   &:hover .featuresImg {
-    transform: scale(2);
+    transform: scale(2.3);
   }
 }
 
 .featuresImg {
-  transform: scale(1.8);
-  position: relative;
-  left: -5%;
+  transform: scale(2.2);
   pointer-events: none;
   transition: transform $transition-speed $transition-style;
-}
-
-// Right side
-.featuresRightSide {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  position: relative;
+  left: 32px;
 }
 
 .featuresArticleRightTop {
@@ -117,17 +105,17 @@
     url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
     url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
   );
-  width: 545px;
-  height: 405px;
-  position: relative;
+  width: 544px;
+  height: 404px;
   bottom: 100px;
+  right: 52px;
 }
 
 .featuresArticleRightTopText {
   max-width: 320px;
   position: absolute;
-  bottom: 20%;
-  right: 10%;
+  bottom: 84px;
+  right: 32px;
   text-wrap: pretty;
 }
 
@@ -139,14 +127,13 @@
   );
   width: 544px;
   height: 244px;
-  position: relative;
 }
 
 .featuresArticleRightBottomText {
-  max-width: 315px;
+  max-width: 316px;
   position: absolute;
-  top: 20%;
-  right: 15%;
+  top: 56px;
+  right: 68px;
 }
 
 // Media queries
