@@ -16,6 +16,54 @@
     box-shadow 0.3s ease;
 }
 
+.slide {
+  width: 396px;
+  height: 512px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid $yellow-color;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-out;
+
+  .buttonPlace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 396px;
+    height: 120px;
+    border-radius: 20px;
+    border: 1px solid $yellow-color;
+    background-color: $black-color;
+  }
+  &.active {
+    opacity: 1;
+    background: linear-gradient(
+      149deg,
+      rgba(80, 71, 42, 1) 5%,
+      rgba(43, 41, 32, 1) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttonPlace {
+  animation: fadeInUp 0.3s ease-out;
+}
+
 .carousel {
   position: relative;
   width: 708px;
@@ -59,7 +107,7 @@
   .arrowLeft,
   .arrowRight {
     position: absolute;
-    top: 30%;
+    top: 45%;
     color: white;
     border: none;
     padding: 10px;
@@ -114,6 +162,7 @@
     font-weight: bold;
     text-decoration: underline;
     margin: 0;
+    text-decoration: none;
   }
 
   p {
@@ -121,6 +170,7 @@
     color: $white-color;
     text-decoration: underline;
     margin: 10px 0;
+    text-decoration: none;
   }
 
   .sizes {
@@ -137,6 +187,7 @@
       color: white;
       cursor: pointer;
       gap: 8px;
+      text-decoration: none;
 
       input {
         appearance: none;

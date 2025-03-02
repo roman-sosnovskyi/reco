@@ -2,6 +2,7 @@ import { FooterButton } from "./types/FooterLink.types";
 import React from "react";
 import classNames from "classnames";
 import styles from "./FooterLink.module.scss";
+import { Link } from "react-router-dom"; // Если используется React Router
 
 const footerButtons: FooterButton[] = [
   { title: "Каталог", link: "/" },
@@ -14,13 +15,14 @@ const FooterLinks: React.FC = () => {
   return (
     <div className={classNames(styles.footerLinks)}>
       {footerButtons.map((button) => (
-        <a
-          key={button.title}
-          href={button.link}
+        <Link
+          key={button.link}
+          to={button.link}
           className={classNames(styles.footerLink)}
+          aria-label={button.title}
         >
           {button.title}
-        </a>
+        </Link>
       ))}
     </div>
   );

@@ -1,28 +1,28 @@
 @use "@/styles/variables.scss" as *;
 
-$block-width: calc(100vw / 3);
-
 @mixin features-article {
   background-repeat: no-repeat;
   background-size: contain;
-  color: #fffaea;
+  color: $white-color;
   text-transform: uppercase;
+  position: relative;
   z-index: 1;
   transition: transform $transition-speed $transition-style;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
 @mixin button {
+  margin-top: auto;
   width: fit-content;
   margin-top: auto;
-  border: 1px solid #fbc000;
+  border: 1px solid $yellow-color;
   background: inherit;
-  color: #fffaea;
+  color: $white-color;
   border-radius: 50px;
-  padding: 18px 40px;
+  padding: 16px 40px;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -43,8 +43,8 @@ $block-width: calc(100vw / 3);
 .featuresSection {
   display: flex;
   justify-content: center;
-  padding-bottom: 100px;
-  max-width: 1360px;
+  align-items: center;
+  font-weight: 300;
   width: 100%;
   font-size: 16px;
 
@@ -56,21 +56,19 @@ $block-width: calc(100vw / 3);
   a {
     @include button;
   }
-}
 
-// Article container
-.featuresArticleContainer {
-  height: 50%;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 12px;
+  }
 }
 
 // Left side
 .featuresLeftSide {
   padding-top: 120px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: $block-width;
+  align-self: stretch;
 }
 
 .featuresArticleLeft {
@@ -79,43 +77,47 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/left-field-desc-1x.png) 1x,
     url(../../assets/images/sections/features/left-field-desc-2x.png) 2x
   );
-  width: 100%;
-  height: 158%;
-  position: relative;
+  width: 386px;
+  height: 332px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 220px;
+    height: 188px;
+  }
 }
 
 .featuresArticleLeftText {
   max-width: 260px;
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 68px;
+  left: 76px;
+  @media (max-width: $breakpoint-tablet) {
+    top: 32px;
+    left: 24px;
+  }
 }
 
 // Image container
 .featuresImgContainer {
-  flex-grow: 1;
-  width: $block-width;
-
   &:hover .featuresImg {
-    transform: scale(2);
+    transform: scale(2.3);
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &:hover .featuresImg {
+      transform: scale(1.9);
+    }
   }
 }
 
 .featuresImg {
-  transform: scale(1.8);
-  position: relative;
-  left: -5%;
+  transform: scale(2.2);
   pointer-events: none;
   transition: transform $transition-speed $transition-style;
-}
-
-// Right side
-.featuresRightSide {
-  display: flex;
-  flex-direction: column;
-  gap: 40%;
-  flex-grow: 1;
-  width: $block-width;
+  position: relative;
+  left: 32px;
+  @media (max-width: $breakpoint-tablet) {
+    left: 24px;
+  }
 }
 
 .featuresArticleRightTop {
@@ -124,19 +126,30 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
     url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
   );
-  width: 120%;
-  height: 230%;
-  position: relative;
-  top: -100%;
-  left: -20%;
+  width: 544px;
+  height: 404px;
+  bottom: 100px;
+  right: 52px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 300px;
+    height: 224px;
+    bottom: 80px;
+    right: 24px;
+  }
 }
 
 .featuresArticleRightTopText {
   max-width: 320px;
   position: absolute;
-  bottom: 20%;
-  right: 10%;
+  bottom: 84px;
+  right: 32px;
   text-wrap: pretty;
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 200px;
+    bottom: 40px;
+    right: 8px;
+  }
 }
 
 .featuresArticleRightBottom {
@@ -145,62 +158,23 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/right-bottom-desc-1x.png) 1x,
     url(../../assets/images/sections/features/right-bottom-desc-2x.png) 2x
   );
-  width: 120%;
-  height: 180%;
-  position: relative;
-  right: 20%;
+  width: 544px;
+  height: 244px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 320px;
+    height: 148px;
+  }
 }
 
 .featuresArticleRightBottomText {
-  max-width: 315px;
+  max-width: 316px;
   position: absolute;
-  top: 20%;
-  right: 15%;
-}
+  top: 56px;
+  right: 68px;
 
-// Media queries
-@media (max-width: $breakpoint-tablet) {
-  .featuresSection {
-    font-size: 12px;
-  }
-
-  .featuresArticleLeft {
-    top: -60%;
-    width: 100%;
-    height: 190%;
-  }
-
-  .featuresArticleLeftText {
-    max-width: 200px;
-    left: 15%;
-  }
-
-  .featuresImgContainer {
-  }
-
-  .featuresImg {
-    left: -10%;
-  }
-
-  .featuresArticleRightTop {
-    height: 250%;
-    left: -30%;
-  }
-
-  .featuresArticleRightTopText {
-    max-width: 200px;
-    right: 10%;
-  }
-
-  .featuresArticleRightBottom {
-    width: 135%;
-    right: 35%;
-  }
-
-  .featuresArticleRightBottomText {
-    max-width: 220px;
-    top: 15%;
-    right: 10%;
-    text-wrap: pretty;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 256px;
+    top: 28px;
+    right: 0;
   }
 }

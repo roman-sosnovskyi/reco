@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
+import "@/styles/index.scss";
 import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
 import ButtonArrow from "../ArowButton/ArowButton.types";
 import Icon from "../Icon/Icon";
+import Carousel from "react-spring-3d-carousel";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
@@ -16,7 +18,6 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [direction, setDirection] = useState("");
 
   const currentProduct = products[currentIndex];
   if (!currentProduct) {
@@ -29,12 +30,10 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const { addToCart } = useCartContext();
 
   const handleNext = () => {
-    setDirection("next");
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
   const handlePrev = () => {
-    setDirection("prev");
     setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
   };
 
@@ -68,71 +67,88 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     setSelectedSize(null);
   }, [currentIndex]);
 
+  const slides = products.map((product, index) => ({
+    key: index,
+    content: (
+      <div
+        className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+      >
+        <img src={product.photo} alt={product.name} className={styles.image} />
+        {index === currentIndex && (
+          <div className={styles.buttonPlace}>
+            <Button
+              size="m"
+              variant="primary"
+              className={styles.addToCart}
+              onClick={handleAddToCart}
+              disabled={!selectedSize}
+            >
+              ДОДАТИ В КОШИК
+            </Button>
+          </div>
+        )}
+      </div>
+    )
+  }));
+
   return (
-    <div className={styles.card}>
-      <div className={styles.carousel}>
-        <ButtonArrow
-          icon="left"
-          onClick={handlePrev}
-          className={styles.arrowLeft}
-        />
-        <div className={`${styles.image_container} ${styles[direction]}`}>
-          <img
-            src={currentProduct.photo}
-            alt={currentProduct.name}
-            className={styles.image}
+    <section className="container">
+      <div className={styles.card}>
+        <div className={styles.carousel}>
+          <ButtonArrow
+            icon="left"
+            onClick={handlePrev}
+            className={styles.arrowLeft}
           />
-          <Button
-            size="m"
-            variant="primary"
-            className={styles.addToCart}
-            onClick={handleAddToCart}
-            disabled={!selectedSize}
-          >
-            Додати в кошик
+          <Carousel
+            slides={slides}
+            goToSlide={currentIndex}
+            offsetRadius={2}
+            showNavigation={false}
+            animationConfig={{ tension: 100, friction: 20 }}
+          />
+          <ButtonArrow
+            icon="right"
+            onClick={handleNext}
+            className={styles.arrowRight}
+          />
+        </div>
+        <div className={styles.info}>
+          <HighlightText>
+            <h2>{currentProduct.name}</h2>
+          </HighlightText>
+          <p>{currentProduct.description}</p>
+          <div className={styles.sizes}>
+            {sizes.length === 0 ? (
+              <div>Размеры не доступны</div>
+            ) : (
+              sizes.map(([size]) => (
+                <label key={size}>
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    checked={selectedSize === size}
+                    onChange={() => handleSizeChange(size)}
+                  />
+                  {size}
+                </label>
+              ))
+            )}
+          </div>
+          <Button variant="secondary" size="l" className={styles.moreButton}>
+            <div className={styles.iconContainer}>
+              <Icon
+                name="icon-arrow-up-right2"
+                size={24}
+                fill="white"
+                stroke="none"
+              />
+            </div>
+            <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
           </Button>
         </div>
-        <ButtonArrow
-          icon="right"
-          onClick={handleNext}
-          className={styles.arrowRight}
-        />
       </div>
-      <div className={styles.info}>
-        <HighlightText>
-          <h2>{currentProduct.name}</h2>
-        </HighlightText>
-        <p>{currentProduct.description}</p>
-        <div className={styles.sizes}>
-          {sizes.length === 0 ? (
-            <div>Размеры не доступны</div>
-          ) : (
-            sizes.map(([size]) => (
-              <label key={size}>
-                <input
-                  type="radio"
-                  name="size"
-                  value={size}
-                  checked={selectedSize === size}
-                  onChange={() => handleSizeChange(size)}
-                />
-                {size}
-              </label>
-            ))
-          )}
-        </div>
-        <Button variant="secondary" size="l" className={styles.moreButton}>
-          <div className={styles.iconContainer}>
-            <Icon
-              name="icon-arrow-up-right2"
-              size={24}
-              fill="white"
-              stroke="none"
-            />
-          </div>
-          <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
-        </Button>
-      </div>
-    </div>
+    </section>
   );
 };

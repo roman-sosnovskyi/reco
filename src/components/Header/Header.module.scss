@@ -1,26 +1,37 @@
 @use "@/styles/variables" as *;
 
+/* Стили для хедера */
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   background-color: $black-color;
   opacity: 0.97;
-  padding-top: 2rem;
+  height: 100px;
+  width: 100%;
   max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
 }
 
-.container {
+/* Стили для контейнера внутри хедера */
+.content {
   display: flex;
   justify-content: space-between;
   width: 100%;
   gap: 1rem;
 }
 
+/* Стили для лого */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+/* Стили для активных кнопок */
 .active_btns {
   display: flex;
   color: $white-color;
@@ -29,6 +40,7 @@
   gap: 1rem;
 }
 
+/* Стили для кнопки вызова */
 .call_btn {
   display: flex;
   justify-content: center;
@@ -36,12 +48,14 @@
   text-decoration: none;
 }
 
+/* Стили для кнопки корзины */
 .cart_btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Адаптивные стили для планшетов */
 @media (max-width: $breakpoint-tablet) {
   .container {
     max-width: 100%;
