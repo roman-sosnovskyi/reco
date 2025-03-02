@@ -56,6 +56,10 @@
   a {
     @include button;
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 12px;
+  }
 }
 
 // Left side
@@ -75,6 +79,11 @@
   );
   width: 386px;
   height: 332px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 220px;
+    height: 188px;
+  }
 }
 
 .featuresArticleLeftText {
@@ -82,12 +91,21 @@
   position: absolute;
   top: 68px;
   left: 76px;
+  @media (max-width: $breakpoint-tablet) {
+    top: 32px;
+    left: 24px;
+  }
 }
 
 // Image container
 .featuresImgContainer {
   &:hover .featuresImg {
     transform: scale(2.3);
+  }
+  @media (max-width: $breakpoint-tablet) {
+    &:hover .featuresImg {
+      transform: scale(1.9);
+    }
   }
 }
 
@@ -97,6 +115,9 @@
   transition: transform $transition-speed $transition-style;
   position: relative;
   left: 32px;
+  @media (max-width: $breakpoint-tablet) {
+    left: 24px;
+  }
 }
 
 .featuresArticleRightTop {
@@ -109,6 +130,12 @@
   height: 404px;
   bottom: 100px;
   right: 52px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 300px;
+    height: 224px;
+    bottom: 80px;
+    right: 24px;
+  }
 }
 
 .featuresArticleRightTopText {
@@ -117,6 +144,12 @@
   bottom: 84px;
   right: 32px;
   text-wrap: pretty;
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 200px;
+    bottom: 40px;
+    right: 8px;
+  }
 }
 
 .featuresArticleRightBottom {
@@ -127,6 +160,10 @@
   );
   width: 544px;
   height: 244px;
+  @media (max-width: $breakpoint-tablet) {
+    width: 320px;
+    height: 148px;
+  }
 }
 
 .featuresArticleRightBottomText {
@@ -134,51 +171,10 @@
   position: absolute;
   top: 56px;
   right: 68px;
-}
 
-// Media queries
-@media (max-width: $breakpoint-tablet) {
-  .featuresSection {
-    font-size: 12px;
-  }
-
-  .featuresArticleLeft {
-    top: -60%;
-    width: 100%;
-    height: 190%;
-  }
-
-  .featuresArticleLeftText {
-    max-width: 200px;
-    left: 15%;
-  }
-
-  .featuresImgContainer {
-  }
-
-  .featuresImg {
-    left: -10%;
-  }
-
-  .featuresArticleRightTop {
-    height: 250%;
-    left: -30%;
-  }
-
-  .featuresArticleRightTopText {
-    max-width: 200px;
-    right: 10%;
-  }
-
-  .featuresArticleRightBottom {
-    width: 135%;
-    right: 35%;
-  }
-
-  .featuresArticleRightBottomText {
-    max-width: 220px;
-    top: 15%;
-    right: 10%;
-    text-wrap: pretty;
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 256px;
+    top: 28px;
+    right: 0;
   }
 }
