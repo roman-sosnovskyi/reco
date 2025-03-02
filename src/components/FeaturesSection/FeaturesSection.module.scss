@@ -14,6 +14,7 @@
 }
 
 @mixin button {
+  margin-top: auto;
   width: fit-content;
   margin-top: auto;
   border: 1px solid $yellow-color;
@@ -64,10 +65,10 @@
 // Left side
 .featuresLeftSide {
   padding-top: 120px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-self: stretch;
 }
 
 .featuresArticleLeft {
@@ -90,8 +91,6 @@
 
 // Image container
 .featuresImgContainer {
-  flex-grow: 1;
-
   &:hover .featuresImg {
     transform: scale(2);
   }
