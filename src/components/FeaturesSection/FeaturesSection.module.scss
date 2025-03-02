@@ -1,11 +1,9 @@
 @use "@/styles/variables.scss" as *;
 
-$block-width: calc(100vw / 3);
-
 @mixin features-article {
   background-repeat: no-repeat;
   background-size: contain;
-  color: #fffaea;
+  color: $white-color;
   text-transform: uppercase;
   z-index: 1;
   transition: transform $transition-speed $transition-style;
@@ -18,9 +16,9 @@ $block-width: calc(100vw / 3);
 @mixin button {
   width: fit-content;
   margin-top: auto;
-  border: 1px solid #fbc000;
+  border: 1px solid $yellow-color;
   background: inherit;
-  color: #fffaea;
+  color: $white-color;
   border-radius: 50px;
   padding: 18px 40px;
   text-transform: uppercase;
@@ -43,7 +41,7 @@ $block-width: calc(100vw / 3);
 .featuresSection {
   display: flex;
   justify-content: center;
-  padding-bottom: 100px;
+  // padding: 192px 0 100px;
   width: 100%;
   font-size: 16px;
 
@@ -58,9 +56,9 @@ $block-width: calc(100vw / 3);
 }
 
 // Article container
-.featuresArticleContainer {
-  height: 50%;
-}
+// .featuresArticleContainer {
+//   height: 50%;
+// }
 
 // Left side
 .featuresLeftSide {
@@ -69,7 +67,6 @@ $block-width: calc(100vw / 3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: $block-width;
 }
 
 .featuresArticleLeft {
@@ -78,7 +75,7 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/left-field-desc-1x.png) 1x,
     url(../../assets/images/sections/features/left-field-desc-2x.png) 2x
   );
-  width: 100%;
+  width: 386px;
   height: 332px;
   position: relative;
 }
@@ -93,7 +90,6 @@ $block-width: calc(100vw / 3);
 // Image container
 .featuresImgContainer {
   flex-grow: 1;
-  width: $block-width;
 
   &:hover .featuresImg {
     transform: scale(2);
@@ -112,9 +108,7 @@ $block-width: calc(100vw / 3);
 .featuresRightSide {
   display: flex;
   flex-direction: column;
-  gap: 40%;
   flex-grow: 1;
-  width: $block-width;
 }
 
 .featuresArticleRightTop {
@@ -123,11 +117,9 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
     url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
   );
-  width: 120%;
-  height: 230%;
+  width: 545px;
+  height: 405px;
   position: relative;
-  top: -100%;
-  left: -20%;
 }
 
 .featuresArticleRightTopText {
@@ -144,10 +136,9 @@ $block-width: calc(100vw / 3);
     url(../../assets/images/sections/features/right-bottom-desc-1x.png) 1x,
     url(../../assets/images/sections/features/right-bottom-desc-2x.png) 2x
   );
-  width: 120%;
-  height: 180%;
+  width: 544px;
+  height: 244px;
   position: relative;
-  right: 20%;
 }
 
 .featuresArticleRightBottomText {
