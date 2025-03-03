@@ -102,11 +102,6 @@
   &:hover .featuresImg {
     transform: scale(2.3);
   }
-  @media (max-width: $breakpoint-tablet) {
-    &:hover .featuresImg {
-      transform: scale(1.9);
-    }
-  }
 }
 
 .featuresImg {
