@@ -13,8 +13,8 @@ import { phoneNumber } from "@/constants/contacts";
 
 const Header = () => {
   return (
-    <header className="container">
-      <div className={styles.header}>
+    <header className={styles.header}>
+      <div className="container">
         <div className={styles.content}>
           <Link to="/" className={styles.logo}>
             <Logo
