@@ -1,8 +1,8 @@
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
-import recoilDesc1xPng from "../../assets/images/sections/feedback/recoil-desc-1x.png";
-import recoilDesc2xPng from "../../assets/images/sections/feedback/recoil-desc-2x.png";
-import recoilDesc1xWebp from "../../assets/images/sections/feedback/recoil-desc-1x.webp";
-import recoilDesc2xWebp from "../../assets/images/sections/feedback/recoil-desc-2x.webp";
+import recoilDesc1xPng from "@/assets/images/sections/feedback/recoil-desc-1x.png";
+import recoilDesc2xPng from "@/assets/images/sections/feedback/recoil-desc-2x.png";
+import recoilDesc1xWebp from "@/assets/images/sections/feedback/recoil-desc-1x.webp";
+import recoilDesc2xWebp from "@/assets/images/sections/feedback/recoil-desc-2x.webp";
 import "@/styles/index.scss";
 import styles from "./FeedbackSection.module.scss";
 
