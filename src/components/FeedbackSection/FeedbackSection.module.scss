@@ -33,6 +33,11 @@
   position: absolute;
   top: 10%;
   left: 10%;
+
+  @media (max-width: $breakpoint-tablet) {
+    left: 10px;
+    transform: rotate(305deg);
+  }
 }
 
 .feedbackTitle {
