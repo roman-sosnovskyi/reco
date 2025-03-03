@@ -12,6 +12,19 @@
   overflow: hidden;
   margin-bottom: 180px;
   box-sizing: border-box;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 60px 60px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 16px;
+    background: radial-gradient(
+      371.89% 134.33% at 3.21% 1.26%,
+      rgba(251, 192, 0, 0.07) 0%,
+      rgba(251, 192, 0, 0) 100%
+    );
+  }
 }
 
 .feedbackArrow {
@@ -38,12 +51,27 @@
     left: 10px;
     transform: rotate(305deg);
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 40px;
+    height: 32px;
+    top: 36px;
+    left: 20px;
+    transform: rotate(342deg);
+  }
 }
 
 .feedbackTitle {
   text-align: center;
   font-weight: 400;
   font-size: 1.875rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1rem;
+    font-weight: 600;
+    text-wrap: balance;
+    text-transform: uppercase;
+  }
 }
 
 .feedbackContent {
@@ -74,6 +102,14 @@
   &:hover .feedbackImg {
     transform: scale(1.1);
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    right: -80px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
 }
 
 .feedbackImg {
@@ -83,14 +119,4 @@
   top: -168px;
   left: 96px;
   transition: transform $transition-speed $transition-style;
-}
-
-@media (max-width: $breakpoint-tablet) {
-  .feedbackSection {
-    padding: 60px 60px;
-  }
-
-  .feedbackImgContainer {
-    right: -80px;
-  }
 }
