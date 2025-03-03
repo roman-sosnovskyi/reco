@@ -33,6 +33,12 @@
   position: absolute;
   top: 10%;
   left: 10%;
+
+  @media (max-width: $breakpoint-tablet) {
+    top: 92px;
+    left: 10px;
+    transform: rotate(305deg);
+  }
 }
 
 .feedbackTitle {
@@ -67,7 +73,7 @@
   right: 42px;
 
   &:hover .feedbackImg {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -86,6 +92,6 @@
   }
 
   .feedbackImgContainer {
-    right: -6dvw;
+    right: -80px;
   }
 }

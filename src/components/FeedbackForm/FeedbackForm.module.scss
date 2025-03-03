@@ -8,6 +8,10 @@ $error-color: #ea4335;
   gap: 40px;
   padding-top: 22px;
   flex-grow: 1;
+
+  button {
+    z-index: 1;
+  }
 }
 
 .feedbackButton {
@@ -62,6 +66,7 @@ $error-color: #ea4335;
   width: 100%;
   position: relative;
   z-index: 1;
+  transition: all $transition-speed $transition-style;
 
   &:hover {
     border-color: $yellow-color;
