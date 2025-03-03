@@ -35,6 +35,7 @@
   left: 10%;
 
   @media (max-width: $breakpoint-tablet) {
+    top: 92px;
     left: 10px;
     transform: rotate(305deg);
   }
@@ -91,6 +92,6 @@
   }
 
   .feedbackImgContainer {
-    right: -6dvw;
+    right: -80px;
   }
 }
