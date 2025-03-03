@@ -62,6 +62,7 @@ $error-color: #ea4335;
   width: 100%;
   position: relative;
   z-index: 1;
+  transition: all $transition-speed $transition-style;
 
   &:hover {
     border-color: $yellow-color;
