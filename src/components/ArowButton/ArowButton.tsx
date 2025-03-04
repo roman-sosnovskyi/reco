@@ -12,7 +12,7 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({
     <button className={`${styles.buttonArrow} ${className}`} onClick={onClick}>
       {icon === "left" ? (
         <Icon
-          name="icon-arrow-right2" // Назва іконки для лівої стрілки
+          name="icon-arrow-right2"
           size={30}
           fill="black"
           stroke="none"
@@ -20,7 +20,7 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({
         />
       ) : (
         <Icon
-          name="icon-arrow-right2" // Назва іконки для правої стрілки
+          name="icon-arrow-right2"
           size={30}
           fill=" black"
           stroke="none"

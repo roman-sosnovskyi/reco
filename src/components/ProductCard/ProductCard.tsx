@@ -5,7 +5,7 @@ import styles from "./ProductCard.module.scss";
 import "@/styles/index.scss";
 import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
-import ButtonArrow from "../ArowButton/ArowButton.types";
+import ButtonArrow from "../ArowButton/ArowButton";
 import Icon from "../Icon/Icon";
 import Carousel from "react-spring-3d-carousel";
 
@@ -95,17 +95,17 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     <section className="container">
       <div className={styles.card}>
         <div className={styles.carousel}>
-          <ButtonArrow
-            icon="left"
-            onClick={handlePrev}
-            className={styles.arrowLeft}
-          />
           <Carousel
             slides={slides}
             goToSlide={currentIndex}
             offsetRadius={2}
             showNavigation={false}
             animationConfig={{ tension: 100, friction: 20 }}
+          />
+          <ButtonArrow
+            icon="left"
+            onClick={handlePrev}
+            className={styles.arrowLeft}
           />
           <ButtonArrow
             icon="right"
