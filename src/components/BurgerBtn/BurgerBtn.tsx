@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styles from "./BurgerBtn.module.scss";
 import classNames from "classnames";
+import ModalMenu from "../MobileMenu/ModalMenu";
 
 const BurgerBtn = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const BurgerBtn = () => {
         <span></span>
         <span></span>
       </button>
-      {modalIsOpen && createPortal(<div></div>, document.body)}
+      {modalIsOpen && createPortal(<ModalMenu />, document.body)}
     </>
   );
 };
