@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import CallButton from "../CallButton/CallButton";
 import CartButton from "../CartButton/CartButton";
 import { phoneNumber } from "@/constants/contacts";
+import BurgerBtn from "../BurgerBtn/BurgerBtn";
 
 const Header = () => {
   return (
@@ -38,6 +39,7 @@ const Header = () => {
               <CartButton />
             </Link>
           </div>
+          <BurgerBtn />
         </div>
       </div>
     </header>
