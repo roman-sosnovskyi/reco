@@ -8,6 +8,7 @@ const ModalMenu = () => {
     <div className={styles.modal}>
       <NavBar>
         <NavButtons
+          className={styles.modalNavBtns}
           labels={navigationButtons.map((button) => button.title)}
           buttons={navigationButtons}
         />
