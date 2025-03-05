@@ -32,7 +32,7 @@ const BurgerBtn = () => {
         <span></span>
         <span></span>
       </button>
-      {modalIsOpen && createPortal(<ModalMenu />, document.body)}
+      {createPortal(<ModalMenu isOpen={modalIsOpen} />, document.body)}
     </>
   );
 };
