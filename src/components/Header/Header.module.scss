@@ -64,4 +64,10 @@
   .navBarBtns {
     display: none !important;
   }
+  .content {
+    justify-content: start;
+  }
+  .active_btns {
+    margin-left: auto;
+  }
 }
