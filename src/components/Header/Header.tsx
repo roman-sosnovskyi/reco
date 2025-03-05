@@ -25,6 +25,7 @@ const Header = () => {
               size="small"
             />
           </Link>
+
           <NavBar className={styles.navBar}>
             <NavButtons
               className={styles.navBarBtns}
@@ -32,6 +33,7 @@ const Header = () => {
               buttons={navigationButtons}
             />
           </NavBar>
+
           <div className={styles.active_btns}>
             <Link to={`tel:${phoneNumber}`} className={styles.call_btn}>
               <CallButton phoneNumber={phoneNumber} />
@@ -40,6 +42,7 @@ const Header = () => {
               <CartButton />
             </Link>
           </div>
+
           <BurgerBtn />
         </div>
       </div>
