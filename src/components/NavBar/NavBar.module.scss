@@ -7,7 +7,4 @@
   gap: 0.5rem;
   box-sizing: border-box;
   z-index: 1000;
-  @media screen and (max-width: $breakpoint-tablet) {
-    display: none;
-  }
 }
