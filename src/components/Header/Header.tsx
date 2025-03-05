@@ -25,7 +25,7 @@ const Header = () => {
               size="small"
             />
           </Link>
-          <NavBar>
+          <NavBar className={styles.navBar}>
             <NavButtons
               labels={navigationButtons.map((button) => button.title)}
               buttons={navigationButtons}
