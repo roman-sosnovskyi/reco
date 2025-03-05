@@ -1,14 +1,8 @@
 @use "@/styles/variables" as *;
-.nav_btns {
+
+.navBtns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  @media screen and (max-width: $breakpoint-tablet) {
-    display: none;
-  }
-}
-
-.nav_btns a {
-  text-decoration: none;
 }
