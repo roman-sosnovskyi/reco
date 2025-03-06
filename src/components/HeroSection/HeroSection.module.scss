@@ -2,6 +2,8 @@
 
 /* Стили для главной секции Hero */
 .heroSection {
+  padding-top: 100px;
+  position: relative;
   display: flex;
   flex: 1;
   justify-content: start;
@@ -33,6 +35,7 @@
   flex-direction: column;
   gap: 10px;
   z-index: 1000;
+  max-width: 82%;
 }
 
 .slogan {
@@ -42,7 +45,7 @@
 }
 
 .text {
-  font-size: 36px;
+  font-size: 32px;
   text-align: left;
   margin-bottom: 4rem;
 }
@@ -50,10 +53,23 @@
 /* Стили для изображения */
 .image_container {
   position: absolute;
-  right: 0;
-  top: 80px;
-  transform: translateX(-30%);
   z-index: 10;
+  position: absolute;
+  right: -60px;
+  top: 80px;
+  z-index: 10;
+
+  figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
 }
 
 .image {
