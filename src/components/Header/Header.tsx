@@ -10,11 +10,12 @@ import { Link } from "react-router-dom";
 import CallButton from "../CallButton/CallButton";
 import CartButton from "../CartButton/CartButton";
 import { phoneNumber } from "@/constants/contacts";
+import BurgerBtn from "../BurgerBtn/BurgerBtn";
 
 const Header = () => {
   return (
-    <header className="container">
-      <div className={styles.header}>
+    <header className={styles.header}>
+      <div className="container">
         <div className={styles.content}>
           <Link to="/" className={styles.logo}>
             <Logo
@@ -24,12 +25,15 @@ const Header = () => {
               size="small"
             />
           </Link>
-          <NavBar>
+
+          <NavBar className={styles.navBar}>
             <NavButtons
+              className={styles.navBarBtns}
               labels={navigationButtons.map((button) => button.title)}
               buttons={navigationButtons}
             />
           </NavBar>
+
           <div className={styles.active_btns}>
             <Link to={`tel:${phoneNumber}`} className={styles.call_btn}>
               <CallButton phoneNumber={phoneNumber} />
@@ -38,6 +42,8 @@ const Header = () => {
               <CartButton />
             </Link>
           </div>
+
+          <BurgerBtn />
         </div>
       </div>
     </header>

@@ -1,4 +1,6 @@
-import recoLogo from "@/assets/images/logo/logo-1x.png";
+// import recoLogo from "@/assets/images/logo/logo-1x.png";
+// import recoLogo from "../assets/images/sections/feedback/recoil-desc-2x.png";
+import recoLogo from "../assets/images/sections/hero/hero-desc-1x.png";
 
 export const products = [
   {

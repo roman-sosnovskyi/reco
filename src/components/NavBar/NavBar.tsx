@@ -3,7 +3,7 @@ import styles from "./NavBar.module.scss";
 
 const NavBar = ({ children, className }: NavBarProps) => {
   const combinedClass = className
-    ? `${styles.navBar} ${className}`
+    ? `${className} ${styles.navBar}`
     : styles.navBar;
   return <nav className={combinedClass}>{children}</nav>;
 };

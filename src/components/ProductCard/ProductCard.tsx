@@ -7,6 +7,7 @@ import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
 import ButtonArrow from "../ArowButton/ArowButton.types";
 import Icon from "../Icon/Icon";
+import Carousel from "react-spring-3d-carousel";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
@@ -17,7 +18,6 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [direction, setDirection] = useState("");
 
   const currentProduct = products[currentIndex];
   if (!currentProduct) {
@@ -30,12 +30,10 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const { addToCart } = useCartContext();
 
   const handleNext = () => {
-    setDirection("next");
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
   const handlePrev = () => {
-    setDirection("prev");
     setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
   };
 
@@ -69,6 +67,30 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     setSelectedSize(null);
   }, [currentIndex]);
 
+  const slides = products.map((product, index) => ({
+    key: index,
+    content: (
+      <div
+        className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+      >
+        <img src={product.photo} alt={product.name} className={styles.image} />
+        {index === currentIndex && (
+          <div className={styles.buttonPlace}>
+            <Button
+              size="m"
+              variant="primary"
+              className={styles.addToCart}
+              onClick={handleAddToCart}
+              disabled={!selectedSize}
+            >
+              ДОДАТИ В КОШИК
+            </Button>
+          </div>
+        )}
+      </div>
+    )
+  }));
+
   return (
     <section className="container">
       <div className={styles.card}>
@@ -78,22 +100,13 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
             onClick={handlePrev}
             className={styles.arrowLeft}
           />
-          <div className={`${styles.image_container} ${styles[direction]}`}>
-            <img
-              src={currentProduct.photo}
-              alt={currentProduct.name}
-              className={styles.image}
-            />
-            <Button
-              size="m"
-              variant="primary"
-              className={styles.addToCart}
-              onClick={handleAddToCart}
-              disabled={!selectedSize}
-            >
-              Додати в кошик
-            </Button>
-          </div>
+          <Carousel
+            slides={slides}
+            goToSlide={currentIndex}
+            offsetRadius={2}
+            showNavigation={false}
+            animationConfig={{ tension: 100, friction: 20 }}
+          />
           <ButtonArrow
             icon="right"
             onClick={handleNext}

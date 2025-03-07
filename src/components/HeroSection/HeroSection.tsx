@@ -16,21 +16,20 @@ const HeroSection = ({ className }: HeroSectionProps) => {
     <section className="container">
       <div className={combinedClass}>
         <RecoBg />
-        <div className={styles.main_content}>
+        <article className={styles.main_content}>
           <div className={styles.text_field}>
-            <p className={styles.slogan}>
-              <HighlightText>RECO</HighlightText> — це бренд створений <br /> з
-              любов’ю до волосся
-            </p>
+            <h1 className={styles.slogan}>
+              <HighlightText>RECO</HighlightText> — це бренд створений з
+              любов&#x2019;ю до волосся
+            </h1>
             <p className={styles.text}>
               Кожен заслуговує на здорове, сильне та блискуче волосся <br />
               <HighlightText>RECO</HighlightText> — це інструмент, який дарує
-              нове життя вашому
-              <br /> волоссю
+              нове життя <br /> вашому волоссю
             </p>
             <HeroButtons />
           </div>
-          <div className={styles.image_container}>
+          <figure className={styles.image_container}>
             <picture>
               <source srcSet={`${heroDesc1x} 1x, ${heroDesc2x} 2x`} />
               <img
@@ -39,8 +38,9 @@ const HeroSection = ({ className }: HeroSectionProps) => {
                 className={styles.image}
               />
             </picture>
-          </div>
-        </div>
+            <figcaption>Інноваційний догляд для вашого волосся</figcaption>
+          </figure>
+        </article>
       </div>
     </section>
   );
