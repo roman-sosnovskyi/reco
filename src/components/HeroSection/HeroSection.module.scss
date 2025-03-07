@@ -2,14 +2,14 @@
 
 /* Стили для главной секции Hero */
 .heroSection {
-  padding-top: 100px;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   position: relative;
   display: flex;
   flex: 1;
   justify-content: start;
   align-items: start;
   flex-direction: row;
-  margin-bottom: 5rem;
   background-color: transparent;
   color: $white-color;
   text-align: center;
