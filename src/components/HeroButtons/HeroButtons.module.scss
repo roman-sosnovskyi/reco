@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+
 .buttonBar {
   display: flex;
   justify-content: start;
@@ -9,11 +10,13 @@
   background-color: transparent;
   gap: 1rem;
 }
+
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .iconContainer {
   height: 52px;
   width: 52px;
@@ -27,10 +30,18 @@
   top: 3px;
   right: 2px;
 }
+
 .button__text {
   padding-right: 2rem;
   color: $black-color;
   margin-right: 8px;
   font-size: 16px;
   text-decoration: none;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .buttonBar {
+    justify-content: center;
+    align-items: center;
+  }
 }
