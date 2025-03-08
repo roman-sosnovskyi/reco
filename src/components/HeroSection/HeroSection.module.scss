@@ -18,7 +18,7 @@
 }
 
 /* Стили для основного контента */
-.main_content {
+.mainContent {
   display: flex;
   flex-direction: row;
   min-height: auto;
@@ -28,7 +28,7 @@
 }
 
 /* Стили для текстовых элементов */
-.text_field {
+.textField {
   display: flex;
   justify-content: start;
   text-align: left;
@@ -51,7 +51,7 @@
 }
 
 /* Стили для изображения */
-.image_container {
+.imageContainer {
   position: absolute;
   z-index: 10;
   position: absolute;
@@ -86,10 +86,14 @@
     padding: 0;
   }
 
+  .textField {
+    max-width: 100%;
+  }
+
   .slogan {
     position: relative;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 48px;
     text-align: left;
     text-wrap: pretty;
   }
@@ -109,7 +113,7 @@
     padding: 0 1rem;
   }
 
-  .main_content {
+  .mainContent {
     gap: 2rem;
     padding: 0;
     min-height: auto;

@@ -16,8 +16,8 @@ const HeroSection = ({ className }: HeroSectionProps) => {
     <section className="container">
       <div className={combinedClass}>
         <RecoBg />
-        <article className={styles.main_content}>
-          <div className={styles.text_field}>
+        <article className={styles.mainContent}>
+          <div className={styles.textField}>
             <h1 className={styles.slogan}>
               <HighlightText>RECO</HighlightText> — це бренд створений з
               любов&#x2019;ю до волосся
@@ -29,7 +29,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
             </p>
             <HeroButtons />
           </div>
-          <figure className={styles.image_container}>
+          <figure className={styles.imageContainer}>
             <picture>
               <source srcSet={`${heroDesc1x} 1x, ${heroDesc2x} 2x`} />
               <img
