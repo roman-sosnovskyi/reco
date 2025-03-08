@@ -111,6 +111,14 @@
 
   .imageContainer {
     position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .image {
+    margin: 0 auto;
+    max-width: 400px;
+    // transform: scale(1.2);
   }
 }
 
