@@ -48,6 +48,8 @@
   font-size: 32px;
   text-align: left;
   margin-bottom: 4rem;
+  max-width: 912px;
+  text-wrap: pretty;
 }
 
 /* Стили для изображения */
@@ -105,8 +107,9 @@
   }
 
   .text {
-    font-size: 3rem;
-    text-align: center;
+    font-size: 28px;
+    text-align: left;
+    max-width: 500px;
   }
 
   .imageContainer {
@@ -118,7 +121,7 @@
   .image {
     margin: 0 auto;
     max-width: 400px;
-    // transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 

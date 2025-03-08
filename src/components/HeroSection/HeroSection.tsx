@@ -33,10 +33,11 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               </picture>
               <figcaption>Інноваційний догляд для вашого волосся</figcaption>
             </figure>
+
             <p className={styles.text}>
               Кожен заслуговує на здорове, сильне та блискуче волосся <br />
               <HighlightText>RECO</HighlightText> — це інструмент, який дарує
-              нове життя <br /> вашому волоссю
+              нове життя вашому волоссю
             </p>
             <HeroButtons />
           </div>
