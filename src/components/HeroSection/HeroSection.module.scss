@@ -128,41 +128,32 @@
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: $breakpoint-mobile) {
   .heroSection {
-    max-width: 100%;
-    align-items: center;
-    margin-top: 14rem;
-    padding: 0 1rem;
   }
 
   .mainContent {
-    gap: 2rem;
-    padding: 0;
-    min-height: auto;
-    margin-top: 3rem;
   }
 
-  .buttonBar {
-    height: 100px;
-    flex-direction: column;
-  }
-
-  .textBar {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  .textField {
   }
 
   .slogan {
-    font-size: 6rem;
-    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    max-width: 88%;
   }
 
   .text {
-    font-size: 3.3rem;
-    text-align: center;
+    font-size: 16px;
+    max-width: 290px;
+    margin: 0;
+  }
+
+  .imageContainer {
+    height: 320px;
   }
 
   .image {
-    display: none;
+    max-width: 300px;
+    transform: none;
   }
 }
