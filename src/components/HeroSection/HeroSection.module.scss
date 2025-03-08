@@ -86,8 +86,14 @@
     padding: 0;
   }
 
+  .mainContent {
+    flex-direction: column;
+    gap: 0;
+  }
+
   .textField {
     max-width: 100%;
+    gap: 0;
   }
 
   .slogan {
@@ -101,6 +107,10 @@
   .text {
     font-size: 3rem;
     text-align: center;
+  }
+
+  .imageContainer {
+    position: relative;
   }
 }
 
