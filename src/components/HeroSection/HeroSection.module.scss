@@ -2,12 +2,14 @@
 
 /* Стили для главной секции Hero */
 .heroSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
   display: flex;
   flex: 1;
   justify-content: start;
   align-items: start;
   flex-direction: row;
-  margin-bottom: 5rem;
   background-color: transparent;
   color: $white-color;
   text-align: center;
@@ -16,7 +18,7 @@
 }
 
 /* Стили для основного контента */
-.main_content {
+.mainContent {
   display: flex;
   flex-direction: row;
   min-height: auto;
@@ -26,13 +28,14 @@
 }
 
 /* Стили для текстовых элементов */
-.text_field {
+.textField {
   display: flex;
   justify-content: start;
   text-align: left;
   flex-direction: column;
   gap: 10px;
   z-index: 1000;
+  max-width: 82%;
 }
 
 .slogan {
@@ -42,18 +45,33 @@
 }
 
 .text {
-  font-size: 36px;
+  font-size: 32px;
   text-align: left;
   margin-bottom: 4rem;
+  max-width: 912px;
+  text-wrap: pretty;
 }
 
 /* Стили для изображения */
-.image_container {
+.imageContainer {
   position: absolute;
-  right: 0;
-  top: 80px;
-  transform: translateX(-30%);
   z-index: 10;
+  position: absolute;
+  right: -60px;
+  top: 80px;
+  z-index: 10;
+
+  figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
 }
 
 .image {
@@ -67,71 +85,75 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    gap: 2rem;
     padding: 0;
   }
 
-  .main_content {
-    gap: 2rem;
-    padding: 0;
-    min-height: auto;
-    margin-top: 3rem;
+  .mainContent {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .textField {
+    max-width: 100%;
+    gap: 0;
   }
 
   .slogan {
     position: relative;
-    font-size: 6rem;
-    text-align: center;
+    font-weight: 600;
+    font-size: 48px;
+    text-align: left;
+    text-wrap: pretty;
   }
 
   .text {
-    font-size: 3rem;
-    text-align: center;
+    font-size: 28px;
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .imageContainer {
+    position: relative;
+    top: 0;
+    right: 0;
   }
 
   .image {
-    display: none;
+    margin: 0 auto;
+    max-width: 400px;
+    transform: scale(1.2);
   }
 }
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: $breakpoint-mobile) {
   .heroSection {
-    max-width: 100%;
-    align-items: center;
-    margin-top: 14rem;
-    padding: 0 1rem;
   }
 
-  .main_content {
-    gap: 2rem;
-    padding: 0;
-    min-height: auto;
-    margin-top: 3rem;
+  .mainContent {
   }
 
-  .buttonBar {
-    height: 100px;
-    flex-direction: column;
-  }
-
-  .textBar {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  .textField {
   }
 
   .slogan {
-    font-size: 6rem;
-    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    max-width: 88%;
   }
 
   .text {
-    font-size: 3.3rem;
-    text-align: center;
+    font-size: 16px;
+    max-width: 290px;
+    margin: 0;
+  }
+
+  .imageContainer {
+    height: 320px;
   }
 
   .image {
-    display: none;
+    max-width: 300px;
+    transform: none;
   }
 }

@@ -12,6 +12,10 @@ $error-color: #ea4335;
   button {
     z-index: 1;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 0;
+  }
 }
 
 .feedbackButton {
@@ -47,21 +51,30 @@ $error-color: #ea4335;
   gap: 10px;
   padding-bottom: 30px;
   position: relative;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 4px;
+  }
 }
 
 .feedbackInputLabel {
-  font-size: 1.375rem;
+  font-size: 20px;
   display: flex;
   align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 
 .feedbackInput {
-  border: 1px solid #1b1d20;
+  border: 1px solid $grey-color;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.05);
   outline: none;
   padding: 12px;
-  font-size: 1.125rem;
+  font-size: 16px;
   color: inherit;
   width: 100%;
   position: relative;
@@ -80,6 +93,10 @@ $error-color: #ea4335;
 
   &.inputError {
     border-color: $error-color;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.75rem;
   }
 }
 

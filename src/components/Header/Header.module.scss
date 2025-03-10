@@ -11,7 +11,6 @@
   opacity: 0.97;
   height: 100px;
   width: 100%;
-  max-width: 1360px;
   box-sizing: border-box;
   z-index: 2000;
 }
@@ -60,5 +59,18 @@
   .container {
     max-width: 100%;
     padding: 0 10px;
+  }
+  .navBar,
+  .navBarBtns {
+    display: none !important;
+  }
+  .content {
+    justify-content: start;
+  }
+  .call_btn {
+    display: none;
+  }
+  .active_btns {
+    margin-left: auto;
   }
 }
