@@ -28,8 +28,8 @@ const FeaturesSection = ({ className }: FeaturesSectionProps) => {
           <a href="#about">Про нас</a>
         </div>
 
-        <div className={styles.featuresImgContainer}>
-          <picture>
+        <div className={styles.featuresImgContainerWrapper}>
+          <picture className={`container ${styles.featuresImgContainer}`}>
             <source
               srcSet={`${recoil1xWebp} 1x, ${recoil2xWebp} 2x`}
               type="image/webp"

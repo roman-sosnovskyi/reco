@@ -12,6 +12,10 @@
   &:hover {
     transform: scale(1.05);
   }
+  @media (max-width: $breakpoint-mobile) {
+    position: absolute;
+    font-size: 12px;
+  }
 }
 
 @mixin button {
@@ -46,6 +50,7 @@
   align-items: center;
   width: 100%;
   font-size: 16px;
+  padding: 100px 0;
 
   h2,
   h3 {
@@ -54,28 +59,35 @@
 
   a {
     @include button;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
 
-  @media (max-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
     font-size: 12px;
-    padding: 100px 0 40px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-bottom: 150px;
+    flex-direction: column;
+    position: relative;
   }
 }
 
 // Left side
-.featuresLeftSide {
-  padding-top: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: stretch;
-}
-
 .featuresArticleLeft {
   @include features-article;
   background-image: image-set(
-    url(../../assets/images/sections/features/left-field-desc-1x.png) 1x,
-    url(../../assets/images/sections/features/left-field-desc-2x.png) 2x
+    url(../../assets/images/sections/features/left-field-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/features/left-field-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/features/left-field-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/features/left-field-desc-2x.png)
+      type("image/png") 2x
   );
   width: 386px;
   height: 332px;
@@ -84,6 +96,22 @@
     width: 220px;
     height: 188px;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    background-image: image-set(
+      url(../../assets/images/sections/features/center-field-mob-1x.webp)
+        type("image/webp") 1x,
+      url(../../assets/images/sections/features/center-field-mob-2x.webp)
+        type("image/webp") 2x,
+      url(../../assets/images/sections/features/center-field-mob-1x.png)
+        type("image/png") 1x,
+      url(../../assets/images/sections/features/center-field-mob-2x.png)
+        type("image/png") 2x
+    );
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
 }
 
 .featuresArticleLeftText {
@@ -91,16 +119,35 @@
   position: absolute;
   top: 68px;
   left: 76px;
+
   @media (max-width: $breakpoint-tablet) {
     top: 32px;
     left: 24px;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    text-align: center;
+    left: 20px;
+    max-width: 162px;
+  }
 }
 
 // Image container
+
+.featuresImgContainerWrapper {
+  @media (max-width: $breakpoint-mobile) {
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
 .featuresImgContainer {
   &:hover .featuresImg {
     transform: scale(2.3);
+  }
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+    height: 400px;
   }
 }
 
@@ -108,28 +155,59 @@
   transform: scale(2.2);
   pointer-events: none;
   transition: transform $transition-speed $transition-style;
-  position: relative;
   left: 32px;
+
   @media (max-width: $breakpoint-tablet) {
     left: 24px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30%;
   }
 }
 
 .featuresArticleRightTop {
   @include features-article;
   background-image: image-set(
-    url(../../assets/images/sections/features/right-top-field-desc-1x.png) 1x,
-    url(../../assets/images/sections/features/right-top-field-desc-2x.png) 2x
+    url(../../assets/images/sections/features/right-top-field-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/features/right-top-field-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/features/right-top-field-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/features/right-top-field-desc-2x.png)
+      type("image/png") 2x
   );
   width: 544px;
   height: 404px;
   bottom: 100px;
   right: 52px;
+
   @media (max-width: $breakpoint-tablet) {
     width: 300px;
     height: 224px;
     bottom: 80px;
     right: 24px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    background-image: image-set(
+      url(../../assets/images/sections/features/top-field-mob-1x.webp)
+        type("image/webp") 1x,
+      url(../../assets/images/sections/features/top-field-mob-2x.webp)
+        type("image/webp") 2x,
+      url(../../assets/images/sections/features/top-field-mob-1x.png)
+        type("image/png") 1x,
+      url(../../assets/images/sections/features/top-field-mob-2x.png)
+        type("image/png") 2x
+    );
+    right: 0;
+    top: 50px;
+    width: 290px;
+    height: 152px;
   }
 }
 
@@ -145,19 +223,50 @@
     bottom: 40px;
     right: 8px;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 200px;
+    right: 40px;
+    bottom: 64px;
+    text-align: center;
+  }
 }
 
 .featuresArticleRightBottom {
   @include features-article;
   background-image: image-set(
-    url(../../assets/images/sections/features/right-bottom-desc-1x.png) 1x,
-    url(../../assets/images/sections/features/right-bottom-desc-2x.png) 2x
+    url(../../assets/images/sections/features/right-bottom-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/features/right-bottom-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/features/right-bottom-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/features/right-bottom-desc-2x.png)
+      type("image/png") 2x
   );
   width: 544px;
   height: 244px;
+
   @media (max-width: $breakpoint-tablet) {
     width: 320px;
     height: 148px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    background-image: image-set(
+      url(../../assets/images/sections/features/bottom-field-mob-1x.webp)
+        type("image/webp") 1x,
+      url(../../assets/images/sections/features/bottom-field-mob-2x.webp)
+        type("image/webp") 2x,
+      url(../../assets/images/sections/features/bottom-field-mob-1x.png)
+        type("image/png") 1x,
+      url(../../assets/images/sections/features/bottom-field-mob-2x.png)
+        type("image/png") 2x
+    );
+    bottom: 50px;
+    right: 0;
+    width: 291px;
+    height: 160px;
   }
 }
 
@@ -171,5 +280,12 @@
     max-width: 256px;
     top: 28px;
     right: 0;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 232px;
+    top: 68px;
+    right: 28px;
+    text-align: center;
   }
 }
