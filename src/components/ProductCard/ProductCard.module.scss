@@ -1,5 +1,12 @@
 @use "@/styles/variables.scss" as *;
 
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    width: 100%;
+    height: 755px;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -14,6 +21,12 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    height: auto;
+    margin: 0 27px;
+  }
 }
 
 .slide {
@@ -26,6 +39,18 @@
   opacity: 0.8;
   transition: opacity 0.5s ease-out;
 
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 49%;
+    height: 274px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    Button {
+      width: 86%;
+      height: 44%;
+    }
+  }
+
   .buttonPlace {
     display: flex;
     justify-content: center;
@@ -37,6 +62,11 @@
     border-radius: 20px;
     border: 1px solid $yellow-color;
     background-color: $black-color;
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 50%;
+      height: 90px;
+      right: 100px;
+    }
   }
   &.active {
     opacity: 1;
@@ -73,11 +103,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: 300px;
+  }
 
   img {
     width: auto;
     height: 100%;
     object-fit: cover;
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .image_container {
@@ -101,6 +139,10 @@
         opacity: 0.5;
         cursor: not-allowed;
       }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+        padding: 8px;
+      }
     }
   }
 
@@ -114,14 +156,26 @@
     cursor: pointer;
     font-size: 1.5rem;
     z-index: 1;
+    @media (max-width: $breakpoint-mobile) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .arrowLeft {
     left: 10px;
+    @media (max-width: $breakpoint-mobile) {
+      left: 0;
+      z-index: 2;
+    }
   }
 
   .arrowRight {
     right: 10px;
+    @media (max-width: $breakpoint-mobile) {
+      right: 0;
+      z-index: 2;
+    }
   }
 }
 
@@ -146,16 +200,55 @@
   font-size: 16px;
 }
 
+.priceBox {
+  margin: 0;
+  position: relative;
+  left: 50%;
+  top: 15%;
+}
+
+.volume {
+  position: relative;
+  top: 60px;
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 250px;
+    font-size: 1rem;
+  }
+}
+
+.priceBox1 {
+  position: relative;
+  bottom: 12px;
+}
+
 .info {
   flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  text-decoration: underline;
   align-items: start;
   gap: 1rem;
   overflow-y: hidden;
+
+  strong {
+    font-size: 1.5rem;
+    color: $yellow-color;
+    @media (max-width: $breakpoint-mobile) {
+      display: block;
+      width: 100%;
+
+      font-size: 1rem;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: 248px;
+    margin: 30px 15px 60px 15px;
+    padding: 0;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -163,20 +256,19 @@
     text-decoration: underline;
     margin: 0;
     text-decoration: none;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.3em;
+    }
   }
 
   p {
     font-size: 1rem;
     color: $white-color;
-    text-decoration: underline;
-    margin: 10px 0;
-    text-decoration: none;
   }
 
   .sizes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
 
     label {
@@ -188,6 +280,9 @@
       cursor: pointer;
       gap: 8px;
       text-decoration: none;
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.8rem;
+      }
 
       input {
         appearance: none;

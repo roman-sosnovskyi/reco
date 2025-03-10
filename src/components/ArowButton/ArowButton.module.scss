@@ -13,6 +13,8 @@
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
+  touch-action: manipulation;
+  user-select: none;
 
   &:hover {
     background-color: rgba(251, 192, 0, 0.8);
