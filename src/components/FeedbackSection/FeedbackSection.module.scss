@@ -18,6 +18,8 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 90px;
+
     padding: 16px;
     border-radius: 15px;
     background: radial-gradient(
@@ -72,6 +74,10 @@
     font-weight: 600;
     text-wrap: balance;
     text-transform: uppercase;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 16px;
   }
 }
 
