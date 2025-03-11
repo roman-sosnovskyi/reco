@@ -20,7 +20,7 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({
           name="icon-arrow-right2"
           size={30}
           fill="black"
-          stroke="black"
+          stroke="none"
           className={styles.arrowLeft}
         />
       ) : (

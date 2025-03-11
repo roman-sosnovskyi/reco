@@ -17,6 +17,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [offsetRadius, setOffsetRadius] = useState(2);
   const { addToCart } = useCartContext();
   const currentProduct = products[currentIndex];
 
@@ -24,7 +25,9 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setOffsetRadius(width >= 768 && width <= 1225 ? 4 : 2);
     };
 
     handleResize();
@@ -111,12 +114,13 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   );
 
   const renderDescription = () => (
-    <>
+    <div className={styles.descriptionContainer}>
       <p>{currentProduct.description}</p>
+    </div>
+  );
+  const renderPrice = () => (
+    <>
       <p>
-        <strong className={styles.volume}>Об'єм</strong>
-      </p>
-      <p className={styles.priceBox}>
         <strong className={styles.price}>Ціна: </strong>{" "}
         {selectedSize
           ? `${currentProduct.sizes[selectedSize]} грн`
@@ -124,6 +128,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
       </p>
     </>
   );
+
   return (
     <section className="container" {...swipeHandlers}>
       <div className={styles.card}>
@@ -131,7 +136,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
           <Carousel
             slides={slides}
             goToSlide={currentIndex}
-            offsetRadius={2}
+            offsetRadius={offsetRadius}
             showNavigation={false}
             animationConfig={{ tension: 100, friction: 20 }}
           />
@@ -149,14 +154,17 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
         <div className={styles.info}>
           <HighlightText>
             <h2>{currentProduct.name}</h2>
+            <h3>{currentProduct.volume}</h3>
           </HighlightText>
           {isMobile ? (
             <>
+              {renderPrice()}
               {renderSizes()}
               {renderDescription()}
             </>
           ) : (
             <>
+              {renderPrice()}
               {renderDescription()}
               {renderSizes()}
             </>
