@@ -5,10 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 1rem;
-  margin-bottom: 20px;
+  gap: 20px;
   width: 500px;
-  height: 328px;
 }
 
 .summaryContainer {
@@ -89,4 +87,11 @@
 
 .checkoutButton:hover {
   background-color: #0056b3;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .cartSummary {
+    width: 335px;
+    margin-bottom: 40px;
+  }
 }
