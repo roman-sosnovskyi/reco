@@ -13,6 +13,7 @@
   justify-content: space-between;
   background-color: $grey-color;
   border-radius: 20px;
+  border: 1px solid rgb(96, 80, 28);
   margin-bottom: 1rem;
   max-width: 708px;
   min-height: 213px;
@@ -62,6 +63,7 @@
 .controlContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 3rem;
 }
 
