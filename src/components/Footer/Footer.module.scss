@@ -5,16 +5,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(80, 71, 42);
   background: $footer-gradient;
-  border-radius: 30px;
-  padding-top: 2rem;
+  border: 1px solid rgb(96, 80, 28);
+  border-bottom: none;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 28px;
   margin: 0;
   max-width: 1360px;
   width: 100%;
   box-sizing: border-box;
-  @media screen and (max-width: $breakpoint-mobile) {
-    padding-bottom: 2rem;
+  @media (max-width: $breakpoint-mobile) {
+    padding: 20px;
   }
 }
 
@@ -25,17 +27,17 @@
   width: 100%;
   max-width: 1360px;
   background-color: transparent;
-  padding: 0 1rem;
 
   @media (max-width: $breakpoint-mobile) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    height: auto;
+    flex-wrap: wrap;
   }
 }
+
 .authorRights {
+  font-weight: 100;
   color: white;
   font-size: 0.8rem;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 8px;
+  }
 }
