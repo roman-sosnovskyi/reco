@@ -19,6 +19,7 @@
   @media (max-width: $breakpoint-mobile) {
     top: 100px;
     width: 95%;
+    left: -2%;
   }
 }
 
@@ -35,6 +36,9 @@
   transform: translate(0, 0);
   box-sizing: border-box;
   user-select: none;
+  @media screen and (max-width: $breakpoint-mobile) {
+    opacity: 0.6;
+  }
 }
 
 @for $i from 1 through 7 {
