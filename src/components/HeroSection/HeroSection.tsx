@@ -2,7 +2,7 @@ import { HeroSectionProps } from "./types/HeroSection.types";
 import styles from "./HeroSection.module.scss";
 import "@/styles/index.scss";
 
-// import RecoBg from "../RecoBg/RecoBg";
+import RecoBg from "../RecoBg/RecoBg";
 // import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
 import heroDesc1x from "@/assets/images/sections/hero/hero-desc-1x.png";
@@ -15,7 +15,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
   return (
     <section className="container">
       <div className={combinedClass}>
-        {/* <RecoBg /> */}
+        <RecoBg />
         <article className={styles.mainContent}>
           <div className={styles.textField}>
             <h1 className={styles.slogan}>

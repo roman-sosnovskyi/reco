@@ -16,11 +16,15 @@
   @media (max-width: $breakpoint-tablet) {
     top: 100px;
   }
+  @media (max-width: $breakpoint-mobile) {
+    top: 100px;
+    width: 95%;
+  }
 }
 
 .wordLayer {
   font-family: "Inter", sans-serif;
-  font-size: clamp(5px, 30vw, 450px);
+  font-size: clamp(5px, 30vw, 420px);
   font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 1px $reco-letters;
