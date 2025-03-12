@@ -5,6 +5,7 @@ import style from "./FeedbackForm.module.scss";
 import Icon from "../Icon/Icon";
 import { ChangeEvent } from "react";
 import Button from "../Button/Button";
+import useDeviceDetection from "@/hooks/useDeviceDetection";
 const FeedbackForm = () => {
   const {
     register,
@@ -13,6 +14,14 @@ const FeedbackForm = () => {
     reset,
     setValue
   } = useForm<FormInput>();
+
+  const { isMobile, isTablet } = useDeviceDetection();
+
+  const getButtonSize = () => {
+    if (isMobile) return "s";
+    if (isTablet) return "m";
+    return "l";
+  };
 
   const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
@@ -104,11 +113,15 @@ const FeedbackForm = () => {
         )}
       </div>
 
-      <Button variant="primary" size="l" className="feedbackButton">
+      <Button
+        variant="primary"
+        size={getButtonSize()}
+        className="feedbackButton"
+      >
         <div className={style.iconContainer}>
           <Icon
             name="icon-arrow-up-right2"
-            size={30}
+            size={isMobile ? 20 : 30}
             fill="white"
             stroke="none"
             className={style.feedbackButtonIcon}

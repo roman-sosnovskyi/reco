@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
+import useDeviceDetection from "@/hooks/useDeviceDetection";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import styles from "./HeroButtons.module.scss";
 
 const HeroButtons = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsTablet(window.innerWidth <= 1276);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const { isMobile, isTablet } = useDeviceDetection();
 
   const getButtonSize = () => {
     if (isMobile) return "s";
