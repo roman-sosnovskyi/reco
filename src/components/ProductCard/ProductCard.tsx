@@ -44,7 +44,8 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const handleSizeChange = (size: string) => setSelectedSize(size);
 
   const handleAddToCart = () => {
-    if (!selectedSize) return alert("Будь ласка, виберіть розмір!");
+    if (!selectedSize || !currentProduct.sizes)
+      return alert("Будь ласка, виберіть розмір!");
 
     const newItem = {
       id: currentProduct.id,
@@ -61,33 +62,39 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     addToCart(currentProduct, selectedSize);
   };
 
-  const slides = products.map((product, index) => ({
-    key: index,
-    content: (
-      <div
-        className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
-      >
-        <img src={product.photo} alt={product.name} className={styles.image} />
-        {index === currentIndex && (
-          <div className={styles.buttonPlace}>
-            <Button
-              size="m"
-              variant="primary"
-              className={styles.addToCart}
-              onClick={handleAddToCart}
-              disabled={!selectedSize}
-            >
-              ДОДАТИ В КОШИК
-            </Button>
-          </div>
-        )}
-      </div>
-    )
-  }));
+  const slides = React.useMemo(() => {
+    return products.map((product, index) => ({
+      key: index,
+      content: (
+        <div
+          className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+        >
+          <img
+            src={product.photo}
+            alt={product.name}
+            className={styles.image}
+          />
+          {index === currentIndex && (
+            <div className={styles.buttonPlace}>
+              <Button
+                size="m"
+                variant="primary"
+                className={styles.addToCart}
+                onClick={handleAddToCart}
+                disabled={!selectedSize}
+              >
+                ДОДАТИ В КОШИК
+              </Button>
+            </div>
+          )}
+        </div>
+      )
+    }));
+  }, [products, currentIndex, selectedSize]);
 
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => handleNext(),
-    onSwipedRight: () => handlePrev(),
+    onSwipedLeft: () => isMobile && handleNext(),
+    onSwipedRight: () => isMobile && handlePrev(),
     preventScrollOnSwipe: true,
     trackMouse: true
   });
