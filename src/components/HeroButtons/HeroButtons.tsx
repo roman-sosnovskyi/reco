@@ -5,20 +5,28 @@ import styles from "./HeroButtons.module.scss";
 
 const HeroButtons = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
+      setIsTablet(window.innerWidth <= 1276);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const getButtonSize = () => {
+    if (isMobile) return "s";
+    if (isTablet) return "m";
+    return "l";
+  };
+
   return (
     <div className={styles.buttonBar}>
       <Button
-        size={isMobile ? "s" : "l"}
+        size={getButtonSize()}
         variant="primary"
         className={styles.button}
       >
@@ -33,11 +41,11 @@ const HeroButtons = () => {
         </div>
         <span className={styles.button__text}>ЗАМОВИТИ</span>
       </Button>
-      <Button size={isMobile ? "s" : "l"} variant="secondary">
+      <Button size={getButtonSize()} variant="secondary">
         <div className={styles.secondСontainer}>
           <Icon
             name="icon-arrow-up-right2"
-            size={isMobile ? 16 : 30}
+            size={getButtonSize() === "s" ? 16 : 30}
             fill="white"
             stroke="none"
             className={styles.SecondIcon}
