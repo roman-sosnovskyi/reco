@@ -6,10 +6,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
-
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: "Noto Sans", sans-serif;
   background-color: $black-color;
+  overflow-x: hidden;
 }
 
 .container {

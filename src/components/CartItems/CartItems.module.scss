@@ -3,8 +3,15 @@
 /* --- Стили для списка товаров --- */
 .cartItems {
   display: flex;
+  width: 708px;
+  margin: 0 auto;
+}
+
+.cartList {
+  display: flex;
   flex-direction: column;
-  width: 710px;
+  margin: 0 auto;
+  gap: 20px;
 }
 
 /* --- Стили для отдельного товара в корзине --- */
@@ -13,14 +20,14 @@
   justify-content: space-between;
   background-color: $grey-color;
   border-radius: 20px;
-  margin-bottom: 1rem;
+  border: 1px solid rgb(96, 80, 28);
   max-width: 708px;
   min-height: 213px;
 }
 
 /* --- Стили изображения товара --- */
 .cartItem img {
-  max-width: 60px;
+  max-width: 148px;
   height: auto;
 }
 
@@ -28,7 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
+  max-width: 148px;
 }
 
 /* --- Контейнер для информации о товаре --- */
@@ -62,6 +69,7 @@
 .controlContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 3rem;
 }
 
@@ -100,4 +108,26 @@
 
 .removeItem:hover {
   background-color: darkred;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .cartItems {
+    width: 100%;
+  }
+  .cartItem {
+    max-width: 335px;
+    padding: 20px;
+  }
+
+  .infoContainer {
+    max-width: 234px;
+    padding: 0;
+  }
+  .controlContainer {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .cartItem img {
+    max-width: 79px;
+  }
 }
