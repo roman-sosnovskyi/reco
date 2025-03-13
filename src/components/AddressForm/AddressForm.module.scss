@@ -1,10 +1,17 @@
 @use "@/styles/variables" as *;
+
 .address_form_container {
   color: $white-color;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   font-size: 16px;
   gap: 10px;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px;
+    flex-flow: inherit;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .info_item strong {

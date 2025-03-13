@@ -34,10 +34,6 @@
 
 @media (max-width: $breakpoint-mobile) {
   .footerLinks {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    font-weight: 600;
-    font-size: 12px;
+    display: none;
   }
 }
