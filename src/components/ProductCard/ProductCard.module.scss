@@ -1,5 +1,27 @@
 @use "@/styles/variables.scss" as *;
 
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@include mobile {
+  .container {
+    width: 100%;
+    height: 755px;
+    @include mobile {
+      height: 100vh;
+    }
+  }
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -14,6 +36,17 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+
+  @include mobile {
+    flex-direction: column;
+    height: auto;
+    margin: 0 27px;
+  }
+  @include tablet {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
 }
 
 .slide {
@@ -26,6 +59,18 @@
   opacity: 0.8;
   transition: opacity 0.5s ease-out;
 
+  @include mobile {
+    max-width: 49%;
+    height: 274px;
+  }
+
+  @include mobile {
+    Button {
+      width: 86%;
+      height: 44%;
+    }
+  }
+
   .buttonPlace {
     display: flex;
     justify-content: center;
@@ -37,6 +82,11 @@
     border-radius: 20px;
     border: 1px solid $yellow-color;
     background-color: $black-color;
+    @include mobile {
+      max-width: 50%;
+      height: 90px;
+      right: 100px;
+    }
   }
   &.active {
     opacity: 1;
@@ -62,6 +112,7 @@
 
 .buttonPlace {
   animation: fadeInUp 0.3s ease-out;
+  will-change: transform, opacity;
 }
 
 .carousel {
@@ -73,11 +124,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    width: 100%;
+    height: 300px;
+  }
+
+  @include tablet {
+    width: 90%;
+  }
 
   img {
     width: auto;
     height: 100%;
     object-fit: cover;
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .image_container {
@@ -96,10 +159,19 @@
       visibility: visible;
       opacity: 1;
       cursor: pointer;
+      box-sizing: border-box;
+      @include mobile {
+        width: 90%;
+        margin: 10px auto;
+      }
 
       &:disabled {
         opacity: 0.5;
         cursor: not-allowed;
+      }
+      @include mobile {
+        font-size: 14px;
+        padding: 8px;
       }
     }
   }
@@ -113,15 +185,27 @@
     padding: 10px;
     cursor: pointer;
     font-size: 1.5rem;
-    z-index: 1;
+    z-index: 2;
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .arrowLeft {
     left: 10px;
+    @include mobile {
+      left: 0;
+      z-index: 2;
+    }
   }
 
   .arrowRight {
     right: 10px;
+    @include mobile {
+      right: 0;
+      z-index: 2;
+    }
   }
 }
 
@@ -146,16 +230,34 @@
   font-size: 16px;
 }
 
+@include mobile {
+  .descriptionContainer {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+
 .info {
   flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  text-decoration: underline;
   align-items: start;
   gap: 1rem;
   overflow-y: hidden;
+
+  @include mobile {
+    width: 100%;
+    height: 248px;
+    margin: 30px 15px 60px 15px;
+    padding: 0;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -163,20 +265,19 @@
     text-decoration: underline;
     margin: 0;
     text-decoration: none;
+    @include mobile {
+      font-size: 1.3em;
+    }
   }
 
   p {
     font-size: 1rem;
     color: $white-color;
-    text-decoration: underline;
-    margin: 10px 0;
-    text-decoration: none;
   }
 
   .sizes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
 
     label {
@@ -188,6 +289,9 @@
       cursor: pointer;
       gap: 8px;
       text-decoration: none;
+      @include mobile {
+        font-size: 0.8rem;
+      }
 
       input {
         appearance: none;

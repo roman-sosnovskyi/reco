@@ -2,110 +2,155 @@ import React, { useState, useEffect } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
-import "@/styles/index.scss";
 import HighlightText from "../HighLightText/HighLightText";
 import Button from "../Button/Button";
-import ButtonArrow from "../ArowButton/ArowButton.types";
+import ButtonArrow from "../ArowButton/ArowButton";
 import Icon from "../Icon/Icon";
 import Carousel from "react-spring-3d-carousel";
+import { useSwipeable } from "react-swipeable";
 
 export const ProductCard: React.FC<{ products: Product[] }> = ({
   products
 }) => {
-  if (!products || products.length === 0) {
-    return <div>Продукты не найдены.</div>;
-  }
+  if (!products?.length) return <div>Продукти не знайдені.</div>;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
-  const currentProduct = products[currentIndex];
-  if (!currentProduct) {
-    return <div>Продукт не найден.</div>;
-  }
-
-  const sizes = currentProduct.sizes
-    ? Object.entries(currentProduct.sizes)
-    : [];
+  const [isMobile, setIsMobile] = useState(false);
+  const [offsetRadius, setOffsetRadius] = useState(2);
   const { addToCart } = useCartContext();
+  const currentProduct = products[currentIndex];
 
-  const handleNext = () => {
+  useEffect(() => setSelectedSize(null), [currentIndex]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setOffsetRadius(width >= 768 && width <= 1225 ? 4 : 2);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleNext = () =>
     setCurrentIndex((prev) => (prev + 1) % products.length);
-  };
-
-  const handlePrev = () => {
+  const handlePrev = () =>
     setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
-  };
-
-  const handleSizeChange = (size: string) => {
-    setSelectedSize(size);
-  };
+  const handleSizeChange = (size: string) => setSelectedSize(size);
 
   const handleAddToCart = () => {
-    if (!selectedSize) {
-      alert("Будь ласка, виберіть розмір!");
-      return;
-    }
+    if (!selectedSize || !currentProduct.sizes)
+      return alert("Будь ласка, виберіть розмір!");
 
     const newItem = {
       id: currentProduct.id,
       name: currentProduct.name,
       size: selectedSize,
       price: currentProduct.sizes[selectedSize],
-      photo: currentProduct.photo
+      photo: currentProduct.photo,
+      volume: currentProduct.volume || "Об'єм",
+      basePrice: currentProduct.price || 450
     };
 
-    const storedCart = localStorage.getItem("cart");
-    const cart = storedCart ? JSON.parse(storedCart) : [];
-
-    cart.push(newItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    localStorage.setItem("cart", JSON.stringify([...cart, newItem]));
     addToCart(currentProduct, selectedSize);
   };
 
-  useEffect(() => {
-    setSelectedSize(null);
-  }, [currentIndex]);
+  const slides = React.useMemo(() => {
+    return products.map((product, index) => ({
+      key: index,
+      content: (
+        <div
+          className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+        >
+          <img
+            src={product.photo}
+            alt={product.name}
+            className={styles.image}
+          />
+          {index === currentIndex && (
+            <div className={styles.buttonPlace}>
+              <Button
+                size="m"
+                variant="primary"
+                className={styles.addToCart}
+                onClick={handleAddToCart}
+                disabled={!selectedSize}
+              >
+                ДОДАТИ В КОШИК
+              </Button>
+            </div>
+          )}
+        </div>
+      )
+    }));
+  }, [products, currentIndex, selectedSize]);
 
-  const slides = products.map((product, index) => ({
-    key: index,
-    content: (
-      <div
-        className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
-      >
-        <img src={product.photo} alt={product.name} className={styles.image} />
-        {index === currentIndex && (
-          <div className={styles.buttonPlace}>
-            <Button
-              size="m"
-              variant="primary"
-              className={styles.addToCart}
-              onClick={handleAddToCart}
-              disabled={!selectedSize}
-            >
-              ДОДАТИ В КОШИК
-            </Button>
-          </div>
-        )}
-      </div>
-    )
-  }));
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => isMobile && handleNext(),
+    onSwipedRight: () => isMobile && handlePrev(),
+    preventScrollOnSwipe: true,
+    trackMouse: true
+  });
+
+  const renderSizes = () => (
+    <div className={styles.sizes}>
+      {Object.keys(currentProduct.sizes || {}).length ? (
+        Object.keys(currentProduct.sizes).map((size) => (
+          <label key={size}>
+            <input
+              type="radio"
+              name="size"
+              value={size}
+              checked={selectedSize === size}
+              onChange={() => handleSizeChange(size)}
+            />
+            {size}
+          </label>
+        ))
+      ) : (
+        <div>Розміри не доступні</div>
+      )}
+    </div>
+  );
+
+  const renderDescription = () => (
+    <div className={styles.descriptionContainer}>
+      <p>{currentProduct.description}</p>
+    </div>
+  );
+  const renderPrice = () => (
+    <>
+      <p>
+        <strong className={styles.price}>Ціна: </strong>{" "}
+        {selectedSize
+          ? `${currentProduct.sizes[selectedSize]} грн`
+          : "Оберіть розмір"}
+      </p>
+    </>
+  );
 
   return (
-    <section className="container">
+    <section className="container" {...swipeHandlers}>
       <div className={styles.card}>
         <div className={styles.carousel}>
+          <Carousel
+            slides={slides}
+            goToSlide={currentIndex}
+            offsetRadius={offsetRadius}
+            showNavigation={false}
+            animationConfig={{ tension: 100, friction: 20 }}
+          />
           <ButtonArrow
             icon="left"
             onClick={handlePrev}
             className={styles.arrowLeft}
-          />
-          <Carousel
-            slides={slides}
-            goToSlide={currentIndex}
-            offsetRadius={2}
-            showNavigation={false}
-            animationConfig={{ tension: 100, friction: 20 }}
           />
           <ButtonArrow
             icon="right"
@@ -116,37 +161,35 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
         <div className={styles.info}>
           <HighlightText>
             <h2>{currentProduct.name}</h2>
+            <h3>{currentProduct.volume}</h3>
           </HighlightText>
-          <p>{currentProduct.description}</p>
-          <div className={styles.sizes}>
-            {sizes.length === 0 ? (
-              <div>Размеры не доступны</div>
-            ) : (
-              sizes.map(([size]) => (
-                <label key={size}>
-                  <input
-                    type="radio"
-                    name="size"
-                    value={size}
-                    checked={selectedSize === size}
-                    onChange={() => handleSizeChange(size)}
-                  />
-                  {size}
-                </label>
-              ))
-            )}
-          </div>
-          <Button variant="secondary" size="l" className={styles.moreButton}>
-            <div className={styles.iconContainer}>
-              <Icon
-                name="icon-arrow-up-right2"
-                size={24}
-                fill="white"
-                stroke="none"
-              />
-            </div>
-            <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ </span>
-          </Button>
+          {isMobile ? (
+            <>
+              {renderPrice()}
+              {renderSizes()}
+              {renderDescription()}
+            </>
+          ) : (
+            <>
+              {renderPrice()}
+              {renderDescription()}
+              {renderSizes()}
+            </>
+          )}
+
+          {!isMobile && (
+            <Button variant="secondary" size="l" className={styles.moreButton}>
+              <div className={styles.iconContainer}>
+                <Icon
+                  name="icon-arrow-up-right2"
+                  size={24}
+                  fill="white"
+                  stroke="none"
+                />
+              </div>
+              <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ</span>
+            </Button>
+          )}
         </div>
       </div>
     </section>

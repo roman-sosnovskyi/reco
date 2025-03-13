@@ -13,6 +13,8 @@
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
+  touch-action: manipulation;
+  user-select: none;
 
   &:hover {
     background-color: rgba(251, 192, 0, 0.8);
@@ -23,8 +25,8 @@
     background-color: rgba(251, 192, 0, 0.9);
     transform: scale(0.95);
   }
+}
 
-  .arrowLeft {
-    transform: rotate(180deg);
-  }
+.arrowLeft {
+  transform: rotate(180deg);
 }
