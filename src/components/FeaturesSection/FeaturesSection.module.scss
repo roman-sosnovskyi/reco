@@ -12,6 +12,7 @@
   &:hover {
     transform: scale(1.05);
   }
+
   @media (max-width: $breakpoint-mobile) {
     position: absolute;
     font-size: 12px;
@@ -147,6 +148,7 @@
   &:hover .featuresImg {
     transform: scale(2.3);
   }
+
   @media (max-width: $breakpoint-mobile) {
     display: block;
     height: 400px;
