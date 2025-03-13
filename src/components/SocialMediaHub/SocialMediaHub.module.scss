@@ -6,12 +6,10 @@
   box-sizing: border-box;
   align-items: center;
   text-align: left;
-  border-radius: 10px;
-  width: 200px;
-  height: 50px;
-  border: none;
-  margin: 0;
-  padding: 0 1rem;
-  gap: 2rem;
+  gap: 10px;
   transition: all 0.3s ease;
+
+  @media (max-width: $breakpoint-mobile) {
+    order: -1;
+  }
 }

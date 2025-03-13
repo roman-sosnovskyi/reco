@@ -3,12 +3,9 @@
   object-fit: contain;
   border-radius: 50%;
   transition: transform 0.2s ease;
-
+  width: 44px;
+  height: 44px;
   &:hover {
     transform: scale(1.1);
-  }
-  @media (max-width: $breakpoint-mobile) {
-    width: 5rem;
-    height: 5rem;
   }
 }
