@@ -127,7 +127,7 @@ const FeedbackForm = () => {
             className={style.feedbackButtonIcon}
           />
         </div>
-        <span className={style.feedbackButtonText}>НАДІСЛАТИ</span>
+        <span className={style.feedbackButtonText}> НАДІСЛАТИ</span>
       </Button>
     </form>
   );

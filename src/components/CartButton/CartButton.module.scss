@@ -46,3 +46,16 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border: 2px solid white;
 }
+
+@media (max-width: $breakpoint-mobile) {
+  .button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .badge {
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+  }
+}
