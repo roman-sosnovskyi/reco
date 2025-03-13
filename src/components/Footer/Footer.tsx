@@ -9,7 +9,6 @@ import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
 import FooterLinks from "../FooterLink/FooterLink";
-import "@/styles/index.scss";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
