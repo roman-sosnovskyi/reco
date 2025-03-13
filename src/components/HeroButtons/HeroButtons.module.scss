@@ -20,6 +20,9 @@
 .iconContainer,
 .secondСontainer {
 
+
+
+
   background-color: $grey-color;
   border-radius: 50%;
   display: flex;
@@ -38,6 +41,21 @@
   @media (max-width: $breakpoint-mobile) {
     display: none;
   }
+
+}
+
+.secondСontainer {
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    height: 34px;
+    width: 34px;
+    top: 1px;
+    right: 2px;
+  }
+=======
+
 }
 
 
@@ -68,6 +86,7 @@
     width: 100%;
     padding: 0;
   }
+
 }
 
 .moreInfoText {
@@ -81,11 +100,18 @@
     width: 100%;
     padding: 0;
   }
+
 }
 
-@media screen and (max-width: $breakpoint-tablet) {
-  .buttonBar {
+.moreInfoText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: $breakpoint-mobile) {
     justify-content: center;
-    align-items: center;
+    margin-left: -12px;
+    font-size: 15px;
+    width: 100%;
+    padding: 0;
   }
 }
