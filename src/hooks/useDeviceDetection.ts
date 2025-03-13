@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 
 const useDeviceDetection = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isTablet, setIsTablet] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isTablet, setIsTablet] = useState(
+    window.innerWidth > 768 && window.innerWidth <= 1276
+  );
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
-      setIsTablet(window.innerWidth <= 1276);
+      setIsTablet(window.innerWidth > 768 && window.innerWidth <= 1276);
     };
 
-    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
