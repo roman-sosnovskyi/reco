@@ -3,7 +3,7 @@ import styles from "./HeroSection.module.scss";
 import "@/styles/index.scss";
 
 import RecoBg from "../RecoBg/RecoBg";
-import HeroButtons from "../HeroButtons/HeroButtons";
+// import HeroButtons from "../HeroButtons/HeroButtons";
 import HighlightText from "../HighLightText/HighLightText";
 import heroDesc1x from "@/assets/images/sections/hero/hero-desc-1x.png";
 import heroDesc2x from "@/assets/images/sections/hero/hero-desc-2x.png";
@@ -39,7 +39,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               <HighlightText>RECO</HighlightText> — це інструмент, який дарує
               нове життя вашому волоссю
             </p>
-            <HeroButtons />
+            {/* <HeroButtons /> */}
           </div>
         </article>
       </div>
