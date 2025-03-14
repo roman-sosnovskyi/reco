@@ -1,5 +1,6 @@
 import styles from "./SummaryPage.module.scss";
 import HighlightText from "@/components/HighLightText/HighLightText";
+import SummarySection from "@/components/SummarySection/SummarySection";
 import "@/styles/index.scss";
 
 export default function SummaryPage() {
@@ -9,7 +10,9 @@ export default function SummaryPage() {
         <h1>
           <HighlightText>SUMMARY</HighlightText>
         </h1>
-        <div className={styles.summaryContainer}></div>
+        <div className={styles.summaryContainer}>
+          <SummarySection />
+        </div>
       </div>
     </main>
   );
