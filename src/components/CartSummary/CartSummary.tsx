@@ -1,9 +1,12 @@
 import { useMemo } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import styles from "./CartSummary.module.scss";
 import { useCartContext } from "@/hooks/useCartContext";
 
 const CartSummary = () => {
   const { cart } = useCartContext();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const total = useMemo(() => {
     return cart.reduce((acc, item) => {
@@ -11,6 +14,10 @@ const CartSummary = () => {
       return acc + (price || 0) * (item.quantity || 1);
     }, 0);
   }, [cart]);
+
+  const handleContinueShopping = () => {
+    navigate(location.state?.from || "/");
+  };
 
   return (
     <section className={styles.cartSummary}>
@@ -48,8 +55,15 @@ const CartSummary = () => {
           <p>₴{total}</p>
         </div>
       </div>
-      <button className={styles.checkoutButton}>ОФОРМИТИ ЗАМОВЛЕННЯ</button>
-      <button className={styles.checkoutButton}>ПРОДОВЖИТИ ПОКУПКИ</button>
+      <Link to="/summary" className={styles.checkoutButton}>
+        ОФОРМИТИ ЗАМОВЛЕННЯ
+      </Link>
+      <button
+        className={styles.continueShoppingButton}
+        onClick={handleContinueShopping}
+      >
+        ПРОДОВЖИТИ ПОКУПКИ
+      </button>
     </section>
   );
 };

@@ -37,7 +37,6 @@
   @media (max-width: $breakpoint-mobile) {
     display: none;
   }
-
 }
 
 .secondСontainer {
@@ -52,7 +51,6 @@
   }
 }
 
-
 .secondСontainer {
   display: none;
 
@@ -64,7 +62,6 @@
     right: 2px;
   }
 }
-
 
 .button__text {
   padding-right: 2rem;
@@ -72,6 +69,7 @@
   margin-right: 8px;
   font-size: 16px;
   text-decoration: none;
+
   @media (max-width: $breakpoint-mobile) {
     display: flex;
     align-items: center;
@@ -80,13 +78,13 @@
     width: 100%;
     padding: 0;
   }
-
 }
 
 .moreInfoText {
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: $breakpoint-mobile) {
     justify-content: center;
     margin-left: -12px;
@@ -94,13 +92,13 @@
     width: 100%;
     padding: 0;
   }
-
 }
 
 .moreInfoText {
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: $breakpoint-mobile) {
     justify-content: center;
     margin-left: -12px;
