@@ -1,0 +1,122 @@
+@use "@/styles/variables" as *;
+
+/* --- Стили для списка товаров --- */
+.cartItems {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  flex-direction: column;
+  border: 1px solid $yellow-color;
+  background-color: $grey-color;
+  border-radius: 20px;
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* --- Стили для отдельного товара в корзине --- */
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- Стили изображения товара --- */
+.cartItem img {
+  height: 108px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Контейнер для информации о товаре --- */
+
+.title {
+  display: flex;
+  justify-content: start;
+  font-size: 1.5rem;
+}
+
+.description {
+  display: flex;
+  justify-content: start;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* --- Контейнер управления товарами (количество и удаление) --- */
+.controlContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* --- Стили управления количеством товаров --- */
+.quantityControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid $yellow-color;
+  border-radius: 40px;
+  width: 120px;
+  height: 40px;
+  font-size: 1.5em;
+}
+
+.quantityButton {
+  padding: 5px 10px;
+  color: $yellow-color;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantityButton:hover {
+  background-color: $yellow-color;
+}
+
+/* --- Кнопка удаления товара --- */
+.removeItem {
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.removeItem:hover {
+  background-color: darkred;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .cartItems {
+    width: 100%;
+  }
+  .cartItem {
+    max-width: 335px;
+    padding: 20px;
+  }
+
+  .infoContainer {
+    max-width: 234px;
+    padding: 0;
+  }
+  .controlContainer {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .cartItem img {
+    max-width: 79px;
+  }
+}
