@@ -3,11 +3,7 @@ import Icon from "@/components/Icon/Icon";
 import styles from "./InputLabel.module.scss";
 import { InputLableProps } from "./types/InputLabel.types";
 
-const InputLabel = ({
-  htmlFor,
-  children,
-  required = false
-}: InputLableProps) => {
+const InputLabel = ({ htmlFor, children, required }: InputLableProps) => {
   return (
     <>
       <label htmlFor={htmlFor} className={styles.inputLabel}>
