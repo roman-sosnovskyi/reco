@@ -1,11 +1,12 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FormInput } from "./types/FeedbackForm.types";
 
-import style from "./FeedbackForm.module.scss";
+import styles from "./FeedbackForm.module.scss";
 import Icon from "../Icon/Icon";
-import { ChangeEvent } from "react";
 import Button from "../Button/Button";
 import useDeviceDetection from "@/hooks/useDeviceDetection";
+import handlePhoneChange from "@/utils/handlePhoneChange";
+
 const FeedbackForm = () => {
   const {
     register,
@@ -23,31 +24,18 @@ const FeedbackForm = () => {
     return "l";
   };
 
-  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, "");
-
-    if (value.length < 4) {
-      setValue("phoneNumber", "+380 ");
-      return;
-    }
-
-    const formatted =
-      `+${value.slice(0, 3)} ${value.slice(3, 5)} ${value.slice(5, 8)} ${value.slice(8, 10)} ${value.slice(10, 12)}`.trim();
-    setValue("phoneNumber", formatted);
-  };
-
   const onSubmit: SubmitHandler<FormInput> = (data) => {
     void data;
     reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={style.feedbackForm}>
-      <div className={style.feedbackInputContainer}>
-        <label htmlFor="name" className={style.feedbackInputLabel}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.feedbackForm}>
+      <div className={styles.feedbackInputContainer}>
+        <label htmlFor="name" className={styles.feedbackInputLabel}>
           Ім&#39;я
           <Icon
-            className={style.inputIconStar}
+            className={styles.inputIconStar}
             name="icon-star"
             stroke="#fbc000"
             size={20}
@@ -65,26 +53,26 @@ const FeedbackForm = () => {
           })}
           type="text"
           placeholder="Введіть ваше імʼя"
-          className={`${style.feedbackInput} ${errors.name ? style.inputError : ""}`}
+          className={`${styles.feedbackInput} ${errors.name ? styles.inputError : ""}`}
         />
 
         {errors.name && (
-          <p className={style.inputErrorText}>{errors.name.message}</p>
+          <p className={styles.inputErrorText}>{errors.name.message}</p>
         )}
       </div>
 
-      <div className={style.feedbackInputContainer}>
-        <label htmlFor="phoneNumber" className={style.feedbackInputLabel}>
+      <div className={styles.feedbackInputContainer}>
+        <label htmlFor="phoneNumber" className={styles.feedbackInputLabel}>
           Номер телефону
           <Icon
-            className={style.inputIconStar}
+            className={styles.inputIconStar}
             name="icon-star"
             stroke="#fbc000"
             size={20}
           />
         </label>
 
-        <div className={style.phoneNumberInputContainer}>
+        <div className={styles.phoneNumberInputContainer}>
           <input
             id="phoneNumber"
             {...register("phoneNumber", {
@@ -95,21 +83,21 @@ const FeedbackForm = () => {
               }
             })}
             type="tel"
-            className={`${style.feedbackInput} ${errors.phoneNumber ? style.inputError : ""}`}
+            className={`${styles.feedbackInput} ${errors.phoneNumber ? styles.inputError : ""}`}
             placeholder="+380 __ ___ __ __"
-            onChange={handlePhoneChange}
-            onFocus={handlePhoneChange}
+            onChange={(event) => handlePhoneChange(event, setValue)}
+            onFocus={(event) => handlePhoneChange(event, setValue)}
           />
           <Icon
             name="icon-phone"
             color="none"
             stroke="#96989B"
-            className={style.inputIconPhone}
+            className={styles.inputIconPhone}
           />
         </div>
 
         {errors.phoneNumber && (
-          <p className={style.inputErrorText}>{errors.phoneNumber.message}</p>
+          <p className={styles.inputErrorText}>{errors.phoneNumber.message}</p>
         )}
       </div>
 
@@ -118,16 +106,16 @@ const FeedbackForm = () => {
         size={getButtonSize()}
         className="feedbackButton"
       >
-        <div className={style.iconContainer}>
+        <div className={styles.iconContainer}>
           <Icon
             name="icon-arrow-up-right2"
             size={isMobile ? 20 : 30}
             fill="white"
             stroke="none"
-            className={style.feedbackButtonIcon}
+            className={styles.feedbackButtonIcon}
           />
         </div>
-        <span className={style.feedbackButtonText}> НАДІСЛАТИ</span>
+        <span className={styles.feedbackButtonText}> НАДІСЛАТИ</span>
       </Button>
     </form>
   );
