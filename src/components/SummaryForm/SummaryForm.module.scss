@@ -1,12 +1,21 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
-.inputContainer {
-  @include inputFieldContainer;
+.summaryForm {
+  width: 100%;
 }
 
-.inputLabel {
-  @include inputFieldLabel;
+.formTitle {
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $yellow-color;
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  @include inputFieldContainer;
+  flex-grow: 1;
 }
 
 .inputField {
@@ -14,5 +23,10 @@
 }
 
 .inputError {
-  @include inputError;
+  @include inputFieldError;
+}
+
+.inputContainerWrapper {
+  display: flex;
+  gap: 20px;
 }
