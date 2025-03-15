@@ -1,0 +1,18 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.inputContainer {
+  @include inputFieldContainer;
+}
+
+.inputLabel {
+  @include inputFieldLabel;
+}
+
+.inputField {
+  @include inputField;
+}
+
+.inputError {
+  @include inputError;
+}
