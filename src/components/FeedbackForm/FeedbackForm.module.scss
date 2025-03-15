@@ -139,11 +139,17 @@ $error-color: #ea4335;
   transform: translateY(-50%);
 }
 
-.feedbackForm button {
+.buttonContainer {
+  display: flex;
+  justify-content: start;
 }
 
 @media (max-width: $breakpoint-tablet) {
   .feedbackForm {
     max-width: 360px;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
   }
 }
