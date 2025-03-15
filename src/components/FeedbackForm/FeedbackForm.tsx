@@ -89,7 +89,6 @@ const FeedbackForm = () => {
         )}
       </div>
 
-
       <Button
         variant="primary"
         size={getButtonSize()}
@@ -107,25 +106,24 @@ const FeedbackForm = () => {
         <span className={styles.feedbackButtonText}> НАДІСЛАТИ</span>
       </Button>
 
-      <div className={style.buttonContainer}>
+      <div className={styles.buttonContainer}>
         <Button
           variant="primary"
           size={getButtonSize()}
           className="feedbackButton"
         >
-          <div className={style.iconContainer}>
+          <div className={styles.iconContainer}>
             <Icon
               name="icon-arrow-up-right2"
               size={isMobile ? 20 : 30}
               fill="white"
               stroke="none"
-              className={style.feedbackButtonIcon}
+              className={styles.feedbackButtonIcon}
             />
           </div>
-          <span className={style.feedbackButtonText}> НАДІСЛАТИ</span>
+          <span className={styles.feedbackButtonText}> НАДІСЛАТИ</span>
         </Button>
       </div>
-
     </form>
   );
 };
