@@ -9,7 +9,6 @@ import SocialMediaHub from "../SocialMediaHub/SocialMediaHub";
 import { address, phoneNumber, email } from "@/constants/contacts";
 import SocialMediaLinks from "../SocialMediaLinks/SocialMediaLinks";
 import FooterLinks from "../FooterLink/FooterLink";
-import "@/styles/index.scss";
 
 const Footer = ({ className }: FooterProps) => {
   const combinedClass = className
@@ -19,7 +18,7 @@ const Footer = ({ className }: FooterProps) => {
     <footer className="container">
       <div className={`${combinedClass} ${styles.footer}`}>
         <div className={styles.footer_container}>
-          <Link to="/">
+          <Link to="/" className={styles.linkLogo}>
             <Logo
               src1x={logo1x}
               src2x={logo2x}
