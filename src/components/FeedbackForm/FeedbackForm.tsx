@@ -6,6 +6,7 @@ import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
 import useDeviceDetection from "@/hooks/useDeviceDetection";
 import handlePhoneChange from "@/utils/handlePhoneChange";
+import InputLabel from "../InputLabel/InputLabel";
 
 const FeedbackForm = () => {
   const {
@@ -32,16 +33,9 @@ const FeedbackForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.feedbackForm}>
       <div className={styles.feedbackInputContainer}>
-        <label htmlFor="name" className={styles.feedbackInputLabel}>
+        <InputLabel htmlFor="name" required={true}>
           Ім&#39;я
-          <Icon
-            className={styles.inputIconStar}
-            name="icon-star"
-            stroke="#fbc000"
-            size={20}
-          />
-        </label>
-
+        </InputLabel>
         <input
           id="name"
           {...register("name", {
@@ -62,15 +56,9 @@ const FeedbackForm = () => {
       </div>
 
       <div className={styles.feedbackInputContainer}>
-        <label htmlFor="phoneNumber" className={styles.feedbackInputLabel}>
+        <InputLabel htmlFor="phoneNumber" required={true}>
           Номер телефону
-          <Icon
-            className={styles.inputIconStar}
-            name="icon-star"
-            stroke="#fbc000"
-            size={20}
-          />
-        </label>
+        </InputLabel>
 
         <div className={styles.phoneNumberInputContainer}>
           <input

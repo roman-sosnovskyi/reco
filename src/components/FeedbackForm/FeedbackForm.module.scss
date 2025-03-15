@@ -64,10 +64,6 @@
   @include inputFieldContainer;
 }
 
-.feedbackInputLabel {
-  @include inputFieldLabel;
-}
-
 .feedbackInput {
   @include inputField;
 }
@@ -78,10 +74,6 @@
 
 .phoneNumberInputContainer {
   position: relative;
-}
-
-.inputIconStar {
-  margin-left: auto;
 }
 
 .inputIconPhone {
