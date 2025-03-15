@@ -53,7 +53,6 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
       size: selectedSize,
       price: currentProduct.sizes[selectedSize],
       photo: currentProduct.photo,
-      volume: currentProduct.volume || "Об'єм",
       basePrice: currentProduct.price || 450
     };
 
@@ -161,7 +160,6 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
         <div className={styles.info}>
           <HighlightText>
             <h2>{currentProduct.name}</h2>
-            <h3>{currentProduct.volume}</h3>
           </HighlightText>
           {isMobile ? (
             <>
