@@ -1,16 +1,25 @@
 @use "@/styles/variables" as *;
 
-/* --- Стили для списка товаров --- */
+/* --- Основной контейнер корзины --- */
 .cartItems {
   display: flex;
+  flex-direction: column;
   width: 500px;
   margin: 0 auto;
-  flex-direction: column;
   border: 1px solid $yellow-color;
   background-color: $grey-color;
   border-radius: 20px;
 }
 
+/* --- Заголовок корзины --- */
+.header {
+  display: flex;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* --- Список товаров в корзине --- */
 .cartList {
   display: flex;
   flex-direction: column;
@@ -18,24 +27,31 @@
   gap: 20px;
 }
 
-/* --- Стили для отдельного товара в корзине --- */
+/* --- Отдельный товар в корзине --- */
 .cartItem {
   display: flex;
   justify-content: space-between;
 }
 
-/* --- Стили изображения товара --- */
-.cartItem img {
-  height: 108px;
-}
-
+/* --- Изображение товара --- */
 .imageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* --- Контейнер для информации о товаре --- */
+.cartItem img {
+  height: 108px;
+}
+
+/* --- Контейнер информации о товаре --- */
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+}
 
 .title {
   display: flex;
@@ -54,7 +70,7 @@
   font-weight: bold;
 }
 
-/* --- Контейнер управления товарами (количество и удаление) --- */
+/* --- Управление товаром (размер, количество) --- */
 .controlContainer {
   display: flex;
   flex-direction: row;
@@ -62,61 +78,85 @@
   gap: 3rem;
 }
 
-/* --- Стили управления количеством товаров --- */
-.quantityControl {
+/* --- Блок доставки --- */
+.deliveryOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deliveryOption {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border: 1px solid $yellow-color;
-  border-radius: 40px;
-  width: 120px;
-  height: 40px;
-  font-size: 1.5em;
 }
 
-.quantityButton {
-  padding: 5px 10px;
-  color: $yellow-color;
-  border-radius: 5px;
-  cursor: pointer;
+.deliveryOptionDescription {
+  margin-left: 10px;
 }
 
-.quantityButton:hover {
+/* --- Итоговая стоимость и оплата --- */
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.summaryPaymentMethods {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 16px;
+  color: #60574b;
+}
+
+/* --- Кнопка оформления заказа --- */
+.buttonPlaceholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 317px;
+  height: 58px;
   background-color: $yellow-color;
+  border-radius: 58px;
+  border: 1px solid $yellow-color;
+  color: black;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #fbbc058c;
+    border-color: #fbbc058c;
+  }
 }
 
-/* --- Кнопка удаления товара --- */
-.removeItem {
-  padding: 5px 10px;
-  color: white;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.removeItem:hover {
-  background-color: darkred;
-}
-
+/* --- Медиа-запросы для мобильных устройств --- */
 @media screen and (max-width: $breakpoint-mobile) {
   .cartItems {
-    width: 100%;
+    width: 335px;
   }
+
   .cartItem {
     max-width: 335px;
-    padding: 20px;
   }
 
   .infoContainer {
-    max-width: 234px;
+    font-size: 18px;
     padding: 0;
   }
-  .controlContainer {
-    flex-wrap: wrap;
-    gap: 1rem;
+
+  .controlContainer p {
+    flex-wrap: nowrap;
   }
+
   .cartItem img {
-    max-width: 79px;
+    max-width: 55px;
+    max-height: 94px;
   }
 }
