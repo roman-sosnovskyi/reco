@@ -16,6 +16,10 @@
   display: flex;
   width: 100%;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 15px;
+  gap: 124px;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
