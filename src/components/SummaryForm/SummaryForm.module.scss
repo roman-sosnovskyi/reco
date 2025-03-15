@@ -2,7 +2,7 @@
 @use "@/styles/mixins" as *;
 
 .summaryForm {
-  width: 100%;
+  width: 605px;
 }
 
 .formTitle {
@@ -15,7 +15,10 @@
 
 .inputContainer {
   @include inputFieldContainer;
-  flex-grow: 1;
+
+  & {
+    flex-grow: 1;
+  }
 }
 
 .inputField {
