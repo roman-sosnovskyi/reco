@@ -9,7 +9,7 @@ import SummaryPage from "./pages/summary/page";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/reco" >
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
