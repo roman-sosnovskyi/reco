@@ -77,7 +77,11 @@ const SummarySection = () => {
         (Visa, MasterCard, ApplePay, Google Pay)
       </p>
       <div className={styles.buttonPlaceholder}>
-        <button className={styles.checkoutButton}>
+        <button
+          type="submit"
+          form="summaryForm"
+          className={styles.checkoutButton}
+        >
           Підтвердити замовлення
         </button>
       </div>
