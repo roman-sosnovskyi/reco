@@ -11,7 +11,7 @@ import NotFoundPage from "./pages/notFound/page.tsx";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/reco" >
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />

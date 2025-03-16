@@ -225,6 +225,22 @@
   font-size: 16px;
 }
 
+.priceContainer {
+  position: relative;
+  left: 230px;
+  top: 37px;
+  margin-top: -37px;
+  @include mobile {
+    left: 0;
+    top: 0;
+    margin-top: 0;
+  }
+}
+
+.volume {
+  color: $yellow_color;
+}
+
 @include mobile {
   .descriptionContainer {
     width: 100%;

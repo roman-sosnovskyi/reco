@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Product } from "@/types/types";
 import { useCartContext } from "@/hooks/useCartContext";
 import styles from "./ProductCard.module.scss";
@@ -9,9 +9,11 @@ import Icon from "../Icon/Icon";
 import Carousel from "react-spring-3d-carousel";
 import { useSwipeable } from "react-swipeable";
 
-export const ProductCard: React.FC<{ products: Product[] }> = ({
-  products
-}) => {
+interface ProductCardProps {
+  products: Product[];
+}
+
+export const ProductCard: React.FC<ProductCardProps> = ({ products }) => {
   if (!products?.length) return <div>Продукти не знайдені.</div>;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +33,6 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -44,8 +45,9 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
   const handleSizeChange = (size: string) => setSelectedSize(size);
 
   const handleAddToCart = () => {
-    if (!selectedSize || !currentProduct.sizes)
+    if (!selectedSize || !currentProduct.sizes) {
       return alert("Будь ласка, виберіть розмір!");
+    }
 
     const newItem = {
       id: currentProduct.id,
@@ -61,35 +63,58 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
     addToCart(currentProduct, selectedSize);
   };
 
-  const slides = React.useMemo(() => {
-    return products.map((product, index) => ({
-      key: index,
-      content: (
-        <div
-          className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
-        >
-          <img
-            src={product.photo}
-            alt={product.name}
-            className={styles.image}
-          />
-          {index === currentIndex && (
-            <div className={styles.buttonPlace}>
-              <Button
-                size="m"
-                variant="primary"
-                className={styles.addToCart}
-                onClick={handleAddToCart}
-                disabled={!selectedSize}
-              >
-                ДОДАТИ В КОШИК
-              </Button>
-            </div>
-          )}
-        </div>
-      )
-    }));
-  }, [products, currentIndex, selectedSize]);
+  const slides = useMemo(
+    () =>
+      products.map((product, index) => ({
+        key: index,
+        content: (
+          <div
+            className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+            key={index}
+          >
+            <img
+              src={product.photo}
+              alt={product.name}
+              className={styles.image}
+            />
+            {index === currentIndex && (
+              <div className={styles.buttonPlace}>
+                {isMobile ? (
+                  <Button
+                    size="m"
+                    variant="primary"
+                    className={styles.addToCart}
+                    onClick={handleAddToCart}
+                    disabled={!selectedSize}
+                  >
+                    ДОДАТИ В КОШИК
+                  </Button>
+                ) : (
+                  <Button
+                    variant="secondary"
+                    size="l"
+                    className={styles.moreButton}
+                  >
+                    <div className={styles.iconContainer}>
+                      <Icon
+                        name="icon-arrow-up-right2"
+                        size={24}
+                        fill="white"
+                        stroke="none"
+                      />
+                    </div>
+                    <span className={styles.moreButtonText}>
+                      БІЛЬШЕ ТОВАРІВ
+                    </span>
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
+        )
+      })),
+    [products, currentIndex, selectedSize, isMobile]
+  );
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => isMobile && handleNext(),
@@ -114,7 +139,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
           </label>
         ))
       ) : (
-        <div>Розміри не доступні</div>
+        <div>Розміри не доступні для цього товару.</div>
       )}
     </div>
   );
@@ -124,15 +149,14 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
       <p>{currentProduct.description}</p>
     </div>
   );
+
   const renderPrice = () => (
-    <>
-      <p>
-        <strong className={styles.price}>Ціна: </strong>{" "}
-        {selectedSize
-          ? `${currentProduct.sizes[selectedSize]} грн`
-          : "Оберіть розмір"}
-      </p>
-    </>
+    <p className={styles.priceContainer}>
+      <strong className={styles.price}>Ціна: </strong>
+      {selectedSize
+        ? `${currentProduct.sizes[selectedSize]} грн`
+        : "Оберіть розмір"}
+    </p>
   );
 
   return (
@@ -163,29 +187,33 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
           </HighlightText>
           {isMobile ? (
             <>
+              <div className={styles.volume}>
+                <h3>{currentProduct.volume}</h3>
+              </div>
               {renderPrice()}
               {renderSizes()}
               {renderDescription()}
             </>
           ) : (
             <>
-              {renderPrice()}
               {renderDescription()}
+              <div className={styles.volume}>
+                <h3>{currentProduct.volume}</h3>
+              </div>
+              {renderPrice()}
               {renderSizes()}
             </>
           )}
 
           {!isMobile && (
-            <Button variant="secondary" size="l" className={styles.moreButton}>
-              <div className={styles.iconContainer}>
-                <Icon
-                  name="icon-arrow-up-right2"
-                  size={24}
-                  fill="white"
-                  stroke="none"
-                />
-              </div>
-              <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ</span>
+            <Button
+              size="m"
+              variant="primary"
+              className={styles.addToCart}
+              onClick={handleAddToCart}
+              disabled={!selectedSize}
+            >
+              ДОДАТИ В КОШИК
             </Button>
           )}
         </div>
