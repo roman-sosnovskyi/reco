@@ -55,7 +55,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ products }) => {
       size: selectedSize,
       price: currentProduct.sizes[selectedSize],
       photo: currentProduct.photo,
-      volume: currentProduct.volume || "Об'єм",
       basePrice: currentProduct.price || 450
     };
 

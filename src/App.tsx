@@ -6,6 +6,8 @@ import ContactPage from "./pages/contacts/page";
 import FeedbackPage from "./pages/feedback/page";
 import CartPage from "./pages/cart/page";
 import SummaryPage from "./pages/summary/page";
+import CatalogPage from "./pages/catalog/page";
+import NotFoundPage from "./pages/notFound/page.tsx";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="feedback" element={<FeedbackPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="summary" element={<SummaryPage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="*" element={<NotFoundPage />} /> {/* Обработка 404 */}
         </Route>
       </Routes>
     </Router>

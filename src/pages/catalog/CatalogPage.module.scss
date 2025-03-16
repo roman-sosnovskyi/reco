@@ -1,0 +1,9 @@
+@use "@/styles/variables" as *;
+
+/* Основные стили контейнера корзины */
+.catalogPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}

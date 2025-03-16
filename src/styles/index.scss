@@ -5,12 +5,26 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  // outline: 1px solid green;
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
 body {
   font-family: "Noto Sans", sans-serif;
   background-color: $black-color;
   overflow-x: hidden;
+  margin: 0;
 }
 
 .container {
@@ -44,18 +58,21 @@ body {
   font-weight: 500;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/fonts/NotoSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/fonts/NotoSans-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/fonts/NotoSans-Thin.woff2") format("woff2");
