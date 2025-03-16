@@ -68,6 +68,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
       content: (
         <div
           className={`${styles.slide} ${index === currentIndex ? styles.active : ""}`}
+          key={index}
         >
           <img
             src={product.photo}
@@ -76,21 +77,39 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
           />
           {index === currentIndex && (
             <div className={styles.buttonPlace}>
-              <Button
-                size="m"
-                variant="primary"
-                className={styles.addToCart}
-                onClick={handleAddToCart}
-                disabled={!selectedSize}
-              >
-                ДОДАТИ В КОШИК
-              </Button>
+              {isMobile ? (
+                <Button
+                  size="m"
+                  variant="primary"
+                  className={styles.addToCart}
+                  onClick={handleAddToCart}
+                  disabled={!selectedSize}
+                >
+                  ДОДАТИ В КОШИК
+                </Button>
+              ) : (
+                <Button
+                  variant="secondary"
+                  size="l"
+                  className={styles.moreButton}
+                >
+                  <div className={styles.iconContainer}>
+                    <Icon
+                      name="icon-arrow-up-right2"
+                      size={24}
+                      fill="white"
+                      stroke="none"
+                    />
+                  </div>
+                  <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ</span>
+                </Button>
+              )}
             </div>
           )}
         </div>
       )
     }));
-  }, [products, currentIndex, selectedSize]);
+  }, [products, currentIndex, selectedSize, isMobile]);
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => isMobile && handleNext(),
@@ -125,6 +144,7 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
       <p>{currentProduct.description}</p>
     </div>
   );
+
   const renderPrice = () => (
     <>
       <p>
@@ -178,16 +198,14 @@ export const ProductCard: React.FC<{ products: Product[] }> = ({
           )}
 
           {!isMobile && (
-            <Button variant="secondary" size="l" className={styles.moreButton}>
-              <div className={styles.iconContainer}>
-                <Icon
-                  name="icon-arrow-up-right2"
-                  size={24}
-                  fill="white"
-                  stroke="none"
-                />
-              </div>
-              <span className={styles.moreButtonText}>БІЛЬШЕ ТОВАРІВ</span>
+            <Button
+              size="m"
+              variant="primary"
+              className={styles.addToCart}
+              onClick={handleAddToCart}
+              disabled={!selectedSize}
+            >
+              ДОДАТИ В КОШИК
             </Button>
           )}
         </div>
