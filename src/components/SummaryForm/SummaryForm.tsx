@@ -36,12 +36,19 @@ const SummaryForm = () => {
           <input
             id="firstName"
             type="text"
-            className={styles.inputField}
             placeholder="Введіть ім'я"
+            {...register("firstName", {
+              required: "Це поле обовʼязкове",
+              pattern: {
+                value: /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ'’ʼ\s]+$/,
+                message: "Імʼя повинно містити тільки букви"
+              }
+            })}
+            className={`${styles.inputField} ${errors.firstName ? styles.inputError : ""}`}
           />
 
           {errors.firstName && (
-            <p className={styles.inputError}>{errors.firstName.message}</p>
+            <p className={styles.inputErrorText}>{errors.firstName.message}</p>
           )}
         </div>
 
@@ -53,12 +60,19 @@ const SummaryForm = () => {
           <input
             id="lastName"
             type="text"
-            className={styles.inputField}
             placeholder="Введіть прізвище"
+            {...register("lastName", {
+              required: "Це поле обовʼязкове",
+              pattern: {
+                value: /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ'’ʼ\s]+$/,
+                message: "Прізвище повинно містити тільки букви"
+              }
+            })}
+            className={`${styles.inputField} ${errors.lastName ? styles.inputError : ""}`}
           />
 
           {errors.lastName && (
-            <p className={styles.inputError}>{errors.lastName.message}</p>
+            <p className={styles.inputErrorText}>{errors.lastName.message}</p>
           )}
         </div>
       </div>
@@ -71,7 +85,6 @@ const SummaryForm = () => {
         <input
           id="phoneNumber"
           type="text"
-          className={styles.inputField}
           placeholder="+380 __ ___ __ __"
           {...register("phoneNumber", {
             required: "Це поле обовʼязкове",
@@ -82,10 +95,11 @@ const SummaryForm = () => {
           })}
           onChange={(event) => handlePhoneChange(event, setValue)}
           onFocus={(event) => handlePhoneChange(event, setValue)}
+          className={`${styles.inputField} ${errors.phoneNumber ? styles.inputError : ""}`}
         />
 
         {errors.phoneNumber && (
-          <p className={styles.inputError}>{errors.phoneNumber.message}</p>
+          <p className={styles.inputErrorText}>{errors.phoneNumber.message}</p>
         )}
       </div>
 
@@ -102,7 +116,7 @@ const SummaryForm = () => {
         />
 
         {errors.country && (
-          <p className={styles.inputError}>{errors.country.message}</p>
+          <p className={styles.inputErrorText}>{errors.country.message}</p>
         )}
       </div>
 
@@ -120,7 +134,7 @@ const SummaryForm = () => {
           />
 
           {errors.city && (
-            <p className={styles.inputError}>{errors.city.message}</p>
+            <p className={styles.inputErrorText}>{errors.city.message}</p>
           )}
         </div>
 
@@ -137,7 +151,7 @@ const SummaryForm = () => {
           />
 
           {errors.postOffice && (
-            <p className={styles.inputError}>{errors.postOffice.message}</p>
+            <p className={styles.inputErrorText}>{errors.postOffice.message}</p>
           )}
         </div>
       </div>
@@ -152,7 +166,7 @@ const SummaryForm = () => {
         />
 
         {errors.comment && (
-          <p className={styles.inputError}>{errors.comment.message}</p>
+          <p className={styles.inputErrorText}>{errors.comment.message}</p>
         )}
       </div>
     </form>
