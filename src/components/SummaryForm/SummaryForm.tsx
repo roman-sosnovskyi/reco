@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 import styles from "./SummaryForm.module.scss";
 
@@ -9,14 +9,23 @@ import handlePhoneChange from "@/utils/handlePhoneChange";
 const SummaryForm = () => {
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     formState: { errors },
-    // reset,
+    reset,
     setValue
   } = useForm<FormInput>();
 
+  const onSubmit: SubmitHandler<FormInput> = (data) => {
+    void data;
+    reset();
+  };
+
   return (
-    <form className={styles.summaryForm}>
+    <form
+      id="summaryForm"
+      className={styles.summaryForm}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <h2 className={styles.formTitle}>Платіжні дані</h2>
       <div className={styles.inputContainerWrapper}>
         <div className={styles.inputContainer}>
