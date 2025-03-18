@@ -19,20 +19,25 @@ const BurgerBtn = () => {
     };
   }, [modalIsOpen]);
 
+  const handleClick = () => {
+    setModalIsOpen((prev) => !prev);
+  };
+
   return (
     <>
       <button
         type="button"
         className={classNames(styles.burgerBtn, { [styles.open]: modalIsOpen })}
-        onClick={() => {
-          setModalIsOpen((prev) => !prev);
-        }}
+        onClick={handleClick}
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
-      {createPortal(<ModalMenu isOpen={modalIsOpen} />, document.body)}
+      {createPortal(
+        <ModalMenu isOpen={modalIsOpen} onClick={handleClick} />,
+        document.body
+      )}
     </>
   );
 };
