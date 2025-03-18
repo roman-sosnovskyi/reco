@@ -7,13 +7,13 @@ import { products } from "@/constants/products";
 
 const MainPage = () => {
   return (
-    <>
+    <main>
       <HeroSection />
       <FeaturesSection />
       <ProductCard products={products} />
       <Insta />
       <FeedbackSection />
-    </>
+    </main>
   );
 };
 
