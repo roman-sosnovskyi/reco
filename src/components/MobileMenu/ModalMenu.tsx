@@ -5,7 +5,7 @@ import NavButtons from "../NavButtons/NavButton";
 import styles from "./ModalMenu.module.scss";
 import { ModalMenuProps } from "./types/ModalMenu.types";
 
-const ModalMenu = ({ isOpen }: ModalMenuProps) => {
+const ModalMenu = ({ isOpen, onClick }: ModalMenuProps) => {
   const [isVisible, setIsVisible] = useState(isOpen);
 
   useEffect(() => {
@@ -19,7 +19,10 @@ const ModalMenu = ({ isOpen }: ModalMenuProps) => {
 
   return (
     isVisible && (
-      <div className={`${styles.modal} ${isOpen ? styles.show : styles.hide}`}>
+      <div
+        className={`${styles.modal} ${isOpen ? styles.show : styles.hide}`}
+        onClick={onClick}
+      >
         <NavBar>
           <NavButtons
             className={styles.modalNavBtns}
