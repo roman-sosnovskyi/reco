@@ -44,6 +44,11 @@
   white-space: nowrap;
 }
 
+.backgroundCircles {
+  top: -260px;
+  left: -320px;
+}
+
 // Common style
 .featuresSection {
   display: flex;
@@ -52,6 +57,7 @@
   width: 100%;
   font-size: 16px;
   padding: 100px 0;
+  position: relative;
 
   h2,
   h3 {

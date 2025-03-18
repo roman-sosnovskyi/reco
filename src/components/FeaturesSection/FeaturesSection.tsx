@@ -7,6 +7,7 @@ import recoil2xPng from "@/assets/images/sections/features/recoil-desc-2x.png";
 import recoil2xWebp from "@/assets/images/sections/features/recoil-desc-2x.webp";
 import styles from "./FeaturesSection.module.scss";
 import HighlightText from "../HighLightText/HighLightText";
+import BackgroundCircles from "../BackgroundCircles/BackgroundCircles";
 
 const FeaturesSection = ({ className }: FeaturesSectionProps) => {
   const classes = classNames(styles.featuresSection, className);
@@ -14,6 +15,7 @@ const FeaturesSection = ({ className }: FeaturesSectionProps) => {
   return (
     <section className="container">
       <div className={classes}>
+        <BackgroundCircles className={styles.backgroundCircles} />
         <h2>Особливості продукту</h2>
 
         <div className={styles.featuresLeftSide}>
