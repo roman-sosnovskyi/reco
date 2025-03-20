@@ -12,6 +12,7 @@
   position: absolute;
   width: 624px;
   height: 504px;
+  z-index: -1;
 
   @media (max-width: $breakpoint-mobile) {
     display: none;
