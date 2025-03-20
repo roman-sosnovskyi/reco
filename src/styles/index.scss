@@ -13,6 +13,13 @@
   flex-direction: column;
 }
 
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: $black-color;
+  overflow-x: hidden;
+  margin: 0;
+}
+
 main {
   flex-grow: 1;
   width: 100vw;
@@ -23,11 +30,14 @@ footer {
   margin-top: auto;
 }
 
-body {
-  font-family: "Noto Sans", sans-serif;
-  background-color: $black-color;
-  overflow-x: hidden;
-  margin: 0;
+a,
+button {
+  transition:
+    color $transition-speed $transition-style,
+    background-color $transition-speed $transition-style,
+    border $transition-speed $transition-style,
+    outline $transition-speed $transition-style,
+    transform $transition-speed $transition-style;
 }
 
 .container {
