@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "@/styles/index.scss";
 import styles from "./Insta.module.scss";
+import BackgroundCircles from "../BackgroundCircles/BackgroundCircles";
 
 const InstagramWidget = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const InstagramWidget = () => {
   return (
     <div className="container">
       <div className={styles.instaContaoner}>
+        <BackgroundCircles className={styles.backgroundCircles} />
         <div
           className="elfsight-app-ca342234-6376-4789-98da-cfb5f70544ae"
           data-elfsight-app-lazy

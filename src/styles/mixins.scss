@@ -1,0 +1,73 @@
+@use "@/styles/variables" as *;
+
+@mixin inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 30px;
+  position: relative;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 4px;
+  }
+}
+
+@mixin inputFieldLabel {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+@mixin inputField {
+  border: 1px solid $grey-color;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+  padding: 12px;
+  font-size: 16px;
+  color: inherit;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  transition: all $transition-speed $transition-style;
+
+  &:hover {
+    border-color: $yellow-color;
+    box-shadow: 0px 4px 20px 0px #fbbc054d;
+  }
+
+  &:focus {
+    border-color: $yellow-color;
+    border-radius: 15px;
+  }
+
+  &.inputError {
+    border-color: $error-color;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px;
+  }
+}
+
+@mixin inputFieldError {
+  position: absolute;
+  bottom: 5px;
+  font-weight: 100;
+  font-size: 16px;
+  color: $error-color;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px;
+    bottom: 8px;
+  }
+}
+
+@mixin inputIconStar {
+  margin-left: auto;
+}

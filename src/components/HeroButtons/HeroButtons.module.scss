@@ -69,6 +69,7 @@
   margin-right: 8px;
   font-size: 16px;
   text-decoration: none;
+
   @media (max-width: $breakpoint-mobile) {
     display: flex;
     align-items: center;
@@ -83,6 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: $breakpoint-mobile) {
     justify-content: center;
     margin-left: -12px;
@@ -96,6 +98,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @media (max-width: $breakpoint-mobile) {
     justify-content: center;
     margin-left: -12px;

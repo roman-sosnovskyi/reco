@@ -1,0 +1,9 @@
+@use "@/styles/mixins" as *;
+
+.inputLabel {
+  @include inputFieldLabel;
+}
+
+.inputIconStar {
+  @include inputIconStar;
+}

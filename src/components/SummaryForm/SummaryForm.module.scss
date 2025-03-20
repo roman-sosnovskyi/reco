@@ -1,0 +1,35 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.summaryForm {
+  width: 100%;
+}
+
+.formTitle {
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $yellow-color;
+  margin-bottom: 24px;
+}
+
+.inputContainer {
+  @include inputFieldContainer;
+
+  & {
+    flex-grow: 1;
+  }
+}
+
+.inputField {
+  @include inputField;
+}
+
+.inputErrorText {
+  @include inputFieldError;
+}
+
+.inputContainerWrapper {
+  display: flex;
+  gap: 20px;
+}
