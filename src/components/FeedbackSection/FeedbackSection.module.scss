@@ -91,19 +91,6 @@
 }
 
 .feedbackImgContainer {
-  background-image: image-set(
-    url(../../assets/images/sections/feedback/circles-desc-1x.webp)
-      type("image/webp") 1x,
-    url(../../assets/images/sections/feedback/circles-desc-2x.webp)
-      type("image/webp") 2x,
-    url(../../assets/images/sections/feedback/circles-desc-1x.png)
-      type("image/png") 1x,
-    url(../../assets/images/sections/feedback/circles-desc-2x.png)
-      type("image/png") 2x
-  );
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: right;
   width: 600px;
   height: 440px;
   position: absolute;
@@ -132,4 +119,43 @@
   left: 80px;
 
   transition: transform $transition-speed $transition-style;
+}
+
+.formCirclesContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.formCircles {
+  background-image: image-set(
+    url(../../assets/images/sections/feedback/circles-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/feedback/circles-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.png)
+      type("image/png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 600px;
+  height: 464px;
+  position: absolute;
+  right: 16px;
+  bottom: 40px;
+
+  @media (max-width: $breakpoint-tablet) {
+    right: -100px;
+    bottom: 40px;
+  }
 }
