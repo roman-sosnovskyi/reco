@@ -36,6 +36,9 @@ const FeedbackSection = () => {
             </picture>
           </div>
         </div>
+        <div className={styles.formCirclesContainer}>
+          <div className={styles.formCircles}></div>
+        </div>
       </div>
     </section>
   );
