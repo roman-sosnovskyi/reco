@@ -1,0 +1,214 @@
+@use "@/styles/variables" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 50px 0;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 971px;
+  gap: 50px;
+  text-align: center;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 375px;
+    gap: 20px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-weight: bold;
+  color: #333;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    gap: 20px;
+  }
+}
+
+.four {
+  font-size: 150px;
+  color: transparent;
+  -webkit-text-stroke: 1px $yellow-color;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 100px;
+  }
+}
+
+.image {
+  width: 154px;
+  height: 154px;
+  object-fit: cover;
+  transform: scale(2.5);
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 30px;
+  color: $yellow-color;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 20px;
+  }
+}
+
+.btnContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homeBtn {
+  width: 259px;
+  height: 58px;
+  background-color: $yellow-color;
+  border-radius: 50px;
+  border: $main-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 10px;
+  cursor: pointer;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: #fbbc058c;
+    border-color: #fbbc058c;
+  }
+}
+
+.iconContainer {
+  width: 56px;
+  height: 56px;
+  @media screen and (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.homeBtnIcon {
+  transform: rotate(225deg);
+  background-color: $grey-color;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+}
+
+.homeBtnText {
+  color: black;
+  font-size: 17px;
+  margin-right: 10px;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 16px;
+  }
+}
+
+.catalogBtn {
+  width: 167px;
+  height: 58px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 1px solid $yellow-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    border-color: $yellow-color;
+  }
+}
+
+.errorCirclesContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.errorCircles {
+  background-image: image-set(
+    url(../../assets/images/sections/feedback/circles-desc-1x.webp)
+      type("image/webp") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.webp)
+      type("image/webp") 2x,
+    url(../../assets/images/sections/feedback/circles-desc-1x.png)
+      type("image/png") 1x,
+    url(../../assets/images/sections/feedback/circles-desc-2x.png)
+      type("image/png") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: bottom;
+  width: 600px;
+  height: 464px;
+  position: absolute;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+.errorCircles1 {
+  @extend .errorCircles;
+  right: 16px;
+  bottom: 40px;
+  transform: rotate(45deg);
+
+  @media (max-width: $breakpoint-tablet) {
+    right: -100px;
+    bottom: 40px;
+  }
+}
+
+.errorCircles2 {
+  @extend .errorCircles;
+  left: -16px;
+  top: -40px;
+  transform: rotate(235deg);
+
+  @media (max-width: $breakpoint-tablet) {
+    left: 100px;
+    top: -40px;
+  }
+}

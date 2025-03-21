@@ -1,13 +1,8 @@
-import { Link } from "react-router-dom";
-
+import Error404 from "@/components/Error404/error404";
 function NotFoundPage() {
   return (
     <main className="container">
-      <div style={{ textAlign: "center", padding: "50px" }}>
-        <h1>404</h1>
-        <p>Страница не найдена</p>
-        <Link to="/">Вернуться на главную</Link>
-      </div>
+      <Error404 />
     </main>
   );
 }
