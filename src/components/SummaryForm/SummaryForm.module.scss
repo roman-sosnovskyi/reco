@@ -32,4 +32,9 @@
 .inputContainerWrapper {
   display: flex;
   gap: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    gap: 0;
+  }
 }
