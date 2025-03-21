@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/Icon/Icon";
 import reco1x from "@/assets/images/sections/error/reco-every_day-1x.png";
 import reco2x from "@/assets/images/sections/error/reco-every_day-2x.png";
+import BackgroundCircles from "../BackgroundCircles/BackgroundCircles";
 
 const Error404 = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.errorCirclesContainer}>
-        <div className={styles.errorCircles1}></div>
-        <div className={styles.errorCircles2}></div>
-      </div>
+      <BackgroundCircles className={styles.backgroundCirclesLeft} />
 
       <div className={styles.placeholder}>
         <div className={styles.title}>
@@ -41,6 +39,7 @@ const Error404 = () => {
           </Link>
         </div>
       </div>
+      <BackgroundCircles className={styles.backgroundCirclesRight} />
     </div>
   );
 };

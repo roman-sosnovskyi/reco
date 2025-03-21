@@ -13,7 +13,9 @@ const NavButtons: FC<NavButtonsProps> = ({ buttons, className }) => {
     <div className={combinedClass}>
       {buttons.map(({ title, link }) => (
         <Link key={title} to={link}>
-          <Button variant="black">{title}</Button>
+          <Button variant="black" size="s">
+            {title}
+          </Button>
         </Link>
       ))}
     </div>
