@@ -6,7 +6,7 @@
   align-items: center;
   min-width: 100%;
   min-height: 100%;
-  padding: 50px 0;
+  padding: 96px 0;
 }
 
 .placeholder {
@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 971px;
+  width: 100%;
   gap: 50px;
   text-align: center;
 
@@ -28,6 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 350px;
   gap: 40px;
   font-weight: bold;
   color: #333;
@@ -48,10 +49,11 @@
 }
 
 .image {
-  width: 154px;
-  height: 154px;
+  width: 170px;
+  height: 170px;
   object-fit: cover;
   transform: scale(2.5);
+  overflow: visible;
 
   @media screen and (max-width: $breakpoint-mobile) {
     width: 100px;
@@ -63,6 +65,7 @@
   margin-top: 20px;
   font-size: 30px;
   color: $yellow-color;
+  letter-spacing: 1.5px;
 
   @media screen and (max-width: $breakpoint-mobile) {
     font-size: 20px;
