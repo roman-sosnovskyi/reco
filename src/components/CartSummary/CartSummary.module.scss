@@ -15,8 +15,7 @@
   align-items: start;
   padding: 1rem;
   border-radius: 20px;
-  border: 1px solid rgb(96, 80, 28);
-
+  border: $main-border;
   gap: 1rem;
   background-color: $grey-color;
 }
