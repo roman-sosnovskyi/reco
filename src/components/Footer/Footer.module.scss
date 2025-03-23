@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   background: $footer-gradient;
-  border: 1px solid rgb(96, 80, 28);
+  border: $main-border;
   border-bottom: none;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -23,13 +23,21 @@
 .footer_container {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
   width: 100%;
   max-width: 1360px;
   background-color: transparent;
-
   @media (max-width: $breakpoint-mobile) {
     flex-wrap: wrap;
+  }
+}
+
+.linkLogo {
+  @media (max-width: $breakpoint-mobile) {
+    order: -1;
+    flex-grow: 1;
   }
 }
 

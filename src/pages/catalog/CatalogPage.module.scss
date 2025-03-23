@@ -1,0 +1,27 @@
+@use "@/styles/variables" as *;
+
+/* Основные стили контейнера корзины */
+.catalogPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+}
+
+.catalogTitleWrapper {
+  width: 100%;
+}
+
+.catalogTitle {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px $yellow-color;
+  color: transparent;
+  margin-bottom: 36px;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}

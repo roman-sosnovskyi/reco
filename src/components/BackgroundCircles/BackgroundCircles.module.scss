@@ -1,0 +1,20 @@
+@use "@/styles/variables" as *;
+
+.circles {
+  background-image: image-set(
+    url(../../assets/images/background/background-1x.webp) type("image/webp") 1x,
+    url(../../assets/images/background/background-2x.webp) type("image/webp") 2x,
+    url(../../assets/images/background/background-1x.png) type("image/png") 1x,
+    url(../../assets/images/background/background-2x.png) type("image/png") 2x
+  );
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 624px;
+  height: 504px;
+  z-index: -1;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}

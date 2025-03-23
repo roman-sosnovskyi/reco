@@ -5,10 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 1rem;
-  margin-bottom: 20px;
+  gap: 20px;
   width: 500px;
-  height: 328px;
 }
 
 .summaryContainer {
@@ -17,6 +15,7 @@
   align-items: start;
   padding: 1rem;
   border-radius: 20px;
+  border: $main-border;
   gap: 1rem;
   background-color: $grey-color;
 }
@@ -49,6 +48,7 @@
   text-align: left;
   font-weight: 100;
 }
+
 .deliveryOptions {
   display: flex;
   flex-direction: column;
@@ -77,14 +77,47 @@
 
 /* Стили для кнопок управления корзиной */
 .checkoutButton {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  fisrt-child {
+    margin-bottom: 20px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 58px;
+  background-color: $yellow-color;
+  border-radius: 58px;
+  border: 1px solid $yellow-color;
+  color: black;
+
+  &:hover {
+    background-color: #fbbc058c;
+    border-color: #fbbc058c;
+  }
 }
 
-.checkoutButton:hover {
-  background-color: #0056b3;
+.continueShoppingButton {
+  width: 500px;
+  height: 58px;
+  background-color: transparent;
+  border-radius: 58px;
+  border: 2px solid #fbbc058c;
+  color: white;
+
+  &:hover {
+    border-color: $yellow-color;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .cartSummary {
+    width: 335px;
+    margin-bottom: 40px;
+  }
+  .checkoutButton {
+    width: 320px;
+  }
+  .continueShoppingButton {
+    width: 320px;
+  }
 }

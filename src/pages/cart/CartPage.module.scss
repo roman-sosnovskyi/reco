@@ -1,15 +1,28 @@
 @use "@/styles/variables" as *;
 
+.backgroundCirclesTop {
+  top: -10%;
+  left: -30%;
+  transform: rotate(45deg);
+}
+
+.backgroundCirclesCenter {
+  top: 50%;
+  left: 50%;
+  transform: scale(1.3);
+}
+
 /* Основные стили контейнера корзины */
 .cartPage {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  max-width: 1360px;
-  margin-top: 10rem;
+  align-items: center;
+  max-width: 1228px;
+  min-height: 62vh;
+  margin-bottom: 40px;
   color: $white-color;
   height: auto;
-  gap: 2rem;
 }
 
 .cartContainer {
@@ -17,5 +30,11 @@
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 15px;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .cartContainer {
+    justify-content: center;
+  }
 }

@@ -8,9 +8,7 @@ export const useCart = () => {
   });
 
   useEffect(() => {
-    if (cart.length) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = useCallback((product: Product, size: string) => {

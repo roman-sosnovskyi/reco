@@ -1,0 +1,174 @@
+@use "@/styles/variables" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 96px 0;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
+  text-align: center;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 375px;
+    gap: 20px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  gap: 40px;
+  font-weight: bold;
+  color: #333;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    gap: 20px;
+  }
+}
+
+.four {
+  font-size: 150px;
+  color: transparent;
+  -webkit-text-stroke: 1px $yellow-color;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 100px;
+  }
+}
+
+.image {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  transform: scale(2.5);
+  overflow: visible;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 30px;
+  color: $yellow-color;
+  letter-spacing: 1.5px;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 20px;
+  }
+}
+
+.btnContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homeBtn {
+  width: 259px;
+  height: 58px;
+  background-color: $yellow-color;
+  border-radius: 50px;
+  border: $main-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 10px;
+  cursor: pointer;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: #fbbc058c;
+    border-color: #fbbc058c;
+  }
+}
+
+.iconContainer {
+  width: 56px;
+  height: 56px;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.homeBtnIcon {
+  transform: rotate(225deg);
+  background-color: $grey-color;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+}
+
+.homeBtnText {
+  color: black;
+  font-size: 17px;
+  margin-right: 10px;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 16px;
+  }
+}
+
+.catalogBtn {
+  width: 167px;
+  height: 58px;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 1px solid $yellow-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  text-transform: uppercase;
+
+  &:hover {
+    outline: 1px solid #fbc000;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    border-color: $yellow-color;
+  }
+}
+
+.backgroundCirclesLeft {
+  top: 19%;
+  left: 0%;
+  transform: rotate(45deg) scale(1.3);
+}
+
+.backgroundCirclesRight {
+  top: 30%;
+  left: 60%;
+  transform: rotate(235deg) scale(1.3);
+  z-index: -1;
+}
