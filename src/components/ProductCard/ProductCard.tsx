@@ -77,6 +77,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ products }) => {
               alt={product.name}
               className={styles.image}
             />
+            {product.isNew && <div className={styles.newBadge}>NEW</div>}
+            {product.badgeInfo && (
+              <div className={styles.badgeInfo}>
+                <Icon
+                  name="icon-waves"
+                  size={isMobile ? 24 : 28}
+                  fill="none"
+                  stroke={styles.yellowColor}
+                />
+              </div>
+            )}
             {index === currentIndex && (
               <div className={styles.buttonPlace}>
                 {isMobile ? (

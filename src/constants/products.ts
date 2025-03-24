@@ -3,6 +3,8 @@ import recoLogo from "../assets/images/sections/hero/hero-desc-1x.png";
 export const products = [
   {
     id: 1,
+    isNew: true,
+    badgeInfo: "i",
     name: "RECO",
     photo: recoLogo,
     volume: "Об'єм",
@@ -19,6 +21,8 @@ export const products = [
   },
   {
     id: 2,
+    isNew: true,
+    badgeInfo: "i",
     name: "HAPPY END",
     photo: recoLogo,
     volume: "Об'єм",
@@ -34,6 +38,8 @@ export const products = [
   },
   {
     id: 3,
+    isNew: true,
+    badgeInfo: "i",
     name: "REC ON",
     photo: recoLogo,
     volume: "Об'єм",
@@ -47,6 +53,8 @@ export const products = [
   },
   {
     id: 4,
+    isNew: true,
+    badgeInfo: "i",
     name: "RecOil",
     photo: recoLogo,
     volume: "Об'єм",
@@ -60,6 +68,8 @@ export const products = [
   },
   {
     id: 5,
+    isNew: true,
+    badgeInfo: "i",
     name: "TERMO CONTROL ",
     photo: recoLogo,
     volume: "Об'єм",
@@ -73,6 +83,8 @@ export const products = [
   },
   {
     id: 6,
+    isNew: true,
+    badgeInfo: "i",
     name: "VOL UP CRAZY",
     photo: recoLogo,
     volume: "Об'єм",
@@ -86,6 +98,8 @@ export const products = [
   },
   {
     id: 7,
+    isNew: true,
+    badgeInfo: "i",
     name: "EVERY DAY",
     photo: recoLogo,
     volume: "Об'єм",
@@ -100,6 +114,8 @@ export const products = [
   },
   {
     id: 8,
+    isNew: true,
+    badgeInfo: "i",
     name: "SHAMPOO HIDRATING",
     photo: recoLogo,
     volume: "Об'єм",

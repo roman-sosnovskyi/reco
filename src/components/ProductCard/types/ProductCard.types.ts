@@ -6,6 +6,8 @@ export interface Product {
   sizes: Record<string, number>;
   price: number;
   volume?: string;
+  isNew?: boolean;
+  badgeInfo?: string;
 }
 
 export interface ProductCardProps {

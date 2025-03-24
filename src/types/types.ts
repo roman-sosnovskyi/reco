@@ -1,4 +1,6 @@
 export type Product = {
+  isNew: any;
+  badgeInfo: any;
   price: number;
   volume: string;
   id: number;

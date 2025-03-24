@@ -22,6 +22,37 @@
   }
 }
 
+.newBadge {
+  background-color: $yellow-color;
+  color: $black-color;
+  padding: 10px 15px;
+  border-radius: 60px;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  @include mobile {
+    left: 110px;
+    top: 20px;
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+}
+
+.badgeInfo {
+  svg {
+    stroke: $yellow-color;
+  }
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  @include mobile {
+    right: 110px;
+    top: 20px;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -60,6 +91,15 @@
   @include mobile {
     max-width: 49%;
     height: 274px;
+    position: static;
+  }
+  @include tablet {
+    position: static;
+  }
+
+  $breakpoint-tablet-plus-one: $breakpoint-tablet + 1;
+  @media (min-width: $breakpoint-tablet-plus-one) {
+    position: absolute;
   }
 
   @include mobile {
